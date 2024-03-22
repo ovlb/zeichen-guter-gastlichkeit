@@ -18,14 +18,14 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(require('./_templates'))
 
-  eleventyConfig.on('eleventy.before', async function () {
-    const dist = path.join(process.cwd(), 'dist')
+  eleventyConfig.addCollection('seriesWithEntries', function (collectionAPI) {
+    const cards = collectionAPI.getFilteredByGlob('_src/pages/cards/**/*.md')
 
-    const deletedDirectoryPaths = await del([`${dist}/**`, `!${dist}/img`])
+    const seriesIDs = new Set()
 
-    if (deletedDirectoryPaths.length) {
-      console.log('eleventy.before: 🗑 Deleted `dist`.')
-    }
+    cards.forEach((card) => seriesIDs.add(card.data.seriesId))
+
+    return [...seriesIDs]
   })
 
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk')
