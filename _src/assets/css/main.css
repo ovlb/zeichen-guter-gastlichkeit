@@ -3,3 +3,7 @@
 @import './0-base/_aspect-ratio.pcss';
 @import './0-base/_a.pcss';
 @import './0-base/_img.pcss';
+
+.logo {
+  width: min(50vw, 320px);
+}
