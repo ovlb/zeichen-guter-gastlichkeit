@@ -36,7 +36,7 @@ class Series {
 
   render(data) {
     return `
-      <h1>Series ${data.seriesID} – ${data.fullSeriesInfo.name}</h1>
+      <h1>Serie ${data.seriesID} – ${data.fullSeriesInfo.name}</h1>
       ${this.renderCardList(data.seriesID, data.collections.card)}
     `
   }
