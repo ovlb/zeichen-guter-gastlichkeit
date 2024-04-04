@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Inframanufaktur No. 11',
-  description: 'An 11ty starter with an orchestra of bells and whistles.',
+  title: 'Zeichen guter Gastlichkeit',
+  description: 'Kultiviertes Essen und Trinken',
   baseURL: process.env.BASE_URL,
 }
