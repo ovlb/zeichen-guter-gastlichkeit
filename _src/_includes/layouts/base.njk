@@ -5,7 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{{ meta.title }}</title>
+    {% if title %}
+    <title>{{ title }} – {{ site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+
+    {% if description %}
+      <meta name="description" content="{{ description }}">
+    {% else %}
+      <meta name="description" content="{{ site.description }}">
+    {% endif %}
 
     {% metaRobots %}
 
@@ -16,7 +26,17 @@
     </style>
   </head>
   <body>
-    <main class="{{ layoutClass }}">
+    <header>
+      <img
+        src="/img/zeichen-guter-gastlichkeit.avif"
+        alt="Zeichen guter Gastlichkeit"
+        class="logo"
+      />
+      <nav>
+        <a href="/">Start</a>
+      </nav>
+    </header>
+    <main class="{{ layoutClass }}" id="main" tabindex="-1">
       {{ content | safe }}
     </main>
   </body>
