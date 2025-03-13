@@ -1,11 +1,15 @@
+const { img } = require('./paths')
+
 /**
- * Check if the image starts with the remote upload path and set MEDIA_HOST if it does
+ * Check if the image is remote and add the src assets path if not
  *
- * @param {String} orig
- * @returns
+ * @param {string} orig
+ * @returns {string}
  */
 module.exports = (orig) => {
-  return orig.startsWith(process.env.MEDIA_ROOT_FOLDER)
-    ? `${process.env.MEDIA_HOST}${orig}`
-    : orig
+  if (orig.startsWith('http')) {
+    return orig
+  }
+
+  return `${img}${orig.replace('^/', '')}`
 }
