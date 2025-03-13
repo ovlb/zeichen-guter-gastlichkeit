@@ -19,6 +19,9 @@ module.exports = {
     image: function ({ seriesId, page }) {
       return `${seriesId}-${page.fileSlug}.jpg`
     },
+    audio: function ({ seriesId, page, build }) {
+      return `${build.cdnDomain}/${seriesId}-${page.fileSlug}.mp3`
+    },
     fullSeriesInfo: function ({ series, collections, seriesId }) {
       return {
         ...series.find((ser) => ser.id === seriesId),
