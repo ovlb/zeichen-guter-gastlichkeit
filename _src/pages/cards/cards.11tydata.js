@@ -20,7 +20,7 @@ module.exports = {
       return `${seriesId}-${page.fileSlug}.jpg`
     },
     audio: function ({ seriesId, page, build }) {
-      return `${build.cdnDomain}/${seriesId}-${page.fileSlug}.mp3`
+      return `${build.cdnDomain}/audio/${seriesId}-${page.fileSlug}.mp3`
     },
     fullSeriesInfo: function ({ series, collections, seriesId }) {
       return {
