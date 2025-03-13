@@ -29,8 +29,10 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk')
+  eleventyConfig.addLayoutAlias('card', 'layouts/card.njk')
+  eleventyConfig.addLayoutAlias('home', 'layouts/home.njk')
 
-  eleventyConfig.addWatchTarget(`./${STATIC_FOLDERS.static}**/*`)
+  eleventyConfig.addWatchTarget(`./${STATIC_FOLDERS.static}/**/*`)
   eleventyConfig.addWatchTarget('./_helper/**/*')
 
   // copy static assets to dist folder

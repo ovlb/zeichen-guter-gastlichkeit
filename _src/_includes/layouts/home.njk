@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/core/base-head.njk" %}
+  </head>
+  <body>
+    <header class="home-header">
+      <p class="text-upper">Rezeptkartenserie</p>
+      <img
+        src="/img/zeichen-guter-gastlichkeit.avif"
+        alt="Zeichen guter Gastlichkeit"
+        class="logo"
+      />
+      <p>
+        Herausgegeben von der <br />
+        <strong>Weinbrennerei Asbach & Co. in Rüdesheim am Rhein</strong><br />
+        für die Freunde kultivierten Essens und Trinkens
+      </p>
+    </header>
+    <main class="{{ layoutClass }} home" id="main" tabindex="-1">
+      {{ content | safe }}
+    </main>
+  </body>
+</html>
