@@ -6,38 +6,64 @@ class Series {
         size: 1,
         alias: 'seriesID',
       },
+      pageCSS: 'series.css',
       eleventyComputed: {
         fullSeriesInfo: function ({ series, seriesID }) {
           return series.find((ser) => ser.id === seriesID)
         },
         permalink: function ({ fullSeriesInfo }) {
-          return (
-            fullSeriesInfo && `/${fullSeriesInfo.name.toLocaleLowerCase('de')}/`
-          )
+          return fullSeriesInfo && `/${this.slugify(fullSeriesInfo.name)}/`
+        },
+        title: function ({ fullSeriesInfo }) {
+          return fullSeriesInfo.name
         },
       },
     }
   }
 
-  renderCardList(seriesID, cards) {
-    const cardsInSeries = cards.filter(
-      (card) => card.data.seriesId === seriesID,
-    )
+  renderItemContent(card) {
+    const negativeOrPositive = Math.round(Math.random()) * 2 - 1
+    const cardRotate = negativeOrPositive * (Math.random() * 5)
+    const baseZIndex = Math.floor(Math.random() * 10) + 1
+
+    return `
+      <article class="card-card" style="--card-rotate: ${cardRotate}deg; --card-z-index: ${baseZIndex}">
+        <p class="card-card__series"><small>Serie ${card.data.fullSeriesInfo.id}/${card.data.cardNumber}<small></p>
+        <figure class="recipe-card-image">
+          <img 
+            src="/cards/${card.data.image}" 
+            alt="" 
+            data-process-image 
+            data-image-sizes="15rem" 
+            data-image-widths="[320, 420, 640, 800]"
+          />
+        </figure>
+        <h2 class="main-headline card-card__headline"><a href="${card.url}">${card.data.title}</a></h2>
+      </article>
+    `
+  }
+
+  renderCardList(cardsInSeries) {
     const listContent = cardsInSeries
       .map((card) => {
-        const listItem = `<li><a href="${card.url}>${card.data.title}</a></li>`
+        const listItem = `<li>${this.renderItemContent(card)}</li>`
 
         return listItem
       })
       .join('')
 
-    return `<ol>${listContent}</ol>`
+    return `<ol role="list" class="card-archive-list">${listContent}</ol>`
   }
 
   render(data) {
+    const seriesCollection =
+      data.collections[`series:${this.slugify(data.fullSeriesInfo.name)}`]
+
     return `
-      <h1>Serie ${data.seriesID} – ${data.fullSeriesInfo.name}</h1>
-      ${this.renderCardList(data.seriesID, data.collections.card)}
+      <header class="series-archive-header">
+        <h1>Serie ${data.seriesID} – ${data.fullSeriesInfo.name}</h1>
+      </header>
+      ${this.renderCardList(seriesCollection)}
     `
   }
 }
