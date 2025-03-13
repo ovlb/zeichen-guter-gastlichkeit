@@ -23,7 +23,11 @@ module.exports = function (eleventyConfig) {
 
     const seriesIDs = new Set()
 
-    cards.forEach((card) => seriesIDs.add(card.data.seriesId))
+    cards.forEach((card) => {
+      if (Date.now() >= card.data.date) {
+        seriesIDs.add(card.data.seriesId)
+      }
+    })
 
     return [...seriesIDs]
   })

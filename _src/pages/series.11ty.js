@@ -56,8 +56,9 @@ class Series {
   }
 
   render(data) {
-    const seriesCollection =
-      data.collections[`series:${this.slugify(data.fullSeriesInfo.name)}`]
+    const seriesCollection = data.collections[
+      `series:${this.slugify(data.fullSeriesInfo.name)}`
+    ].filter((c) => Date.now() >= c.data.date)
 
     return `
       <header class="series-archive-header">

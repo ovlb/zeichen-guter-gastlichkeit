@@ -26,7 +26,9 @@ module.exports = {
       return {
         ...series.find((ser) => ser.id === seriesId),
         cards: collections.card
-          .filter((c) => c.data.seriesId === seriesId)
+          .filter(
+            (c) => c.data.seriesId === seriesId && Date.now() >= c.data.date,
+          )
           .sort(
             (cardA, cardB) => cardA.data.cardNumber - cardB.data.cardNumber,
           ),
