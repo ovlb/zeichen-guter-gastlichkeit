@@ -1,3 +1,4 @@
+const IS_PROD = process.env.PAGE_STATE === 'production'
 class Series {
   data() {
     return {
@@ -58,7 +59,7 @@ class Series {
   render(data) {
     const seriesCollection = data.collections[
       `series:${this.slugify(data.fullSeriesInfo.name)}`
-    ].filter((c) => Date.now() >= c.data.date)
+    ].filter((c) => (IS_PROD ? Date.now() >= c.data.date : true))
 
     return `
       <header class="series-archive-header">

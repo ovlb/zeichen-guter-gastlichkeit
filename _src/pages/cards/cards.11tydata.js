@@ -1,8 +1,14 @@
+const IS_PROD = process.env.PAGE_STATE === 'production'
+
 module.exports = {
   tags: ['card'],
   layout: 'card',
   pageCSS: 'card.css',
-  permalink: function ({ series, title, seriesId, part }) {
+  permalink: function ({ series, title, seriesId, part, date }) {
+    if (IS_PROD && date > Date.now()) {
+      return false
+    }
+
     const { name: seriesName } = series.find((ser) => ser.id === seriesId)
     const seriesSlug = this.slugify(seriesName.toLocaleLowerCase('de'))
 

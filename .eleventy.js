@@ -3,7 +3,7 @@ const del = require('del')
 
 const STATIC_FOLDERS = require('./_helper/paths')
 
-const IS_PROD = process.env.ELEVENTY_ENV === 'production'
+const IS_PROD = process.env.PAGE_STATE === 'production'
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('./_plugins'))
@@ -24,7 +24,7 @@ module.exports = function (eleventyConfig) {
     const seriesIDs = new Set()
 
     cards.forEach((card) => {
-      if (Date.now() >= card.data.date) {
+      if (Date.now() >= card.data.date || !IS_PROD) {
         seriesIDs.add(card.data.seriesId)
       }
     })
