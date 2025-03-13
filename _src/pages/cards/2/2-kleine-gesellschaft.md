@@ -2,7 +2,6 @@
 title: Kleine Gesellschaft
 date: 2024-03-19
 seriesId: 2
-cardNumber: 2
 ---
 
 In der Mehrzahl aller Fälle schreiben Wohnungs- und Tischgröße bereits die Obergrenze der Besucherzahl vor.

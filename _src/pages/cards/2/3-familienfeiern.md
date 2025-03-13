@@ -2,7 +2,6 @@
 title: Familienfeiern
 date: 2024-03-20
 seriesId: 2
-cardNumber: 3
 ---
 
 Familienfeste und kirchliche Feiertage werden gewöhnlich in einem festumgrenzten Kreis begangen. Bei Kindtaufen, Kommunionen/ Konfirmationen und Hochzeiten kommen noch Pfarrer, Hausarzt und enge Freunde dazu.

@@ -1,8 +1,6 @@
 ---
 title: Fisch-Einkauf
 date: 2024-03-12
-seriesId: 1
-cardNumber: 3
 ---
 
 Fischgeschäfte sind selten geworden. Man ist daher mehr und mehr auf Tiefkühlware oder Versandgeschäfte angewiesen.

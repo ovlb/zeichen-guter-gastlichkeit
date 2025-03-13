@@ -1,8 +1,6 @@
 ---
 title: Fleisch- und Wildeinkauf
 date: 2024-01-18
-seriesId: 1
-cardNumber: 2
 ---
 
 Gut wirtschaften heißt auch richtig einkaufen, gleichgültig, ob für die Familie, für wenige oder viele Gäste.

@@ -1,8 +1,6 @@
 ---
 title: Einkaufs-Regeln
 date: 2024-01-15
-seriesId: 1
-cardNumber: 1
 ---
 
 Gut wirtschaften heißt auch richtig einkaufen, gleichgültig, ob für die Familie, für wenige oder viele Gäste.

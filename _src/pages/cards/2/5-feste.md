@@ -2,7 +2,6 @@
 title: Feste
 date: 2024-03-22
 seriesId: 2
-cardNumber: 5
 ---
 
 Jedes Fest erfordert eine Planung in bezug auf Stil, Umfang, passende Gäste, richtige Bewirtung und gemütliche Umgebung. Es ist daher nützlich, sich eine Check-Liste anzulegen, auf der alles vermerkt wird, woran man denken muß.

@@ -1,8 +1,6 @@
 ---
 title: Getränke-Einkauf
 date: 2024-03-15
-seriesId: 1
-cardNumber: 5
 ---
 
 ## Alkoholfreie Getränke und Biere
@@ -16,4 +14,4 @@ Für kleine Gesellschaften Flaschenbier, bei großen Gesellschaften und rustikal
 Regelmäßige Weintrinker beziehen größere Mengen von einem erprobten Winzer oder einem guten Fachgeschäft auf Vorrat für einige Monate bzw. bei gutem Keller auch für Jahre. Wer keine Lagermöglichkeit hat, kauft den Wein mindestens eine Woche im voraus. Der gängige Weißwein sollte 1 bis 3 Jahre, Rotwein 3 bis
 8 Jahre alt sein. Ausnahmen sind junge Beaujolais. Darauf achten, daß sich unter den Weißweinen auch trockene Sorten (mit gelbem Weinsiegel) befinden.
 
-Zum Standard-Angebot bei einer Gastlichkeit gehören Weinbrand, Edelkom, Obstbrand, Whisky, Gin und Wodka. In jedem Fall sollte es sich dabei um erstklassige Markenprodukte handeln. In vielen Gegenden ist noch an Rum zu denken, an den weißen speziell zum Mixen. Wichtig sind ferner einige Liköre, vorzugsweise die Geschmacksrichtungen Curaçao, Apricot, Orange, Kirsch, Kaffee und Ei.
+Zum Standard-Angebot bei einer Gastlichkeit gehören Weinbrand, Edelkorn, Obstbrand, Whisky, Gin und Wodka. In jedem Fall sollte es sich dabei um erstklassige Markenprodukte handeln. In vielen Gegenden ist noch an Rum zu denken, an den weißen speziell zum Mixen. Wichtig sind ferner einige Liköre, vorzugsweise die Geschmacksrichtungen Curaçao, Apricot, Orange, Kirsch, Kaffee und Ei.

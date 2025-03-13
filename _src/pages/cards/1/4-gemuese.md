@@ -1,8 +1,6 @@
 ---
 title: Gemüse-Einkauf
 date: 2024-03-13
-seriesId: 1
-cardNumber: 4
 ---
 
 Gemüse soll möglichst frisch zubereitet werden. Man kauft es deshalb • im letzten Moment, muß sich jedoch vorher vergewissern, daß es auch vorrätig ist.

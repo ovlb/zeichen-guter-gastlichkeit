@@ -2,7 +2,6 @@
 title: Zwangloses Beisammensein
 date: 2024-03-18
 seriesId: 2
-cardNumber: 1
 ---
 
 Auch Freunde, die man oft sieht und die sich nicht anzumelden pflegen, sind Gäste und werden bewirtet.
