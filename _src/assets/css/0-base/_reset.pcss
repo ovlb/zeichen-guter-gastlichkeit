@@ -1,5 +1,13 @@
 @import 'open-props/src/extra/normalize.css';
 
+:where(h1, h2, h3, h4, h5, h6) {
+  font-size: var(--font-size-4);
+}
+
+:where(p, ul, ol, dl, h6) {
+  font-size: var(--u-font-size-0);
+}
+
 :where([role='list']) {
   list-style: none;
   padding-left: 0;

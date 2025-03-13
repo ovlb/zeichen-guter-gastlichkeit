@@ -1,0 +1,23 @@
+.home-header {
+  padding: var(--size-4);
+  text-align: center;
+
+  p {
+    margin-inline: auto;
+  }
+}
+
+.home-intro {
+  display: flex;
+  flex-flow: column;
+  margin-inline: auto;
+  max-inline-size: var(--size-content-3);
+  row-gap: var(--size-4);
+}
+
+.group-list {
+  @media (--sm-n-above) {
+    column-count: 2;
+    column-gap: var(--size-2);
+  }
+}

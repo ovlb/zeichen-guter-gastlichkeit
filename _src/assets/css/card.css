@@ -1,0 +1,111 @@
+@import './2-structures/_card.pcss';
+
+.series {
+  background-color: var(--text-1);
+  color: var(--surface-1);
+
+  :any-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.series__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  max-inline-size: var(--detail-view-container-inline-size);
+  padding-block: var(--size-2);
+  padding-inline: var(--size-5);
+}
+
+.card {
+  gap: var(--size-3);
+  margin-inline: auto;
+  max-inline-size: var(--detail-view-container-inline-size);
+  padding: var(--size-5);
+
+  @media (--md-n-above) {
+    & {
+      display: grid;
+      grid-template-columns: 40% 1fr;
+    }
+  }
+}
+.card-image {
+  align-self: start;
+  box-shadow: inset var(--text-1) 0 0 0 2px, inset var(--surface-1) 0 0 0 4px,
+    inset var(--text-1) 0 0 0 5px, inset var(--surface-1) 0 0 0 7px,
+    inset var(--text-1) 0 0 0 10px, inset var(--surface-1) 0 0 0 15px,
+    inset var(--text-1) 0 0 0 16px;
+  padding: 22px;
+
+  @media (--md-n-above) {
+    & {
+      position: sticky;
+      top: var(--size-5);
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.card-content {
+  max-inline-size: var(--size-content-3);
+  padding-block: var(--size-2);
+}
+
+.card-text {
+  :is(p, ul, ol) + p {
+    margin-block-start: var(--size-2);
+  }
+
+  h2 {
+    font-size: var(--u-font-size-0);
+    margin-block-start: var(--size-3);
+    max-inline-size: var(--size-content-3);
+  }
+}
+
+.card-footer__inner {
+  margin-inline: auto;
+  max-inline-size: var(--detail-view-container-inline-size);
+  padding-block: var(--size-2);
+  padding-block-end: 0;
+  padding-inline: var(--size-5);
+  text-align: center;
+}
+
+.logo-container {
+  display: block;
+  /* margin-block-start: calc(-1 * var(--size-10)); */
+  margin-inline: auto;
+  padding: var(--size-4);
+  position: relative;
+  text-align: center;
+  width: min(90vw, 25rem);
+  z-index: 10;
+}
+
+.series-navigation {
+  margin-block-end: var(--size-4);
+  text-align: left;
+
+  ol {
+    column-gap: var(--size-8);
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: var(--size-2);
+
+    li {
+      white-space: nowrap;
+    }
+  }
+}

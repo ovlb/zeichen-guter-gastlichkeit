@@ -1,0 +1,47 @@
+@font-face {
+  font-family: Elford;
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://static.owlish.dev/fonts/elfort.woff2');
+}
+
+@font-face {
+  font-family: 'Nomada Serif';
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://static.owlish.dev/fonts/NomadaSerif-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'Nomada Serif';
+  font-style: normal;
+  font-weight: bold;
+  src: url('https://static.owlish.dev/fonts/NomadaSerif-Bold.woff2');
+}
+
+:root {
+  --fonts-headline: Elford, cursive;
+  --font-serif: Nomada Serif, ui-serif, serif;
+}
+
+:where(html) {
+  font-family: var(--font-serif);
+}
+
+:where(.main-headline) {
+  font-family: var(--fonts-headline);
+  font-size: var(--u-font-size-5);
+  letter-spacing: 0.04em;
+  word-spacing: 0.04em;
+}
+
+.text-centered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.text-upper {
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  word-spacing: 0.02em;
+}
