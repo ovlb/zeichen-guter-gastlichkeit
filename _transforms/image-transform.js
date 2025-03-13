@@ -3,7 +3,7 @@ const { parseHTML } = require('linkedom')
 
 const getFullSource = require('../_helper/get-full-source')
 
-const IS_PROD = process.env.ELVENTY_ENV === 'production'
+const IS_PROD = process.env.ELEVENTY_ENV === 'production'
 
 const defaultOptions = {
   widths: [320, 680, 1024, 1400, 2000, null],
