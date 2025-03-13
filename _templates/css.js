@@ -1,5 +1,6 @@
 const { minify } = require('csso')
 const IS_PROD = process.env.ELEVENTY_ENV === 'production'
+const ENABLE_MINIFY = false
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addTemplateFormats('css')
@@ -30,7 +31,7 @@ module.exports = function (eleventyConfig) {
       }
 
       return () => {
-        if (IS_PROD) {
+        if (IS_PROD && ENABLE_MINIFY) {
           const cssoResult = minify(css)
 
           if (cssoResult.errors) {
