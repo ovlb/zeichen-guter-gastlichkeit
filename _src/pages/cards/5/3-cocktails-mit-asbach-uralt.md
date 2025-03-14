@@ -4,25 +4,26 @@ date: 2025-03-14
 part: II
 ---
 
-Anstelle der üblichen Aperitifs, die aus einer pur gereichten oder aufgespritzten Spirituose bestehen, kann man zur Begrüßung oder vor dem Essen auch einen Cocktail offerieren. Er besteht aus mehreren Zutaten, die so harmonieren, daß kein Geschmack übertönend im Vordergrund steht. Dabei sollte er leicht herb sein, um den Appetit anzuregen. Besonders angenehm sind Cocktails mit einem leichten Schuß trockenem Champagner.
+## Alexander-Cocktail
 
-## Corri
+2 cl Asbach Uralt, 2 cl Creme de Cacao, 2 cl frische Sahne
 
-3 cl Jack Daniel's Tennessee Sour Mash Whiskey, 2 cl Ramazzotti, Champagner Taittinger Rosé
+im Shaker schütteln und in einer Cocktailschale servieren.
 
-Spirituosen im Shaker schütteln, in eine Cocktailschale seihen und mit etwas Champagner aufspritzen.
+## Blue Lady
 
-## Nikaiki
+3 cl Asbach Uralt, 3 cl Curaçao blue, 3 cl Zitronensaft, ½ Eiweiß
 
-2 cl Asbach Uralt,
-2 cl Amaretto Mandel-Likör, 1 cl Boonekamp, Champagner Taittinger
+Zutaten im Shaker kräftig schütteln und in eine große Cocktailschale seihen.
 
-Spirituosen im Shaker schütteln, in eine Cocktailschale seihen und den Champagner aufspritzen.
+## Classic Cocktail
 
-## Milano
+4 cl Asbach Uralt, 1 cl Curaçao Orange, 1 cl Maraschino, 1 cl Zitronensaft
 
-2 cl Ramazzotti, 1 cl Grand Marnier, 1 cl Jack Daniel's Tennessee
-Sour Mash Whiskey, 1 cl Rum-Likör, 1 Barlöffel Zitrone,
-3 Dash Orange Bitter, Champagner Taittinger
+im Shaker schütteln und mit einer Cocktailkirsche im Glas servieren.
 
-Spirituosen, Zitrone und Orange Bitter in den Shaker geben, kräftig schütteln, in eine Cocktailschale seihen und mit etwas Champagner aufspritzen.
+## Caribean Cocktail
+
+4 cl Asbach Uralt, 1 cl Curaçao Triple Sec, 1 cl Ananassaft, 2 Dash Angostura
+
+im Shaker kräftig schütteln und in eine Cocktailschale seihen.
