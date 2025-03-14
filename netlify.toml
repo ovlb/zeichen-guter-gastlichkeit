@@ -3,4 +3,5 @@
     [plugins.inputs]
         cache_img = './img'
         cache_img_httpHeader = false
+        cache_assets = '../.cache'
         cache_other = ['./feed-images']
