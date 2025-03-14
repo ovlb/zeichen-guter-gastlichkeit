@@ -6,12 +6,10 @@
 <title>{{ title }} – {{ site.title }}</title>
 {% else %}
 <title>{{ site.title }}</title>
-{% endif %}
-
-{% if description %}
-<meta name="description" content="{{ description }}">
+{% endif %} {% if description %}
+<meta name="description" content="{{ description }}" />
 {% else %}
-<meta name="description" content="{{ site.description }}">
+<meta name="description" content="{{ site.description }}" />
 {% endif %}
 
 <link rel="shortcut icon" href="/img/favicon.png" />
@@ -23,5 +21,11 @@
 <link rel="stylesheet" href="/css/custom-properties.css" />
 <link rel="stylesheet" href="/css/main.css" />
 {% if pageCSS %}
-  <link rel="stylesheet" href="/css/{{pageCSS}}" />
+<link rel="stylesheet" href="/css/{{ pageCSS }}" />
 {% endif %}
+<link
+  rel="alternate"
+  href="/feeds/cards.xml"
+  title="Rezeptkarten-Feed"
+  type="application/rss+xml"
+/>

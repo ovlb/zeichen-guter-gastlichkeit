@@ -23,7 +23,7 @@ module.exports = {
       return page.fileSlug.split('-')[0]
     },
     image: function ({ seriesId, page }) {
-      return `${seriesId}-${page.fileSlug}.jpg`
+      return `/cards/${seriesId}-${page.fileSlug}.jpg`
     },
     audio: function ({ seriesId, page, build }) {
       return `${build.cdnDomain}/audio/${seriesId}-${page.fileSlug}.mp3`

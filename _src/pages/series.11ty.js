@@ -32,7 +32,7 @@ class Series {
         <p class="card-card__series"><small>Serie ${card.data.fullSeriesInfo.id}/${card.data.cardNumber}<small></p>
         <figure class="recipe-card-image">
           <img 
-            src="/cards/${card.data.image}" 
+            src="${card.data.image}" 
             alt="" 
             data-process-image 
             data-image-sizes="15rem" 
