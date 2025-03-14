@@ -43,7 +43,7 @@
             <h1 class="main-headline">{{ title }}</h1>
           </header>
           <section class="card-text">
-            <audio controls src="{{ audio }}"></audio>
+            <audio controls preload="metadata" src="{{ audio }}"></audio>
           </section>
           <section class="card-text">
             {{ content | safe }}
