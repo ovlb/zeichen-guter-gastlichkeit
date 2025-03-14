@@ -100,12 +100,13 @@ class AtomFeed {
   }
 
   async enrichContent(post) {
-    const parsed = await convertHtmlToAbsoluteUrls(
-      post.templateContent,
-      this.feedURL,
-    )
+    const episodeText = `
+      <p>Transcript: ${siteData.baseURL}${post.url}</p>
+      <p><em>Zeichen guter Gastlichkeit</em> ist eine Produktion des VEB Audioproduktionen Clara Zetkin; Berlin, DDR.</p>
+      <p>Das Copyright für alle Texte und Bilder liegt bei der Weinbrennerei Asbach & Co. in Rüdesheim am Rhein.</p>
+    `
 
-    return parsed
+    return convertHtmlToAbsoluteUrls(episodeText, siteData.baseURL)
   }
 
   async render({ feed: feedData, collections }) {
