@@ -108,12 +108,12 @@ class AtomFeed {
   }
 
   async enrichContent(post) {
+    const link = `${siteData.baseURL}${post.url}`
+
     const episodeText = `
-      <p>Alle Informationen zu Karte & Serie: ${siteData.baseURL}${post.url}</p>
-      <div>
-        ${post.templateContent}
-      </div>
-      <p><em>Zeichen guter Gastlichkeit</em> ist eine Produktion des VEB Audioproduktionen Clara Zetkin; Berlin, DDR.</p>
+      <p>Alle Informationen zu Karte & Serie auf der <a href="${link}">Detailseite</a>.</p>
+      ${post.templateContent ? post.templateContent : ''}
+      <p>Zeichen guter Gastlichkeit ist eine Produktion des VEB Audioproduktionen Clara Zetkin; Berlin, DDR.</p>
       <p>Das Copyright für alle Texte und Bilder liegt bei der Weinbrennerei Asbach & Co. in Rüdesheim am Rhein.</p>
     `
 
@@ -129,6 +129,7 @@ class AtomFeed {
       let link = absoluteUrl(post.url, siteData.baseURL)
       let file = await this.getFileInfo(post.data.audio)
       const imageUrl = await this.makeImage(post)
+      const parsedContent = await this.enrichContent(post)
 
       feed.addItem({
         title: post.data.title,
@@ -144,10 +145,8 @@ class AtomFeed {
         },
         imageUrl,
         itunesImage: imageUrl,
+        description: parsedContent,
         date: post.data.date,
-        ...(post.templateContent && {
-          content: await this.enrichContent(post),
-        }),
       })
     }
 
