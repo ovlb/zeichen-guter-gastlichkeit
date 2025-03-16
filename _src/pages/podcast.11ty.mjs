@@ -111,7 +111,7 @@ class AtomFeed {
     const link = `${siteData.baseURL}${post.url}`
 
     const episodeText = `
-      <p>Alle Informationen zu Karte & Serie auf der <a href="${link}">Detailseite</a>.</p>
+      <p>Alle Informationen zu Karte & Serie auf der Detailseite: ${link}.</p>
       ${post.templateContent ? post.templateContent : ''}
       <p>Zeichen guter Gastlichkeit ist eine Produktion des VEB Audioproduktionen Clara Zetkin; Berlin, DDR.</p>
       <p>Das Copyright für alle Texte und Bilder liegt bei der Weinbrennerei Asbach & Co. in Rüdesheim am Rhein.</p>
