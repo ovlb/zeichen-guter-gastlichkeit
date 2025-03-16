@@ -58,24 +58,24 @@
           </section>
         </section>
       </article>
-      <footer class="card-footer">
-        <div class="card-footer__inner">
-          <nav class="series-navigation" aria-label="Serie">
-            <p>Rezeptkarten in der Serie {{ fullSeriesInfo.name }}</p>
-            <ol>
-              {% for card in fullSeriesInfo.cards %}
-              <li>
-                <a href="{{ card.url }}">{{ card.data.title }}</a>
-              </li>
-              {% endfor %}
-            </ol>
-          </nav>
-          <nav>
-            <a href="/">Start</a>
-          </nav>
-        </div>
-        {% include "components/core/end-role.njk" %}
-      </footer>
     </main>
+    <footer class="page-footer card-footer">
+      <div class="card-footer__inner">
+        <nav class="series-navigation" aria-label="Serie">
+          <p>Rezeptkarten in der Serie {{ fullSeriesInfo.name }}</p>
+          <ol>
+            {% for card in fullSeriesInfo.cards %}
+            <li>
+              <a href="{{ card.url }}">{{ card.data.title }}</a>
+            </li>
+            {% endfor %}
+          </ol>
+        </nav>
+        <nav>
+          <a href="/">Start</a>
+        </nav>
+      </div>
+      {% include "components/core/end-role.njk" %}
+    </footer>
   </body>
 </html>
