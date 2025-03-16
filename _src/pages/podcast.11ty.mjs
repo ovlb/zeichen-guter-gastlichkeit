@@ -102,6 +102,7 @@ class AtomFeed {
           subcats: [{ text: 'Food' }],
         },
       ],
+      categories: ['Food', 'Cooking', 'Recipes'],
       itunesImage: imageUrl,
     })
   }
