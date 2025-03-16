@@ -56,7 +56,7 @@ class AtomFeed {
   async makePodcastCover() {
     const data = await Image(fullSource('/podcast-cover.jpg'), {
       formats: ['jpg'],
-      widths: [500],
+      widths: [1600],
       urlPath: '/feed-images/',
       outputDir: './dist/feed-images/',
     })
