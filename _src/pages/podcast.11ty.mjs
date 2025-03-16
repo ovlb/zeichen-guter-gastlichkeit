@@ -86,6 +86,7 @@ class AtomFeed {
       feedUrl: this.feedURL,
       author: 'Oscar',
       copyright: 'Asbach & Co.',
+      language: 'deu',
       link: this.feedURL,
       ttl: 24 * 60,
       imageUrl,
@@ -95,6 +96,12 @@ class AtomFeed {
         email: 'itunes@m.ovlb.net',
       },
       itunesExplicit: 'no',
+      itunesCategory: [
+        {
+          text: 'Arts',
+          subcats: [{ text: 'Food' }],
+        },
+      ],
       itunesImage: imageUrl,
     })
   }
