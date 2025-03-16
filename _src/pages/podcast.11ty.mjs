@@ -53,6 +53,10 @@ class AtomFeed {
     }
   }
 
+  getMusicParagraph(musicInfo) {
+    return `<p>Musik von ${musicInfo.artist} vom Album <a href="${musicInfo.albumLink}">${musicInfo.albumName}</a>.</p>`
+  }
+
   async makePodcastCover() {
     const data = await Image(fullSource('/podcast-cover.jpg'), {
       formats: ['jpg'],
@@ -113,6 +117,7 @@ class AtomFeed {
     const episodeText = `
       <p>Alle Informationen zu Karte & Serie auf der Detailseite: ${link}.</p>
       ${post.templateContent ? post.templateContent : ''}
+      ${this.getMusicParagraph(post.data.music)}
       <p>Zeichen guter Gastlichkeit ist eine Produktion des VEB Audioproduktionen Clara Zetkin; Berlin, DDR.</p>
       <p>Das Copyright für alle Texte und Bilder liegt bei der Weinbrennerei Asbach & Co. in Rüdesheim am Rhein.</p>
     `

@@ -82,6 +82,14 @@
   }
 }
 
+.metadata {
+  margin-block-start: var(--size-5);
+
+  & * {
+    font-size: var(--u-font-size--1);
+  }
+}
+
 .card-footer__inner {
   margin-inline: auto;
   max-inline-size: var(--detail-view-container-inline-size);

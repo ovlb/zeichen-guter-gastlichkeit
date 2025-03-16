@@ -49,6 +49,13 @@
           <section class="card-text">
             {{ content | safe }}
           </section>
+          <section class="card-text metadata">
+            <p>
+              Musik von {{ music.artist }} vom Album
+              <a href="{{ music.albumLink }}">{{ music.albumName }}</a
+              >.
+            </p>
+          </section>
         </section>
       </article>
       <footer class="card-footer">
