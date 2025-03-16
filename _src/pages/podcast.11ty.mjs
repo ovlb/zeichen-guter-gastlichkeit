@@ -132,7 +132,7 @@ class AtomFeed {
 
       feed.addItem({
         title: post.data.title,
-        link,
+        url: link,
         guid: link,
         itunesDuration: file.duration,
         itunesSeason: post.data.fullSeriesInfo.id,
