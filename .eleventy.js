@@ -2,10 +2,11 @@ const path = require('path')
 const del = require('del')
 
 const STATIC_FOLDERS = require('./_helper/paths')
+const { readdir } = require('fs/promises')
 
 const IS_PROD = process.env.PAGE_STATE === 'production'
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
   eleventyConfig.addPlugin(require('./_plugins'))
 
   eleventyConfig.addPlugin(require('./_shortcodes'))
@@ -17,6 +18,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('./_transforms'))
 
   eleventyConfig.addPlugin(require('./_templates'))
+
+  const events = await import('./_events/index.mjs')
+  eleventyConfig.addPlugin(events.default)
 
   eleventyConfig.addCollection('seriesWithEntries', function (collectionAPI) {
     const cards = collectionAPI.getFilteredByGlob('_src/pages/cards/**/*.md')
