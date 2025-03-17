@@ -92,7 +92,7 @@ class AtomFeed {
       copyright: 'Asbach & Co.',
       language: 'deu',
       link: this.feedURL,
-      ttl: 24 * 60,
+      ttl: 4 * 60,
       imageUrl,
       itunesAuthor: 'Oscar',
       itunesOwner: {
