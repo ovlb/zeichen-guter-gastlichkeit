@@ -21,6 +21,10 @@
   max-inline-size: var(--detail-view-container-inline-size);
   padding-block: var(--size-2);
   padding-inline: var(--size-5);
+
+  p {
+    font-variant-numeric: initial;
+  }
 }
 
 .card {

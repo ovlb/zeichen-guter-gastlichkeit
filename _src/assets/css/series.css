@@ -53,6 +53,7 @@
   background-color: var(--text-1);
   color: var(--surface-1);
   display: flex;
+  font-variant-numeric: initial;
   line-height: 1;
   margin-block-end: var(--size-2);
   margin-block-start: calc(-1 * var(--size-2));
