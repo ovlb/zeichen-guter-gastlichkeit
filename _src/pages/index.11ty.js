@@ -32,7 +32,7 @@ class Home {
       ${this.renderGroups(series, collections.seriesWithEntries)}
       <p class="text-centered">
         <small>
-          Bitte beachten Sie auch die auf der Rückseite gegebenen Hinweise!
+          Bitte beachten Sie auch die auf der Rückseite <a href="/hinweise/">gegebenen Hinweise</a>!
         </small>
       </p>
     </section>
