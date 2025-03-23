@@ -19,8 +19,8 @@
   justify-content: space-between;
   margin-inline: auto;
   max-inline-size: var(--detail-view-container-inline-size);
-  padding-block: var(--size-2);
-  padding-inline: var(--size-5);
+  padding-block: var(--space-s);
+  padding-inline: var(--space-m);
 
   p {
     font-variant-numeric: initial;
@@ -28,7 +28,7 @@
 }
 
 .card {
-  gap: var(--size-3);
+  gap: var(--space-m);
   margin-inline: auto;
   max-inline-size: var(--detail-view-container-inline-size);
   padding: var(--size-5);
@@ -63,16 +63,16 @@
 
 .card-content {
   max-inline-size: var(--size-content-3);
-  padding-block: var(--size-2);
+  padding-block: var(--space-s);
 
   & > * + * {
-    margin-block-start: var(--size-2);
+    margin-block-start: var(--space-m);
   }
 }
 
 .card-text {
   :is(p, ul, ol) + p {
-    margin-block-start: var(--size-2);
+    margin-block-start: var(--space-xs);
   }
 
   :is(audio) {
@@ -87,7 +87,7 @@
 }
 
 .metadata {
-  margin-block-start: var(--size-5);
+  margin-block-start: var(--space-s);
 
   & * {
     font-size: var(--u-font-size--1);
@@ -97,7 +97,7 @@
 .card-footer__inner {
   margin-inline: auto;
   max-inline-size: var(--detail-view-container-inline-size);
-  padding-block: var(--size-2);
+  padding-block: var(--space-s);
   padding-block-end: 0;
   padding-inline: var(--size-5);
   text-align: center;
@@ -107,7 +107,7 @@
   display: block;
   /* margin-block-start: calc(-1 * var(--size-10)); */
   margin-inline: auto;
-  padding: var(--size-4);
+  padding: var(--space-m);
   position: relative;
   text-align: center;
   width: min(90vw, 25rem);
@@ -115,14 +115,14 @@
 }
 
 .series-navigation {
-  margin-block-end: var(--size-4);
+  margin-block-end: var(--space-m);
   text-align: left;
 
   ol {
-    column-gap: var(--size-8);
+    column-gap: var(--space-l);
     display: flex;
     flex-flow: row wrap;
-    row-gap: var(--size-2);
+    row-gap: var(--space-2xs);
 
     li {
       white-space: nowrap;
