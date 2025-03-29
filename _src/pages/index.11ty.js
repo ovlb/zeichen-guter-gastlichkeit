@@ -35,6 +35,11 @@ class Home {
           Bitte beachten Sie auch die auf der Rückseite <a href="/hinweise/">gegebenen Hinweise</a>!
         </small>
       </p>
+      <p class="text-centered">
+        <small>
+          Neue Karten Montag–Freitag.
+        </small>
+      </p>
     </section>
   `
   }
