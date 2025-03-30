@@ -50,11 +50,22 @@
             {{ content | safe }}
           </section>
           <section class="card-text metadata">
+            {% if music.isLofiGenerator %}
+            <p>
+              Musik generiert von
+              <a href="https://lofigenerator.com">lofi generator</a> unter
+              <a href="https://creativecommons.org/licenses/by/4.0/"
+                >CC BY 4.0</a
+              >
+              Lizenz.
+            </p>
+            {% else %}
             <p>
               Musik von {{ music.artist }} vom Album
               <a href="{{ music.albumLink }}">{{ music.albumName }}</a
               >.
             </p>
+            {% endif %}
           </section>
         </section>
       </article>
