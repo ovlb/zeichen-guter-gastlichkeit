@@ -24,8 +24,9 @@ const AUDIO_DIR = join(__dirname, './.tmp-audio/')
 async function getFilesFromDir(dir) {
   try {
     const entries = await readdir(dir, { withFileTypes: true })
+
     return entries
-      .filter((entry) => entry.isFile())
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.flac'))
       .map((file) => join(dir, file.name))
   } catch (error) {
     console.error(`Error reading directory ${dir}:`, error)
@@ -153,7 +154,11 @@ async function uploadAllToAuphonic() {
       return
     }
 
-    console.log(`📂 Found ${audioFiles.length} files to upload...`)
+    console.log(
+      `📂 Found ${audioFiles.length} ${
+        audioFiles.length === 1 ? 'file' : 'files'
+      } to upload...`,
+    )
 
     for (const file of audioFiles) {
       const fileName = basename(file)
