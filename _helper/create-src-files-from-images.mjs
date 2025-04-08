@@ -6,15 +6,12 @@ import { existsSync } from 'fs'
 import seriesData from '../_src/_data/series.js'
 import slugify from '@sindresorhus/slugify'
 import { ocrScanImage } from './ocr-scan-recipe-card.mjs'
+import { getAllCardImages, fileNameRegex } from './get-all-card-images.mjs'
 
 const cwd = process.cwd()
-const srcImagesDir = path.join(cwd, '_src/assets/img/cards')
 const outputBaseDir = path.join(cwd, '_src/pages/cards')
 
 const FIRST_NEW_DATE = new Date('2025-04-24')
-
-// Regular expression to match the file name pattern
-const fileNameRegex = /^(\d+)-(\d+)-(.+)\.jpg$/
 
 /**
  * Creates a directory at the specified path if it doesn't exist
@@ -71,15 +68,11 @@ async function create11tyDataFile(seriesId) {
  */
 export async function processImages() {
   try {
-    // Read all files from the source directory
-    const files = await fs.readdir(srcImagesDir)
-
-    const imageFiles = files.filter(
-      (file) => file.endsWith('.jpg') && fileNameRegex.test(file),
-    )
+    const imageFiles = await getAllCardImages()
 
     for (const file of imageFiles) {
       const match = file.match(fileNameRegex)
+
       if (!match) continue
 
       const [, seriesId, indexInSeries, name] = match

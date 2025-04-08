@@ -2,6 +2,7 @@ import { readdir, readFile } from 'fs/promises'
 import { join, dirname, basename } from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
+import { getAllCardImages } from './get-all-card-images.mjs'
 
 dotenv.config()
 
@@ -147,6 +148,7 @@ async function startAuphonicProduction(uuid) {
 async function uploadAllToAuphonic() {
   try {
     const audioFiles = await getFilesFromDir(AUDIO_DIR)
+    const imageFiles = await getAllCardImages()
 
     if (audioFiles.length === 0) {
       console.log(`❌ No audio files found in ${AUDIO_DIR}`)
@@ -162,7 +164,15 @@ async function uploadAllToAuphonic() {
 
     for (const file of audioFiles) {
       const fileName = basename(file)
+      const fileNameWithoutExt = fileName.split('.')[0]
+
       console.log(`📂 Processing ${fileName} …`)
+
+      if (!imageFiles.find((img) => img.startsWith(fileNameWithoutExt))) {
+        console.log(`❌ ${fileName} has no corresponding card, skipping …`)
+
+        continue
+      }
 
       const productionUuid = await createProduction()
       console.log(`✅ Created production: ${productionUuid}`)
