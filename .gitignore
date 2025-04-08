@@ -4,3 +4,4 @@ dist/
 .DS_Store
 .env
 _helper/.tmp-audio/*.flac
+_helper/.tmp-img/*.jpg
