@@ -5,8 +5,8 @@ import path from 'path'
 import { existsSync } from 'fs'
 import seriesData from '../_src/_data/series.js'
 import slugify from '@sindresorhus/slugify'
-import { ocrScanImage } from './ocr-scan-recipe-card.mjs'
 import { getAllCardImages, fileNameRegex } from './get-all-card-images.mjs'
+import { scanCardContent } from './scan-card-content.mjs'
 
 const cwd = process.cwd()
 const outputBaseDir = path.join(cwd, '_src/pages/cards')
@@ -131,7 +131,7 @@ export function calculateReleaseDate(index) {
 }
 
 /**
- * Creates markdown content with frontmatter for a card
+ * Creates markdown content with cardContent for a card
  * @param {Object} params - The parameters for creating markdown content
  * @param {string} params.indexInSeries - The index of the card in the series
  * @param {string} params.name - The name of the card
@@ -139,31 +139,29 @@ export function calculateReleaseDate(index) {
  * @returns {string} The generated markdown content
  */
 export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
-  // Import the OCR function
+  let textContent = ''
+  const fileName = `${seriesId}-${indexInSeries}-${name}`
 
-  // Construct the image path
-  let ocrContent = ''
-  const fileName = `${seriesId}-${indexInSeries}-${name}.jpg`
   try {
-    ocrContent = await ocrScanImage(fileName)
-    console.log(`📝 OCR scan completed for ${fileName}`)
-  } catch (error) {
-    console.error(
-      `❌ Error scanning image ${fileName}. Using fallback content.`,
-    )
+    textContent = await scanCardContent({
+      series: seriesId,
+      episode: indexInSeries,
+    })
 
-    ocrContent = '<!-- OCR scan failed -->'
+    console.log(`📝 .txt read completed for ${fileName}`)
+  } catch (error) {
+    console.error(`❌ Error reading .txt ${fileName}. Using fallback content.`)
+
+    textContent = { title: name, text: '<!-- .txt no compute -->' }
   }
 
-  const frontMatter = `---
-title: ${name}
+  return `---
+title: ${textContent.title}
 date: ${calculateReleaseDate(indexInSeries)}
 ---
 
-${ocrContent}
-  `
-
-  return frontMatter
+${textContent.text}
+`
 }
 
 processImages()

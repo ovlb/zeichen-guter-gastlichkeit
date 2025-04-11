@@ -67,7 +67,6 @@
     "markdown-it-image-figures": "^2.1.1",
     "markdown-it-prism": "^2.3.0",
     "netlify-plugin-11ty": "^1.4.0",
-    "nid": "^2.0.1",
     "open-props": "^1.7.13",
     "postcss": "^8.4.36",
     "postcss-custom-media": "^10.0.4",
@@ -84,8 +83,7 @@
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-order": "^5.0.0",
-    "stylelint-prettier": "^2.0.0",
-    "tesseract.js": "^6.0.1"
+    "stylelint-prettier": "^2.0.0"
   },
   "lint-staged": {
     "**/*.{js,vue,mjs}": [
