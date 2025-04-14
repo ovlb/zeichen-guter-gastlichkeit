@@ -1,6 +1,6 @@
 ---
 title: Geflügelcocktail
-date: 2025-09-14
+date: 2025-04-14
 ---
 
 325 g gegartes Hähnchen- oder Putenbrustfleisch, 125 g Staudensellerie, 1 kleiner säuerlicher Apfel, 2 Teel. Zitronensaft, 2 Eßl. 50% fetthaltige Mayonnaise, 2 Eßl. Tomatenketchup, Salz, Pfeffer, Zucker, 2 cl Asbach Uralt, ½ Kopf fester Salat
