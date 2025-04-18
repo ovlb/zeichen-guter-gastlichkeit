@@ -1,26 +1,31 @@
-const path = require('path')
-const del = require('del')
-
-const STATIC_FOLDERS = require('./_helper/paths')
-const { readdir } = require('fs/promises')
+import path from 'path'
+import del from 'del'
+import STATIC_FOLDERS from './_helper/paths.js'
+import { readdir } from 'fs/promises'
 
 const IS_PROD = process.env.PAGE_STATE === 'production'
 
-module.exports = async function (eleventyConfig) {
-  eleventyConfig.addPlugin(require('./_plugins'))
+export default async function (eleventyConfig) {
+  const plugins = await import('./_plugins/index.js')
+  const shortcodes = await import('./_shortcodes/index.js')
+  const functions = await import('./_functions/index.js')
+  const libraries = await import('./_libraries/index.js')
+  const transforms = await import('./_transforms/index.js')
+  const templates = await import('./_templates/index.js')
+  const events = await import('./_events/index.js')
+  const configPlugins = await Promise.all([
+    import('./_plugins/index.js'),
+    import('./_shortcodes/index.js'),
+    import('./_functions/index.js'),
+    import('./_libraries/index.js'),
+    import('./_transforms/index.js'),
+    import('./_templates/index.js'),
+    import('./_events/index.js'),
+  ])
 
-  eleventyConfig.addPlugin(require('./_shortcodes'))
-
-  eleventyConfig.addPlugin(require('./_functions'))
-
-  eleventyConfig.addPlugin(require('./_libraries'))
-
-  eleventyConfig.addPlugin(require('./_transforms'))
-
-  eleventyConfig.addPlugin(require('./_templates'))
-
-  const events = await import('./_events/index.mjs')
-  eleventyConfig.addPlugin(events.default)
+  configPlugins.forEach((plugin) => {
+    eleventyConfig.addPlugin(plugin.default)
+  })
 
   eleventyConfig.addCollection('seriesWithEntries', function (collectionAPI) {
     const cards = collectionAPI.getFilteredByGlob('_src/pages/cards/**/*.md')

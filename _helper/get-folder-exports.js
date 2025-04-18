@@ -1,20 +1,20 @@
-const path = require('path')
-const { camelCase } = require('lodash')
-const getFilesOfType = require('./get-files')
+import path from 'path'
+import camelCase from 'lodash/camelCase.js'
+import getFilesOfType from './get-files.js'
 
-module.exports = function getFolderExports(folder) {
+export default async function getFolderExports(folder) {
   const functions = []
   const files = getFilesOfType(folder)
 
-  files.forEach(function (fileName) {
+  for (const fileName of files) {
     if (fileName !== 'index.js') {
       const name = camelCase(fileName.replace('.js', ''))
 
-      const func = require(path.join(folder, fileName))
+      const imported = await import(path.join(folder, fileName))
 
-      functions.push({ name, func })
+      functions.push({ name, func: imported.default })
     }
-  })
+  }
 
   return functions
 }

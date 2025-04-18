@@ -1,7 +1,6 @@
-const Image = require('@11ty/eleventy-img')
-const { parseHTML } = require('linkedom')
-
-const getFullSource = require('../_helper/get-full-source')
+import Image from '@11ty/eleventy-img'
+import { parseHTML } from 'linkedom'
+import getFullSource from '../_helper/get-full-source.js'
 
 const IS_PROD = process.env.ELEVENTY_ENV === 'production'
 
@@ -52,7 +51,7 @@ function setImgAttributes(img, meta, options) {
   }
 }
 
-module.exports = {
+export default {
   transform: async function (content) {
     // Basic implementation is based on this Gist: https://gist.github.com/Alexs7zzh/d92ae991ad05ed585d072074ea527b5c
     // We removed the `forEach` to leverage the core `Image` functionality.

@@ -4,9 +4,7 @@
     "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended"
   ],
-  "ignorePatterns": [
-    "node_modules/"
-  ],
+  "ignorePatterns": ["node_modules/"],
   "env": {
     "es2020": true,
     "node": true

@@ -1,8 +1,10 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
 
-const sitemap = require('@quasibit/eleventy-plugin-sitemap')
+dotenv.config()
 
-module.exports = {
+import sitemap from '@quasibit/eleventy-plugin-sitemap'
+
+export default {
   plugin: sitemap,
   pluginOptions: {
     sitemap: {

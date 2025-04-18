@@ -1,0 +1,15 @@
+{
+  "include": ["*"],
+  "exclude": ["./dist"],
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ES6",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "ava"]
+  }
+}

@@ -1,14 +1,15 @@
-import { readdir, readFile } from 'fs/promises'
-import { join, dirname, basename } from 'path'
+import { readFile, readdir } from 'fs/promises'
+import { basename, dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
-import { getAllCardImages } from './get-all-card-images.mjs'
+import { getAllCardImages } from './get-all-card-images.js'
 
 dotenv.config()
 
-const { AUPHONIC_API_KEY, AUPHONIC_PRESET_ID } = process.env
+const { NODE_ENV, AUPHONIC_API_KEY, AUPHONIC_PRESET_ID } = process.env
+const isInTest = NODE_ENV === 'test'
 
-if (!AUPHONIC_API_KEY || !AUPHONIC_PRESET_ID) {
+if (!isInTest && (!AUPHONIC_API_KEY || !AUPHONIC_PRESET_ID)) {
   throw new Error(
     'Missing required environment variables: AUPHONIC_API_KEY and/or AUPHONIC_PRESET_ID',
   )

@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
 import fs from 'fs/promises'
-import path from 'path'
 import { existsSync } from 'fs'
-import seriesData from '../_src/_data/series.js'
 import slugify from '@sindresorhus/slugify'
-import { getAllCardImages, fileNameRegex } from './get-all-card-images.mjs'
-import { scanCardContent } from './scan-card-content.mjs'
+import path from 'path'
+
+import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
+import { scanCardContent } from './scan-card-content.js'
+import seriesData from '../_src/_data/series.js'
 
 const cwd = process.cwd()
 const outputBaseDir = path.join(cwd, '_src/pages/cards')
@@ -107,12 +108,12 @@ export async function processImages() {
 /**
  * Calculates a release date based on the provided index
  * Starts from FIRST_NEW_DATE and adds weekdays (skipping weekends)
- * @param {string|number} index - The index of the card in the series
+ * @param {string} _index - The index of the card in the series
  * @returns {string} The calculated release date in YYYY-MM-DD format
  */
-export function calculateReleaseDate(index) {
+export function calculateReleaseDate(_index) {
   const baseDate = new Date(FIRST_NEW_DATE)
-  index = parseInt(index, 10)
+  const index = parseInt(_index, 10)
 
   if (index === 1) return baseDate.toISOString().split('T')[0]
 
@@ -136,10 +137,10 @@ export function calculateReleaseDate(index) {
  * @param {string} params.indexInSeries - The index of the card in the series
  * @param {string} params.name - The name of the card
  * @param {string} params.seriesId - The ID of the series the card belongs to
- * @returns {string} The generated markdown content
+ * @returns {Promise<string>} The generated markdown content
  */
 export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
-  let textContent = ''
+  let textContent
   const fileName = `${seriesId}-${indexInSeries}-${name}`
 
   try {

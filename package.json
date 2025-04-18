@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Kultiviertes Essen und Trinken",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "ELEVENTY_ENV=production eleventy",
     "build:clean": "npm run clean && npm run build",
@@ -11,9 +12,9 @@
     "lint": "concurrently \"npm:lint:*\"",
     "lint:css": "stylelint '**/*.pcss' --fix",
     "lint:js": "eslint \"**/*.{js,vue,mjs}\" --ignore-pattern 'node_modules/**/*' --fix",
-    "serve": "ELEVENTY_ENV=development eleventy --serve --quiet --port 7777",
+    "serve": "ELEVENTY_ENV=development eleventy --serve --port 7777",
     "test": "ava",
-    "prepare": "node scripts/prepare.js"
+    "prepare": "node .husky/install.js"
   },
   "engines": {
     "node": "20"
@@ -54,7 +55,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.2.0",
     "html-minifier": "^4.0.0",
-    "husky": "^7.0.0",
+    "husky": "^9.1.7",
     "linkedom": "^0.16.10",
     "lint-staged": "^12.1.2",
     "markdown-it": "^14.1.0",

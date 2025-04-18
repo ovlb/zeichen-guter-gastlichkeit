@@ -1,6 +1,6 @@
 const IS_PROD = process.env.PAGE_STATE === 'production'
 
-module.exports = {
+export default {
   tags: ['card'],
   layout: 'card',
   pageCSS: 'card.css',

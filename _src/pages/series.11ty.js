@@ -70,4 +70,4 @@ class Series {
   }
 }
 
-module.exports = Series
+export default Series

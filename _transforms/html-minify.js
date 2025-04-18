@@ -1,6 +1,6 @@
-const htmlmin = require('html-minifier')
+import htmlmin from 'html-minifier'
 
-module.exports = {
+export default {
   when: 'prod',
   transform: function (content) {
     if (this.outputPath && this.outputPath.endsWith('.html')) {

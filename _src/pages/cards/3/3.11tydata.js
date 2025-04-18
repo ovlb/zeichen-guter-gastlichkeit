@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   tags: ['series:tischordnung'],
   seriesId: 3,
   music: {

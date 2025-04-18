@@ -1,12 +1,13 @@
-const path = require('path')
-const getFilesOfType = require('../_helper/get-files')
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import getFolderExports from '../_helper/get-folder-exports.js'
 
-module.exports = function (eleventyConfig) {
-  const plugins = getFilesOfType(__dirname)
-    .filter((file) => file !== 'index.js')
-    .map((file) => require(path.join(__dirname, file)))
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
-  plugins.forEach((plugin) => {
-    eleventyConfig.addPlugin(plugin.plugin, plugin.pluginOptions || {})
+export default async function (eleventyConfig) {
+  const plugins = await getFolderExports(__dirname)
+
+  plugins.forEach(({ func }) => {
+    eleventyConfig.addPlugin(func.plugin, func.pluginOptions || {})
   })
 }

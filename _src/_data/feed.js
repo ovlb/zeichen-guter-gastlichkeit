@@ -1,9 +1,9 @@
-const { baseURL } = require('./site')
+import siteData from './site.js'
 
-module.exports = {
+export default {
   language: 'de', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
-  image: `${baseURL}/img/favicon.png`,
-  favicon: `${baseURL}/img/favicon.png`,
+  image: `${siteData.baseURL}/img/favicon.png`,
+  favicon: `${siteData.baseURL}/img/favicon.png`,
   author: {
     name: 'Oscar',
     email: 'o@ovl.design',

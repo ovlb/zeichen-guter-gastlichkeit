@@ -1,4 +1,4 @@
-const { parseHTML } = require('linkedom')
+import { parseHTML } from 'linkedom'
 
 /**
  * Check if the image starts with the remote upload path and set MEDIA_HOST if it does
@@ -12,7 +12,7 @@ const getFullSource = (orig) => {
     : orig
 }
 
-module.exports = {
+export default {
   transform: function (content) {
     if (this.outputPath && this.outputPath.endsWith('.html')) {
       let { document } = parseHTML(content)

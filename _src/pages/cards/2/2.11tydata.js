@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   tags: ['series:einladung'],
   seriesId: 2,
   music: {
