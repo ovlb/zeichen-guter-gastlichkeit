@@ -12,7 +12,7 @@ import seriesData from '../_src/_data/series.js'
 const cwd = process.cwd()
 const outputBaseDir = path.join(cwd, '_src/pages/cards')
 
-const FIRST_NEW_DATE = new Date('2025-04-24')
+const FIRST_NEW_DATE = new Date('2025-05-15')
 
 /**
  * Creates a directory at the specified path if it doesn't exist
@@ -42,7 +42,7 @@ async function create11tyDataFile(seriesId) {
     return
   }
 
-  const fileName = `${seriesId}.11tydata.mjs`
+  const fileName = `${seriesId}.11tydata.js`
 
   const filePath = path.join(outputBaseDir, seriesId, fileName)
   const content = `export default {
