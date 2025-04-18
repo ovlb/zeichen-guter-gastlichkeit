@@ -5,7 +5,7 @@ date: 2025-03-24
 
 ## Kir
 
-1/8 l trockener weißer Burgunder Aligoté, 2 cl Creme de Cassis
+⅛ l trockener weißer Burgunder Aligoté, 2 cl Creme de Cassis
 
 Den gut gekühlten Wein mit dem Likör verrühren und im Zinnbecher oder Tumbler servieren.
 

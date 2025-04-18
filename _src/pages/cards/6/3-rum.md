@@ -23,6 +23,6 @@ Einen Tumbler zu ⅔ mit feingestoßenem Eis füllen. Limettensaft mit Rum, Siru
 
 ## Ananas-Daiquiri
 
-4 cl weißer Rum, 2 cl Cointreau, 2 Barlöffel Limetten- oder Zitronensaft, 3 Dash Orangen-Bitter, 1/8 l Ananassaft
+4 cl weißer Rum, 2 cl Cointreau, 2 Barlöffel Limetten- oder Zitronensaft, 3 Dash Orangen-Bitter, ⅛ l Ananassaft
 
 Rum mit Cointreau, Zitronensaft und Orangen-Bitter im Shaker schütteln, in einen hohen Tumbler mit etwas Eis seihen und den Ananassaft auffüllen. Einige Stückchen Ananas oder enthäutete Orangenspalten zugeben. Mit Trinkhalm und Barlöffel servieren.

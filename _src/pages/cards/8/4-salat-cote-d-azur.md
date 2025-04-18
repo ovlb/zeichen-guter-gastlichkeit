@@ -11,6 +11,6 @@ Für die Sauce:
 
 Die Eier in Achtel schneiden und mit den Bohnen, der gehobelten Gurke, den Paprikastreifen, Tomatenscheiben und Zwiebelringen ver-mischen. Die gewaschenen Salatblätter und den zerpflückten Thunfisch vorsichtig unterheben.
 
-Senf mit Ol, Essig, Zitrone und Weinbrand verrühren. Kräuter einstreuen und würzen. Mit einer Prise Zucker geschmacklich abrunden.
+Senf mit Öl, Essig, Zitrone und Weinbrand verrühren. Kräuter einstreuen und würzen. Mit einer Prise Zucker geschmacklich abrunden.
 
 Unmittelbar vor dem Servieren die Salatsauce über das Ganze gießen und gut vermengen. Als Beigabe frisches Stangenbrot reichen.
