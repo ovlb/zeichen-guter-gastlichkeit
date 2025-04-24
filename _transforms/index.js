@@ -23,7 +23,7 @@ export default async function (eleventyConfig) {
     if (when === 'prod' && IS_PROD) {
       eleventyConfig.addTransform(name, transform)
 
-      return
+      continue
     }
 
     eleventyConfig.addTransform(name, transform)
