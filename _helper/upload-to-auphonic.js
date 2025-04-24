@@ -17,6 +17,7 @@ if (!isInTest && (!AUPHONIC_API_KEY || !AUPHONIC_PRESET_ID)) {
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const AUDIO_DIR = join(__dirname, './.tmp-audio/')
+let imageFiles = []
 
 /**
  * Gets all files from a directory
@@ -144,16 +145,87 @@ async function startAuphonicProduction(uuid) {
 }
 
 /**
+ * Processes an audio file for upload to Auphonic if it has a corresponding image file
+ *
+ * This function handles:
+ * - Checking for corresponding image files
+ * - Creating an Auphonic production
+ * - Uploading the audio file to the production
+ * - Starting the production process
+ * - Implementing retry logic with exponential backoff
+ *
+ * @async
+ * @param {string} file - Path to the audio file to process
+ * @returns {Promise<Object>} Processing result object
+ * @returns {string} result.fileName - Name of the processed file
+ * @returns {boolean} [result.skipped] - True if processing was skipped due to missing image
+ * @returns {string} [result.productionUuid] - UUID of the created Auphonic production (if successful)
+ * @returns {boolean} [result.success] - True if processing completed successfully
+ * @returns {string} [result.error] - Error message if processing failed after all retries
+ * @throws {Error} If an unexpected error occurs outside the retry mechanism
+ */
+async function processFile(file) {
+  const fileName = basename(file)
+  const fileNameWithoutExt = fileName.split('.')[0]
+  const MAX_RETRIES = 2
+  let retries = 0
+
+  // Check for corresponding image
+  if (!imageFiles.find((img) => img.startsWith(fileNameWithoutExt))) {
+    console.log(`⏭️ ${fileName} has no corresponding card, skipping...`)
+    return { fileName, skipped: true }
+  }
+
+  while (retries <= MAX_RETRIES) {
+    try {
+      console.log(
+        `🔄 Processing ${fileName}${
+          retries > 0 ? ` (retry ${retries})` : ''
+        }...`,
+      )
+
+      const productionUuid = await createProduction()
+      console.log(`✅ Created production: ${productionUuid} for ${fileName}`)
+
+      await uploadFileToAuphonic(file, productionUuid)
+      console.log(`📤 Uploaded ${fileName} to production: ${productionUuid}`)
+
+      await startAuphonicProduction(productionUuid)
+      console.log(`🚀 Started processing: ${productionUuid} for ${fileName}`)
+
+      return { fileName, productionUuid, success: true }
+    } catch (error) {
+      retries++
+      if (retries <= MAX_RETRIES) {
+        const delay = Math.pow(2, retries) * 1000 // Exponential backoff
+        console.warn(
+          `⚠️ Error with ${fileName}, retrying in ${
+            delay / 1000
+          }s... (${retries}/${MAX_RETRIES})`,
+        )
+        await new Promise((resolve) => setTimeout(resolve, delay))
+      } else {
+        console.error(
+          `❌ Failed to process ${fileName} after ${MAX_RETRIES} retries:`,
+          error,
+        )
+        return { fileName, error: error.message, success: false }
+      }
+    }
+  }
+}
+
+/**
  * Main function to upload all files in the audio directory to Auphonic
  */
 async function uploadAllToAuphonic() {
   try {
+    console.time('Total execution time')
     const audioFiles = await getFilesFromDir(AUDIO_DIR)
-    const imageFiles = await getAllCardImages()
+    imageFiles = await getAllCardImages()
 
     if (audioFiles.length === 0) {
       console.log(`❌ No audio files found in ${AUDIO_DIR}`)
-
       return
     }
 
@@ -163,33 +235,42 @@ async function uploadAllToAuphonic() {
       } to upload...`,
     )
 
-    for (const file of audioFiles) {
-      const fileName = basename(file)
-      const fileNameWithoutExt = fileName.split('.')[0]
+    const CONCURRENCY_LIMIT = 3
+    const results = []
 
-      console.log(`📂 Processing ${fileName} …`)
-
-      if (!imageFiles.find((img) => img.startsWith(fileNameWithoutExt))) {
-        console.log(`❌ ${fileName} has no corresponding card, skipping …`)
-
-        continue
-      }
-
-      const productionUuid = await createProduction()
-      console.log(`✅ Created production: ${productionUuid}`)
-
-      await uploadFileToAuphonic(file, productionUuid)
-      console.log(
-        `✅ Uploaded file \`${fileName}\` to production: ${productionUuid}`,
+    for (let i = 0; i < audioFiles.length; i += CONCURRENCY_LIMIT) {
+      const batch = audioFiles.slice(i, i + CONCURRENCY_LIMIT)
+      const batchResults = await Promise.all(
+        batch.map((file) => processFile(file)),
       )
+      results.push(...batchResults)
 
-      await startAuphonicProduction(productionUuid)
-      console.log(`🚀 Started processing production: ${productionUuid}`)
+      // Show progress
+      const processed = Math.min(i + CONCURRENCY_LIMIT, audioFiles.length)
+      const percent = Math.round((processed / audioFiles.length) * 100)
+      console.log(
+        `⏱️ Progress: ${processed}/${audioFiles.length} files (${percent}%)`,
+      )
     }
 
-    console.log('🎉 All files uploaded and productions started successfully.')
+    // Generate summary statistics
+    const successful = results.filter((r) => r.success === true).length
+    const skipped = results.filter((r) => r.skipped === true).length
+    const failed = results.filter((r) => r.success === false).length
+
+    console.log('\n📊 Summary:')
+    console.log(`✅ Successfully processed: ${successful}`)
+    console.log(`⏭️ Skipped: ${skipped}`)
+    console.log(`❌ Failed: ${failed}`)
+
+    if (failed > 0) {
+      console.log('\n❌ Failed files:')
+      failed.forEach((f) => console.log(`   - ${f.fileName}: ${f.error}`))
+    }
+
+    console.timeEnd('Total execution time')
   } catch (error) {
-    console.error('Error processing audio files:', error)
+    console.error('🔥 Fatal error processing audio files:', error)
     process.exit(1)
   }
 }
