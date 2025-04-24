@@ -56,7 +56,7 @@ export default {
     // Basic implementation is based on this Gist: https://gist.github.com/Alexs7zzh/d92ae991ad05ed585d072074ea527b5c
     // We removed the `forEach` to leverage the core `Image` functionality.
     // async transforms work, even though the docs don’t tell you about it.
-    if (this.outputPath && this.outputPath.endsWith('.html')) {
+    if (this.outputPath?.endsWith('.html')) {
       let { document } = parseHTML(content)
 
       // data attr for opt in images
