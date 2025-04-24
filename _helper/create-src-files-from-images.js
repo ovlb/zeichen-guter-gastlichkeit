@@ -1,18 +1,28 @@
 #!/usr/bin/env node
 
 import fs from 'fs/promises'
-import { existsSync } from 'fs'
+import { existsSync, readFileSync } from 'fs'
 import slugify from '@sindresorhus/slugify'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
-import { scanCardContent } from './scan-card-content.js'
+import { scanCardContent, deleteAllTextFiles } from './scan-card-content.js'
+import { dateUtils } from './date-utils.js'
+
 import seriesData from '../_src/_data/series.js'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const CONFIG_FILE = path.join(__dirname, '.upload-config.json')
+
+const uploadConfig = JSON.parse(readFileSync(CONFIG_FILE, 'utf8'))
 
 const cwd = process.cwd()
 const outputBaseDir = path.join(cwd, '_src/pages/cards')
 
-const FIRST_NEW_DATE = new Date('2025-05-15')
+const LAST_DATE = new Date(uploadConfig.lastPublishDate)
+
+const VERBOSE_LOGS = process.env.VERBOSE_LOGS === 'true'
 
 /**
  * Creates a directory at the specified path if it doesn't exist
@@ -70,15 +80,30 @@ async function create11tyDataFile(seriesId) {
 export async function processImages() {
   try {
     const imageFiles = await getAllCardImages()
+    const sortedFiles = [...imageFiles].sort((a, b) => {
+      const matchA = a.match(fileNameRegex)
+      const matchB = b.match(fileNameRegex)
 
-    for (const file of imageFiles) {
+      const [, seriesIdA, indexA] = matchA
+      const [, seriesIdB, indexB] = matchB
+
+      // First compare by series
+      if (seriesIdA !== seriesIdB) {
+        return parseInt(seriesIdA) - parseInt(seriesIdB)
+      }
+
+      // Then by index within series
+      return parseInt(indexA) - parseInt(indexB)
+    })
+    let lastDate = new Date(LAST_DATE)
+
+    for (const file of sortedFiles) {
       const match = file.match(fileNameRegex)
-
-      if (!match) continue
 
       const [, seriesId, indexInSeries, name] = match
       const outputDir = path.join(outputBaseDir, seriesId)
-      const outputFile = path.join(outputDir, `${indexInSeries}-${name}.md`)
+      const outputFileName = `${indexInSeries}-${name}.md`
+      const outputFile = path.join(outputDir, outputFileName)
 
       if (!existsSync(outputDir)) {
         await createDirectory(outputDir)
@@ -87,18 +112,37 @@ export async function processImages() {
 
       try {
         await fs.access(outputFile)
-        console.log(`🙅 File ${outputFile} already exists, skipping.`)
+
+        if (VERBOSE_LOGS) {
+          console.log(`🙅 File ${outputFile} already exists, skipping.`)
+        }
       } catch (error) {
         const content = await createMarkdownContent({
           indexInSeries,
           name,
           seriesId,
         })
-        await fs.writeFile(outputFile, content)
-        console.log(`✅ Created file ${outputFile}`)
+        const date = dateUtils.getNextBusinessDay(lastDate)
+
+        // update to use for next card
+        lastDate = date
+
+        console.log(
+          `📅 Publish date for ${outputFileName}: ${dateUtils.format(date)}`,
+        )
+
+        await writeToFile(outputFile, {
+          title: content.title,
+          date: dateUtils.formatYYYYMMDD(date),
+          text: content.text,
+        })
       }
     }
 
+    await updateNextDate(lastDate)
+
+    const deletedCount = await deleteAllTextFiles()
+    console.log(`🗑️ Deleted ${deletedCount} files from .tmp-txt`)
     console.log('🎉 Processing completed.')
   } catch (error) {
     console.error('💥 Error processing images:', error)
@@ -106,38 +150,16 @@ export async function processImages() {
 }
 
 /**
- * Calculates a release date based on the provided index
- * Starts from FIRST_NEW_DATE and adds weekdays (skipping weekends)
- * @param {string} _index - The index of the card in the series
- * @returns {string} The calculated release date in YYYY-MM-DD format
- */
-export function calculateReleaseDate(_index) {
-  const baseDate = new Date(FIRST_NEW_DATE)
-  const index = parseInt(_index, 10)
-
-  if (index === 1) return baseDate.toISOString().split('T')[0]
-
-  let daysAdded = 1
-
-  while (daysAdded < index) {
-    baseDate.setDate(baseDate.getDate() + 1)
-
-    // Only count weekdays (skip Saturday and Sunday)
-    if (baseDate.getDay() !== 0 && baseDate.getDay() !== 6) {
-      daysAdded++
-    }
-  }
-
-  return baseDate.toISOString().split('T')[0] // Returns YYYY-MM-DD
-}
-
-/**
- * Creates markdown content with cardContent for a card
- * @param {Object} params - The parameters for creating markdown content
- * @param {string} params.indexInSeries - The index of the card in the series
- * @param {string} params.name - The name of the card
- * @param {string} params.seriesId - The ID of the series the card belongs to
- * @returns {Promise<string>} The generated markdown content
+ * Creates markdown content for a specific item in a series.
+ * Attempts to scan card content based on series ID and index.
+ * Falls back to minimal content if scanning fails.
+ *
+ * @async
+ * @param {Object} options - The options object
+ * @param {number|string} options.indexInSeries - The index of the item in the series
+ * @param {string} options.name - The name of the item
+ * @param {string} options.seriesId - The ID of the series
+ * @returns {Promise<{title: string, text: string}>} The text content object containing title and text properties
  */
 export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
   let textContent
@@ -156,13 +178,54 @@ export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
     textContent = { title: name, text: '<!-- .txt no compute -->' }
   }
 
-  return `---
-title: ${textContent.title}
-date: ${calculateReleaseDate(indexInSeries)}
----
-
-${textContent.text}
-`
+  return textContent
 }
 
-processImages()
+async function writeToFile(filePath, { title, date, text }) {
+  const mdContent = `---
+title: ${title}
+date: ${date}
+---
+
+${text}
+`
+  try {
+    await fs.writeFile(filePath, mdContent)
+    console.log(`✅ Created file ${filePath}`)
+  } catch (error) {
+    console.error(`❌ Error creating file ${filePath}:`, error)
+  }
+}
+
+/**
+ * Updates the last publish date in the configuration file
+ * @param {Date} date - The date to save as the last publish date
+ * @returns {Promise<void>}
+ */
+async function updateNextDate(date) {
+  if (date <= LAST_DATE) {
+    console.log(
+      `⏭️ Skipping date update: ${dateUtils.format(
+        date,
+      )} is not after the last publish date ${dateUtils.format(LAST_DATE)}`,
+    )
+    return
+  }
+
+  try {
+    const updatedConfig = {
+      ...uploadConfig,
+      lastPublishDate: date.toISOString(),
+    }
+    await fs.writeFile(CONFIG_FILE, JSON.stringify(updatedConfig, null, 2))
+
+    console.log(`📅 Updated last publish date to ${date.toISOString()}`)
+  } catch (error) {
+    console.error(`❌ Error updating last publish date:`, error)
+  }
+}
+
+// Run the main function if this file is executed directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  processImages()
+}

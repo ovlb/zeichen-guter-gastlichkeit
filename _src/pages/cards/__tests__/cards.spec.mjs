@@ -3,6 +3,8 @@ import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import { dateUtils } from '../../../../_helper/date-utils.js'
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const cardsDir = path.resolve(__dirname, '../')
 
@@ -111,29 +113,6 @@ const markdown = {
         const numB = parseInt(b.split('-')[0], 10) || 0
         return numA - numB
       })
-  },
-}
-
-// Date utilities
-const dateUtils = {
-  isWeekend(date) {
-    const day = date.getDay()
-    return day === 0 || day === 6 // 0 is Sunday, 6 is Saturday
-  },
-
-  format(date) {
-    return new Intl.DateTimeFormat('de-DE', {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    }).format(date)
-  },
-
-  getNextBusinessDay(date) {
-    const nextDate = new Date(date)
-    // If Friday, skip to Monday (+3 days)
-    nextDate.setDate(date.getDate() + (date.getDay() === 5 ? 3 : 1))
-    return nextDate
   },
 }
 
