@@ -66,8 +66,6 @@ export default {
         ...document.querySelectorAll('.md-content img'),
       ]
 
-      console.log('🧑‍🔬', this.outputPath, images.length)
-
       const staticImages = images.filter(
         (img) => !img.getAttribute('src').endsWith('.gif'),
       )

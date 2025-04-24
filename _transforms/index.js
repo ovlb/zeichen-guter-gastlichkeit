@@ -18,8 +18,6 @@ export default async function (eleventyConfig) {
     const name = camelCase(fileName.replace('.js', ''))
     const { when, transform } = imported.default
 
-    console.log('🧑‍🔬 transforms', name, when, typeof transform)
-
     if (when === 'prod' && IS_PROD) {
       eleventyConfig.addTransform(name, transform)
 
