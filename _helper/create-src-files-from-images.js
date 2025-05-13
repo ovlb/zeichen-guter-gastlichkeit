@@ -7,7 +7,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
-import { scanCardContent, deleteAllTextFiles } from './scan-card-content.js'
+import { scanCardContent } from './scan-card-content.js'
 import { dateUtils } from './date-utils.js'
 
 import seriesData from '../_src/_data/series.js'
@@ -141,8 +141,6 @@ export async function processImages() {
 
     await updateNextDate(lastDate)
 
-    const deletedCount = await deleteAllTextFiles()
-    console.log(`🗑️ Deleted ${deletedCount} files from .tmp-txt`)
     console.log('🎉 Processing completed.')
   } catch (error) {
     console.error('💥 Error processing images:', error)
@@ -163,7 +161,7 @@ export async function processImages() {
  */
 export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
   let textContent
-  const fileName = `${seriesId}-${indexInSeries}-${name}`
+  const fileName = `${seriesId}-${indexInSeries}-${name}.txt`
 
   try {
     textContent = await scanCardContent({
