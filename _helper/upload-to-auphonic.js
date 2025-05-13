@@ -275,11 +275,6 @@ async function uploadAllToAuphonic() {
   }
 }
 
-// Run the main function if this file is executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  uploadAllToAuphonic()
-}
-
 export {
   getFilesFromDir,
   createProduction,
