@@ -2,7 +2,7 @@ import path from 'path'
 import { readdir } from 'fs/promises'
 
 const cwd = process.cwd()
-const srcImagesDir = path.join(cwd, '_src/assets/img/cards')
+export const srcImagesDir = path.join(cwd, '_src/assets/img/cards')
 
 export const fileNameRegex = /^(\d+)-(\d+)-(.+)\.jpg$/
 

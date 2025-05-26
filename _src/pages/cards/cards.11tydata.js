@@ -25,6 +25,9 @@ export default {
     image: function ({ seriesId, page }) {
       return `/cards/${seriesId}-${page.fileSlug}.jpg`
     },
+    podcastImage: function ({ seriesId, page }) {
+      return `/podcast/${seriesId}-${page.fileSlug}-podcast.jpg`
+    },
     audio: function ({ seriesId, page, build }) {
       return `${build.cdnDomain}/audio/${seriesId}-${page.fileSlug}.mp3`
     },
