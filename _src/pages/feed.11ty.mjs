@@ -30,9 +30,9 @@ class AtomFeed {
   }
 
   async makeImage(post) {
-    const data = await Image(fullSource(post.data.podcastImage), {
+    const data = await Image(fullSource(post.data.image), {
       formats: ['jpg'],
-      widths: [2000],
+      widths: [1600],
       urlPath: '/feed-images/',
       outputDir: './dist/feed-images/',
     })
