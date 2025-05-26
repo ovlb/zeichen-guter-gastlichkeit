@@ -30,7 +30,7 @@
   border: 1px solid var(--choco-1);
   border-radius: var(--border-size-1);
   box-shadow: var(--shadow-2);
-  flex: 0 1 min(calc(10rem + 10vw), 30rem);
+  flex: 0 1 min(calc(7rem + 13vw), 30rem);
   overflow: hidden;
   padding: var(--size-2);
   position: relative;
