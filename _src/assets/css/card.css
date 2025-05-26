@@ -79,6 +79,12 @@
     inline-size: 100%;
   }
 
+  :is(hr) {
+    inline-size: 45%;
+    margin-block: var(--size-3);
+    margin-inline: auto;
+  }
+
   h2 {
     font-size: var(--u-font-size-0);
     margin-block-start: var(--size-3);
