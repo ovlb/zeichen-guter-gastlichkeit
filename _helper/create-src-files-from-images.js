@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url'
 import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
 import { scanCardContent } from './scan-card-content.js'
 import { dateUtils } from './date-utils.js'
+import { createPodcastImage } from './create-podcast-episode-image.js'
 
 import seriesData from '../_src/_data/series.js'
 
@@ -117,11 +118,14 @@ export async function processImages() {
           console.log(`🙅 File ${outputFile} already exists, skipping.`)
         }
       } catch (error) {
-        const content = await createMarkdownContent({
-          indexInSeries,
-          name,
-          seriesId,
-        })
+        const [content] = await Promise.all([
+          createMarkdownContent({
+            indexInSeries,
+            name,
+            seriesId,
+          }),
+          createPodcastImage(file),
+        ])
         const date = dateUtils.getNextBusinessDay(lastDate)
 
         // update to use for next card
@@ -130,7 +134,6 @@ export async function processImages() {
         console.log(
           `📅 Publish date for ${outputFileName}: ${dateUtils.format(date)}`,
         )
-
         await writeToFile(outputFile, {
           title: content.title,
           date: dateUtils.formatYYYYMMDD(date),
