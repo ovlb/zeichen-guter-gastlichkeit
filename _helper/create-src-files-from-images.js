@@ -132,7 +132,9 @@ export async function processImages() {
         lastDate = date
 
         console.log(
-          `📅 Publish date for ${outputFileName}: ${dateUtils.format(date)}`,
+          `📅 Publish date for ${
+            content.title
+          } (${seriesId} / ${indexInSeries}): ${dateUtils.format(date)}`,
         )
         await writeToFile(outputFile, {
           title: content.title,
