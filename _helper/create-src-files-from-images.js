@@ -9,7 +9,10 @@ import { fileURLToPath } from 'url'
 import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
 import { scanCardContent } from './scan-card-content.js'
 import { dateUtils } from './date-utils.js'
-import { createPodcastImage } from './create-podcast-episode-image.js'
+import {
+  createContentImage,
+  createPodcastImage,
+} from './create-image-functions.js'
 
 import seriesData from '../_src/_data/series.js'
 
@@ -125,6 +128,7 @@ export async function processImages() {
             seriesId,
           }),
           createPodcastImage(file),
+          createContentImage(file),
         ])
         const date = dateUtils.getNextBusinessDay(lastDate)
 
