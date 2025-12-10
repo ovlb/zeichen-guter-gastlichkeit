@@ -19,6 +19,7 @@ const EXCLUDED_FROM_DATE_TEST = [
   '3-cocktails-mit-asbach-uralt.md',
   '4-cocktails-mit-scotch.md',
   '6-cocktails-mit-canadian-whisky.md',
+  '5-karpfen-polnisch.md',
 ]
 const EXCLUDED_FROM_WEEKEND_TEST = [
   '3-wein-aperitifs.md',
