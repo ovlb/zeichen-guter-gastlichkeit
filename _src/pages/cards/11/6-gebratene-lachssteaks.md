@@ -1,6 +1,6 @@
 ---
 title: Gebratene Lachssteaks
-date: 2025-12-15
+date: 2025-12-11
 ---
 
 
