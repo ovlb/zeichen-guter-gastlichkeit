@@ -1,6 +1,7 @@
 ---
 title: Karpfen Polnisch
 date: 2025-12-10
+imageAlt: "Mehrere Karpfenstücke in dickflüssiger brauner Sauce auf einem Teller mit blauem Blumenmuster. Im Hintergrund eine Schüssel mit petersilienbestreuten Salzkartoffeln und zwei Glas Weißwein."
 ---
 
 

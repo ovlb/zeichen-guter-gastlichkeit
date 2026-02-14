@@ -1,6 +1,7 @@
 ---
 title: Pichelsteiner Topf
 date: 2025-06-09
+imageAlt: "Ein herzhafter Eintopf mit großen Fleischstücken, Weißkohl, Karotten, Lauch und Kartoffeln in klarer Brühe in einer rechteckigen Glasform. Im Hintergrund stehen Salz- und Pfefferstreuer sowie ein Brotlaib auf karierter Tischdecke."
 ---
 
 Je 400 g schieres Rind- und Lammfleisch, 200 g Schweineschulter ohne Knochen, Salz, Pfeffer, 100 g Ochsenmark, 500 g Sellerieknolle, 500 g Kartoffeln, 250g Möhren, 500 g Wirsing- oder Spitzkohl, 1 Stange Porree, 250 g Zwiebeln, 1 1 Fleischbrühe

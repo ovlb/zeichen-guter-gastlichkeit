@@ -1,6 +1,7 @@
 ---
 title: Mockturtle-Suppe
 date: 2025-05-09
+imageAlt: "Zwei Suppentassen mit blauem Blattmuster sind gefüllt mit einer braunen Suppe, in der Champignons, grüne Erbsen und Fleischstücke schwimmen. Daneben liegt ein Laib dunkles Brot auf einer Holzoberfläche."
 ---
 
 Die Basis für diese englische Spezialität einer falschen Schildkrötensuppe sind Kalbsköpfe. Da man diese weder leicht im Einzelhandel erhält noch in einem üblichen Kochtopf auskochen kann, ist man darauf angewiesen, die Suppe aus der Dose zu beziehen. Durch Einlagen wird sie verbessert.

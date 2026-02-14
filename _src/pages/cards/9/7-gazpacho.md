@@ -1,6 +1,7 @@
 ---
 title: Gazpacho
 date: 2025-05-02
+imageAlt: "Eine cremige helle Suppe in einem orangefarbenen Topf mit Henkeln, garniert mit Speckwürfeln und Lauchringen. Drumherum sind frische Zutaten arrangiert: rote und grüne Paprika, Knoblauch und Tomaten."
 ---
 
 (kalte spanische Gemüsesuppe)

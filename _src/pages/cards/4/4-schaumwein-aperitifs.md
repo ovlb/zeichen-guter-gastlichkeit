@@ -1,6 +1,7 @@
 ---
 title: Schaumwein-Aperitifs
 date: 2024-04-18
+imageAlt: "Drei verschiedene Getränke in Gläsern sind arrangiert mit frischen Weintrauben, grünen Weinblättern und einer halben Orange als Garnitur, im Hintergrund steht eine Flasche. Die Drinks zeigen sich in klarem Gelb, leuchtendem Orange und kräftigem Rot."
 ---
 
 Champagner und Sekt sind während der letzten Jahrzehnte weitgehend an die Stelle von bitteren Aperitifs gerückt. Voraussetzung ist, daß es sich in jedem Fall um eine gute, besonders trockene Qualität handelt.

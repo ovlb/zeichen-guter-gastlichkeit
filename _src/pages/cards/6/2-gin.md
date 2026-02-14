@@ -1,6 +1,7 @@
 ---
 title: Gin-Longdrinks
 date: 2025-03-25
+imageAlt: "Vier verschiedene Gläser mit Gin–Cocktails auf einer Steinplatte, dekoriert mit Zitronenscheiben und Trinkhalmen. Im Hintergrund ranken sich Efeu–Zweige an einer Holzwand. Die Getränke sind transparent bis leicht trüb."
 ---
 
 ## Gin Tonic

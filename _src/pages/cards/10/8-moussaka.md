@@ -1,6 +1,7 @@
 ---
 title: Moussaka
 date: 2025-06-05
+imageAlt: "Ein Auflauf mit geschichteten Zucchinischeiben, Hackfleisch und geschmolzenem Käse in einer braunen Keramikform. Dahinter steht eine Schüssel mit Reis, garniert mit frischen Kräutern, auf einem olivgrünen Untergrund."
 ---
 
 Für dieses griechische Gericht lassen sich verschiedene Gemüse der Jahreszeit verwenden. Es ist auch möglich, Kartoffeln in der Gemüse-mischung zu garen. Hier ein Rezept, das sich besonders gut zu Reis als Beilage eignet:

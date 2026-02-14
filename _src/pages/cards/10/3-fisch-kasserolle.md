@@ -1,6 +1,7 @@
 ---
 title: Fisch-Kasserolle mit Gemüse
 date: 2025-05-29
+imageAlt: "Gemüse–Fisch–Suppe in einer Schüssel und einer dekorativen Keramikschale in Fischform. Die Suppe enthält große Fischstücke, Paprikastreifen, Möhren, Lauch und Sellerie in klarer Brühe. Die Schüssel und Schale haben ein gerilltes Muster, karierte Tischdecke mit Herzmotiv im Hintergrund."
 ---
 
 50 g durchwachsener Speck, 2 Zwiebeln, 2 Eßl. Öl, 1 Bund oder 1 Tiefkühlpäckchen Suppengrün, je 2 rote und grüne Paprikaschoten, ¾l Fleischbrühe, 1 Teel. getrocknetes Basilikum, 1 Messerspitze Thymian, 1 Teel. Rosen-Paprika, Pfeffer, Salz, 1 kg Rotbarsch- oder Seelachsfilet, Zitronensaft

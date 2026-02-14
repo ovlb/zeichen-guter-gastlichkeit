@@ -1,6 +1,7 @@
 ---
 title: Bayerische Leberklöße
 date: 2025-06-10
+imageAlt: "Vier panierte Fleischbällchen liegen auf einem Bett aus Sauerkraut, garniert mit gehacktem Schnittlauch und schwarzen Pfefferkörnern. Im Hintergrund befinden sich frische Petersilie in einem Topf, ein kariertes Geschirrtuch sowie Salz- und Pfefferstreuer aus Holz."
 ---
 
 8 altbackene, abgeriebene Semmeln, reichlich ¼l Milch, 400 g Rinder-leber, 2 Eßl. feingehackte Zwiebel, 2 Eßl. gehackte Petersilie, 2 Eier, Salz, Pfeffer, Paprika (oder abgeriebene Zitronenschale), 2 Eßl. gerebelter Majoran, 1 Bund Schnittlauch.

@@ -1,6 +1,7 @@
 ---
 title: Flambierte Hummer-Schildkrötensuppe
 date: 2025-05-06
+imageAlt: "Eine cremige, goldgelbe Suppe in einer Suppentasse mit Blumenmuster, garniert mit frischen Kräutern und Maiskörnern, serviert auf grüner Stoffserviette mit geröstetem Brot und Löffel. Im Hintergrund sind weitere Geschirr-Elemente auf einem Holztisch zu erkennen."
 ---
 
 Je eine 0,4-1-Dose Hummer- und Schildkrötensuppe, 4 Eßl. süße Sahne, 1 Teel. Speisestärke, 2 Eigelb, 8 cl Asbach Uralt, 1 Eßl. frischer, gehackter Dill, 1 Eßl. Pistazien

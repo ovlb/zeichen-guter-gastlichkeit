@@ -1,6 +1,7 @@
 ---
 title: Sauerampfersuppe
 date: 2025-05-13
+imageAlt: "Zwei orange-braune Suppenschalen mit grüner Kräutersuppe, garniert mit einem Klecks Sauerrahm und Pilzen, dazu dunkles Vollkornbrot. Im Hintergrund stehen grüne Paprikaschoten auf einem karierten Geschirrtuch."
 ---
 
 (Rassolnik)

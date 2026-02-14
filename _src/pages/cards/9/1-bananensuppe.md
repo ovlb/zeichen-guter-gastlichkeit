@@ -1,6 +1,7 @@
 ---
 title: Bananensuppe „Vansanta”
 date: 2025-04-24
+imageAlt: "Eine cremige gelbe Bananensuppe mit Bananenscheiben in zwei weißen Schüsseln mit gelbem Blumenmuster, daneben liegen frische Bananen. Die Suppenschüsseln stehen auf passenden Untertellern mit demselben Dekor."
 ---
 
 für 6–8 Personen

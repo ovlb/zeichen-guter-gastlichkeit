@@ -1,6 +1,7 @@
 ---
 title: Bittere Appetitmacher
 date: 2024-04-12
+imageAlt: "Zwei elegante Cocktailgläser mit bernsteinfarbener Flüssigkeit stehen auf einer gehäkelten Spitzendecke, daneben eine Glasschale mit goldbraunen gerollten Waffelröllchen. Getrocknete Blumen im Hintergrund runden die Dekoration im typischen Stil der 1970er-Jahre ab."
 ---
 
 Die bekannten fertigen Aperitifgetränke lassen sich gut mit einigen Spirituosen kombinieren.

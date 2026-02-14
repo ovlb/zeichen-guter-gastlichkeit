@@ -1,6 +1,7 @@
 ---
 title: Kinder bei Tisch
 date: 2024-03-27
+imageAlt: "Ein festlich gedeckter Tisch mit einer Sahnetorte in der Mitte, umgeben von Tassen mit Blumenmuster, Gebäck und Schokoladenkugeln. Papier–Lampions hängen darüber, und Platzdekorationen mit Papp-Bonbons und Namensschildern schmücken die einzelnen Gedecke."
 ---
 
 Kinder sollen in ihrer Erziehung und Ausbildung Hilfen für ihr späteres Leben erhalten. Dies gilt auch für den häuslichen Bereich. Sie werden heute stärker als früher in das familiäre Gesellschaftsleben einbezogen – unterschiedlich nach der Art der Gesellschaft, den räumlichen Gegebenheiten und dem Zeitpunkt der Veranstaltung.

@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Calvados
 date: 2025-03-20
+imageAlt: "Verschiedene Cocktails und Aperitifs in eleganten Gläsern, umgeben von frischen grünen Äpfeln. Im Hintergrund eine Calvados-Flasche."
 ---
 
 ## Calvados-Cocktail

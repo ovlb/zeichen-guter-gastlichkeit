@@ -1,6 +1,7 @@
 ---
 title: Linsentopf
 date: 2025-06-04
+imageAlt: "Ein herzhafter Linseneintopf mit Würstchen, Möhrenscheiben, Porree und Speckstücken wird in einem grünen Teller im Vordergrund und einem grün-gelben Schmortopf im Hintergrund serviert."
 ---
 
 250g durchwachsener Räucherspeck, 1 Zwiebel, 500 g Linsen, 1 Eßl. Instant Fleischbrühe, 1 Bund oder 1 Tiefkühlpäckchen Suppengrün, Salz, Pfeffer, 1 Teel. getrocknetes Basilikum, ½/ Teel. Zucker, 4 Paar Frankfurter Würstchen, 8 cl Asbach Uralt

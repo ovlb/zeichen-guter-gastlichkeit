@@ -1,6 +1,7 @@
 ---
 title: Birnen, Bohnen und Speck
 date: 2025-05-27
+imageAlt: "Ein gebratener Schweinebauch mit knuspriger Kruste liegt in einer dunklen Bratform, umgeben von grünen Bohnen und gelben Kartoffeln. Die Bratenschwarte ist mit ganzen Birnen und Bohnen garniert."
 ---
 
 600 g durchwachsener Speck, 1 kg grüne Bohnen, 1 Bund Bohnenkraut, 4 bis 8 Kochbimen je nach Größe, Salz, Pfeffer

@@ -1,6 +1,7 @@
 ---
 title: Borschtsch
 date: 2025-05-28
+imageAlt: "Ein Schmortopf aus dunkler Keramik mit gelbem Blattmuster enthält Fleischstücke mit Zwiebeln, daneben steht ein Teller mit Borschtsch mit Fleisch, Kohl und einem Klecks Sauerrahm. Rechts im Bild eine Schale mit weißer Creme oder Sauerrahm, links ein Holzlöffel auf einem gelben Geschirrtuch."
 ---
 
 1 kg Hochrippe oder magere Ochsenbrust, 1 Zwiebel, 2 Lorbeerblätter, 1 Teel. Kümmel, Salz, 1,2 kg Rote Bete, 1 kg Weißkohl, Essig, Pfeffer, 1 Becher saure Sahne

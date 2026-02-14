@@ -1,6 +1,7 @@
 ---
 title: Labskaus
 date: 2025-06-03
+imageAlt: "Portion Labskaus mit Spiegelei, Salzgurken, Rote Bete und Matjesfilet auf einem Teller. Im Hintergrund ein Bierglas, eine Schüssel mit weiterem Labskaus und eine Obstschale."
 ---
 
 800 g gepökelte Rinderbrust, wahlweise auch 400 g Pökel-Rinderbrust und 400 g gepökelter Schweinenacken,

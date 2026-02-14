@@ -1,6 +1,7 @@
 ---
 title: Rüdesheimer Schlot-Engele
 date: 2025-04-21
+imageAlt: "Geräucherte Mettwürstchen in einer Pfanne mit gedünsteten Zwiebelringen, Aprikosen, Pflaumen und Kapern in glänzender Soße. Im Vordergrund ein angerichteter Teller mit einer Portion des Gerichts auf einem Bett aus Sauerkraut. Rechts daneben ein kleiner Salat mit Radieschen, Gurke und Petersilie. Kariertes Geschirrtuch als Unterlage."
 ---
 
 Zutaten für 4 Personen:

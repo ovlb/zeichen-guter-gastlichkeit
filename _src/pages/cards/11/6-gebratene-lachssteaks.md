@@ -1,6 +1,7 @@
 ---
 title: Gebratene Lachssteaks
 date: 2025-12-11
+imageAlt: "Gebratene Lachsscheiben auf dunklem Teller, garniert mit Petersilie, Dill, gegrillten Tomaten und Zitronenscheiben. Als Beilagen Kräuterreis und Kopfsalat mit Gurkenscheiben auf separaten Tellern."
 ---
 
 

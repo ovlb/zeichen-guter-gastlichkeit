@@ -1,6 +1,7 @@
 ---
 title: Klare Fleischbrühe
 date: 2025-05-08
+imageAlt: "Eine Tasse klare Fleischbrühe mit Petersilie steht im Vordergrund, umgeben von frischem Suppengemüse wie Sellerie, Möhren, Pastinaken, Porree, einer Tomate und einem rohen Fleischstück. Im Hintergrund sind weitere Zutaten zu sehen."
 ---
 
 Für die meisten Rezepte, in denen klare Fleischbrühe verlangt wird, benutzen wir heute Instant-Fertig-Produkte. Durch Suppengrün und Streuwürze läßt sich eine solche Brühe noch verbessern.

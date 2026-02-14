@@ -1,6 +1,7 @@
 ---
 title: Der festliche Tisch
 date: 2025-03-31
+imageAlt: "Ein festlich gedeckter Tisch mit weißer Tischdecke, Silberbesteck und geschliffenem Kristallglas, in der Mitte steht ein dunkler Blumenstrauß mit rosa und gelben Dahlien. Im Vordergrund liegen weiße Servietten mit blauem Blumenmuster auf den Tellern, dahinter ein antiker Holzstuhl."
 ---
 
 Da auch die Augen mitessen, soll der Tischdekoration gebührend Beachtung geschenkt werden. Nachfolgende Checkliste erleichtert Planung und Aufbau.

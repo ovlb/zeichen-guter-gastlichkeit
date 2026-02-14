@@ -1,6 +1,7 @@
 ---
 title: Forelle „Müllerin"
 date: 2025-06-13
+imageAlt: "Knusprig gebratene Forellen auf einer ovalen Platte, garniert mit Zitronenscheiben und Petersilie. Im Hintergrund Pellkartoffeln mit gehackter Petersilie in einer Schüssel und ein gemischter Blattsalat mit Paprikastreifen."
 ---
 
 4 Forellen, Pfeffer, Salz, 2 Bund Petersilie, 4 Eßl. Mehl, 150 g Butter, Anchovis- oder Sardellenpaste, 1 Zitrone

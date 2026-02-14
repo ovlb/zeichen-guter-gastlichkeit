@@ -1,6 +1,7 @@
 ---
 title: Die Glas-Wahl
 date: 2025-04-01
+imageAlt: "Ein Küchenschrank aus Holz mit drei Regalebenen zeigt Gläser und Geschirr: oben rauchfarbene Kelchgläser, in der Mitte verschiedene gemusterte Trinkgläser, unten weiße Porzellantassen mit goldener Beschriftung, ein Tablett mit blauem Blumenmuster und eine weiße Kaffeekanne."
 ---
 
 Eine strenge Abgrenzung zwischen einzelnen Glasformen besteht heute kaum noch. Trotz der großen Variationsbreite und Überschneidungen gibt es aber einige Grundregeln für den gut gedeckten Tisch und die Hausbar:

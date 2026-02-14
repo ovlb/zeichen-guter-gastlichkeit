@@ -1,6 +1,7 @@
 ---
 title: Muschel- und Austernessen
 date: 2025-04-04
+imageAlt: "Sechs frische Austern auf der Halbschale sind auf einem Teller mit gedrehter Kordel-Dekoration arrangiert, in der Mitte liegt eine halbe Zitrone. Im Hintergrund steht eine grüne Suppenterrine gefüllt mit dampfenden Miesmuscheln, umgeben von weiteren Muschelschalen."
 ---
 
 Muscheln können Suppeneinlage, Vor- oder Hauptgericht sein, Austern gewöhnlich nur Vor- oder Zwischengericht. Muscheln als Vorgericht werden serviert:

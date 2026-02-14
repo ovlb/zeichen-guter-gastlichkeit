@@ -1,6 +1,7 @@
 ---
 title: Geflügelleber auf Toast
 date: 2025-04-22
+imageAlt: "Zwei Tellergerichte mit gebratener Leber auf Toastbrot, garniert mit Apfelscheiben, gebratenen Zwiebeln und Petersilie, dazu Bratensoße. Im Hintergrund eine Glasschale mit grünem Blattsalat und ein Glas Weißwein."
 ---
 
 Besonders geeignet als Vorgericht oder als nächtliche überraschung bei Parties.

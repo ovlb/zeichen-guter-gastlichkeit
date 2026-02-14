@@ -1,6 +1,7 @@
 ---
 title: Coquilles St. Jacques
 date: 2025-04-09
+imageAlt: "Vier geöffnete Jakobsmuscheln in ihren Schalen liegen auf einem silbernen Tablett, serviert in einer cremigen gelben Sauce mit Garnelen und frischem Dill garniert. Im Hintergrund sind Kristallgläser und getoastetes Brot zu sehen."
 ---
 
 1 kleine Zwiebel, 40g Butter, 300g frisches oder tiefgefrorenes Jacobsmuschelfleisch, 14 1 Sahne, ½8 1 herber Weißwein, Salz, Pfeffer, 2 cl Asbach Uralt, 1 Eigelb

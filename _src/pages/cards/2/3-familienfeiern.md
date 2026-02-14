@@ -2,6 +2,7 @@
 title: Familienfeiern
 date: 2024-03-20
 seriesId: 2
+imageAlt: "Ein festliches Menü mit Fleischbraten, Spargel und Erbsen auf einer Servierplatte. Auf dem Teller im Vordergrund liegt eine gefüllte Avocadohälfte mit Krabben. Dabei steht ein rosa Dessert im Glas. Die Tafel ist mit Blumenmustergeschirr, rosa Tischdecke, Kaffeetassen und einem Blumenstrauß dekoriert."
 ---
 
 Familienfeste und kirchliche Feiertage werden gewöhnlich in einem festumgrenzten Kreis begangen. Bei Kindtaufen, Kommunionen/ Konfirmationen und Hochzeiten kommen noch Pfarrer, Hausarzt und enge Freunde dazu.

@@ -1,6 +1,7 @@
 ---
 title: Rum-Longdrinks
 date: 2025-03-26
+imageAlt: "Vier verschiedene Getränke mit weißen Strohhalmen stehen auf zwei schwarzen Tabletts mit goldenem Blumenmuster, dahinter eine gelbe Schüssel."
 ---
 
 ## Cuba Libre

@@ -1,6 +1,7 @@
 ---
 title: Hamburger Aalsuppe
 date: 2025-05-05
+imageAlt: "Drei olivgrüne Keramikschalen gefüllt mit einem deftigen Eintopf aus Kartoffeln, Möhren, Erbsen, Fleischstücken und Trockenfrüchten, arrangiert auf gelber Stoffserviette mit Blumenmuster."
 ---
 
 500 g Dörrobst (Pflaumen, Äpfel und Birnen), 1 Schinkenknochen, 375 g Möhren, 300 g Sellerie, 1 Petersilienwurzel, 2 Stangen Porree, gemischte grüne Kräuter (Petersilie, Dill, Thymian, Kerbel, Zitronenmelisse), Salz, Pfeffer, Zucker, ⅛ l Essig, 1 Eßl. Speisestärke, 1 Stück Aal (ca. 100-300 g)

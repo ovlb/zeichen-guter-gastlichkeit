@@ -1,6 +1,7 @@
 ---
 title: Aal grün in Dillsauce
 date: 2025-06-11
+imageAlt: "Aalstücke in cremiger Dillsauce auf einem gemusterten Teller, serviert mit Pellkartoffeln in einer Schale und einem Glas Weißwein. Im Hintergrund Blattsalat als Beilage."
 ---
 
 1,5 kg frischer Aal, 40 g Butter, 50 g Mehl, ⅜l Fleischbrühe, ⅛l Weißwein, 4 Eßl. süße Sahne, Salz, Pfeffer, 3 Bund Dill, 2 Eigelb

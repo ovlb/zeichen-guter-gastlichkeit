@@ -1,6 +1,7 @@
 ---
 title: Gefüllte grüne Heringe
 date: 2025-06-16
+imageAlt: "Vier in Alufolie gewickelte, gefüllte Heringe mit Dill garniert, serviert mit Salzkartoffeln im karierten Geschirrtuch und gemischtem Blattsalat mit Tomaten."
 ---
 
 8 grüne Heringe mit möglichst viel Rogen, 1 Zitrone, 1 Zwiebel, 30g Butter, je 1 Eßl. gehackte Petersilie, Dill und Kapern, 1 kleiner Apfel, 2cl Asbach Uralt, 2 hartgekochte Eier, Salz, Pfeffer, Zitrone, 2 Eßl. Butter

@@ -24,22 +24,26 @@ class Series {
 
   renderItemContent(card) {
     const negativeOrPositive = Math.round(Math.random()) * 2 - 1
-    const cardRotate = negativeOrPositive * (Math.random() * 5)
+    const cardRotate = negativeOrPositive * (Math.random() * 3)
     const baseZIndex = Math.floor(Math.random() * 10) + 1
 
     return `
       <article class="card-card" style="--card-rotate: ${cardRotate}deg; --card-z-index: ${baseZIndex}">
-        <p class="card-card__series"><small>Serie ${card.data.fullSeriesInfo.id}/${card.data.cardNumber}<small></p>
+        <p class="card-card__series"><small>Serie ${
+          card.data.fullSeriesInfo.id
+        }/${card.data.cardNumber}<small></p>
         <figure class="recipe-card-image">
-          <img 
-            src="${card.data.image}" 
-            alt="" 
-            data-process-image 
-            data-image-sizes="15rem" 
+          <img
+            src="${card.data.image}"
+            alt="${card.data.imageAlt || ''}"
+            data-process-image
+            data-image-sizes="15rem"
             data-image-widths="[320, 420, 640, 800]"
           />
         </figure>
-        <h2 class="main-headline card-card__headline"><a href="${card.url}">${card.data.title}</a></h2>
+        <h2 class="main-headline card-card__headline"><a href="${card.url}">${
+      card.data.title
+    }</a></h2>
       </article>
     `
   }

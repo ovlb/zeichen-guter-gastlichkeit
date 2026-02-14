@@ -1,6 +1,7 @@
 ---
 title: Wein-Aperitifs
 date: 2024-04-14
+imageAlt: "Getränke unterschiedlicher Farbe in Gläsern unterschiedlicher Form. Die Gläser stehen auf einem Tablett, dekoriert mit grünen Farnwedeln und gelben Kerzenhaltern aus strukturiertem Glas."
 ---
 
 Ein Glas Wein vor dem Essen zu trinken, ist wahrscheinlich die älteste Aperitif-Form. Auch heute bietet man vor dem Essen ein Glas trockenen Rubio-Sherry fino oder Souza-Portwein an. Im Gebiet von Cognac serviert man statt dessen einen Pineau des Charentes aus Traubensaft und Cognac, der sich auch in Deutschland einzubürgern beginnt.

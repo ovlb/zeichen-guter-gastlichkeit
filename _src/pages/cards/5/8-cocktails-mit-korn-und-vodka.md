@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Korn und Wodka
 date: 2025-03-19
+imageAlt: "Vier verschiedene Cocktails in unterschiedlichen Gläsern, arrangiert auf hellen Steinen. Links hinten ein dunkler Drink mit Zitronenscheibe am Glasrand, daneben ein cremefarbener Cocktail in einer Sektschale. Vorne links ein Drink in einer bauchigen Cocktailschale, rechts daneben ein Glas mit einem Getränk in Orange– und Rottönen."
 ---
 
 ## Bajazzo

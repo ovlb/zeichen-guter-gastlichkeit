@@ -1,6 +1,7 @@
 ---
 title: Gebratenes Kalbsbries auf Calvados Champignons
 date: 2025-04-23
+imageAlt: "Ovale Servierplatte mit panierten Kalbsbries-Scheiben, garniert mit Zitronenscheiben und Basilikumblättern. Links am Rand dekorative Kartoffelpüree-Rosetten, rechts geschmorte Champignons mit Petersilie. Im Hintergrund ein Glas Weißwein auf Holztisch."
 ---
 
 400 g Kalbsbries (Schweser), Salz, 100 g Butter, 1 Ei, 4 Eßl. Mehl, 200 g Champignons, 3 Eßl. gehackte Petersilie, 1 Teel. Edelsüß-Paprika, 1 Prise weißer Pfeffer, 1 Teel. geribbeltes Basilikum, 6 cl Calvados Gilbert, 2 Eßl. Crème fraîche

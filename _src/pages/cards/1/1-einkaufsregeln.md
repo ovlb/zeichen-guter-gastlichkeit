@@ -1,6 +1,7 @@
 ---
 title: Einkaufs-Regeln
 date: 2024-01-15
+imageAlt: "Ein Kunde steht im Supermarkt vor einem Regal mit Spirituosen und betrachtet gemeinsam mit der Verkäuferin einen gefüllten Einkaufswagen mit verschiedenen Lebensmitteln und Verpackungen. Im Hintergrund sind Flaschen auf einem Regal sowie Dekoration an der Wand zu erkennen."
 ---
 
 Gut wirtschaften heißt auch richtig einkaufen, gleichgültig, ob für die Familie, für wenige oder viele Gäste.

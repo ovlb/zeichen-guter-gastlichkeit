@@ -1,6 +1,7 @@
 ---
 title: Käse-Krabben-Toast
 date: 2025-04-11
+imageAlt: "Gefüllte grüne Paprikaringe mit Tomatenscheiben und Käse auf überbackenen Toastscheiben mit Krabben, garniert mit frischer Petersilie. Die herzhaften Häppchen sind auf einem Holzbrett angerichtet und mit schwarzem Pfeffer gewürzt."
 ---
 
 4 Scheiben Toastbrot, 30 g Butter, 200 g Nordseekrabbenfleisch, 4 Scheiben Schweizer Käse, 1 grüne Paprikaschote, 2 Tomaten, Pfeffer, Salz

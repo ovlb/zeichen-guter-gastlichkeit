@@ -1,6 +1,7 @@
 ---
 title: Fisch-Einkauf
 date: 2024-03-12
+imageAlt: "Ein Fischhändler im weißen Kittel präsentiert in einem Supermarkt eine große Flunder oder Scholle über einer Kühltheke mit frischem Fisch. Im Hintergrund sind Regale mit bunten Konserven und anderen Lebensmitteln aus den 1970er-Jahren zu sehen."
 ---
 
 Fischgeschäfte sind selten geworden. Man ist daher mehr und mehr auf Tiefkühlware oder Versandgeschäfte angewiesen.

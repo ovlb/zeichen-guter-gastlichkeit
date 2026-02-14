@@ -1,6 +1,7 @@
 ---
 title: Vichyssoise
 date: 2025-05-19
+imageAlt: "Zwei Suppentassen mit cremiger, heller Suppe, garniert mit gehackten Kräutern, stehen auf Untertassen neben einer karierten Serviette und sind auf einem hellen Holztisch arrangiert."
 ---
 
 (Kalte Kartoffelsuppe)

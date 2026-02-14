@@ -1,6 +1,7 @@
 ---
 title: Muschelsuppe
 date: 2025-05-12
+imageAlt: "Eine cremige Suppe mit geschnittenen Lauchringen in einer weißen Porzellanterrine mit gewelltem Rand, serviert auf einem dunklen Holztablett. Im Hintergrund sind eine Tasse und eine Brot zu erkennen."
 ---
 
 2 kg Muscheln, 2 Möhren, 1 Stange Porree, 3 Zwiebeln, ½ l Weißwein, ½ l Fleischbrühe, 2 Päckchen Safranfäden, ⅛ l süße Sahne, Salz, Pfeffer, 10 g Mehl, 10 g Speisestärke

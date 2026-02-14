@@ -1,6 +1,7 @@
 ---
 title: Wein- und Champagner-Longdrinks
 date: 2025-03-24
+imageAlt: "Ein Stielglas mit goldgelber Flüssigkeit und einer Zitronenscheibe steht neben einem Glasschälchen mit gesalzenen Erdnüssen und Crackern. Im Vordergrund liegt ein Flaschenöffner in Seepferdchenform und eine Schale mit gesalzenen Mandeln."
 ---
 
 ## Kir

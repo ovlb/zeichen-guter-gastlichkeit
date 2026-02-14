@@ -1,6 +1,7 @@
 ---
 title: Grundsätzliche Regeln
 date: 2024-04-04
+imageAlt: "Eine Flasche Asbach Uralt steht neben einem Cocktail-Shaker und zwei gefüllten Gläsern mit orangefarbenen Drinks, die jeweils mit einer Orangenscheibe und Cocktailkirsche garniert sind. Im Hintergrund liegen frische Orangen und Zitronen auf dunklem Untergrund."
 ---
 
 Der Aperitif soll den Magen auf das Essen vorbereiten. Seinen Ursprung hat er in der Naturheilkunde. Verdauungswirksame Stoffe aus Kräuter wurden mit Hilfe von Wein oder Spirituosen ausgezogen und vor dem Essen gereicht. In Frankreich, wo die Sitte entstand, war dies besonders abends vor der Hauptmahlzeit üblich.

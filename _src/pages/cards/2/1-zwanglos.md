@@ -2,6 +2,7 @@
 title: Zwangloses Beisammensein
 date: 2024-03-18
 seriesId: 2
+imageAlt: "Ein gedeckter Spieltisch mit Käsewürfeln und Weintrauben auf Spießen, Salzgebäck auf einer Glasplatte, Schwenkern mit Cognac, Spielkarten und Bridge-Blöcken."
 ---
 
 Auch Freunde, die man oft sieht und die sich nicht anzumelden pflegen, sind Gäste und werden bewirtet.

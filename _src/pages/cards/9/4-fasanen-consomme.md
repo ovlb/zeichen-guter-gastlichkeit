@@ -1,6 +1,7 @@
 ---
 title: Fasanen-Consommé
 date: 2025-04-29
+imageAlt: "Eine Tasse klare Suppe mit Grießnocken schwimmt in einer vintage Porzellantasse mit Vogel- und Blumenmuster, dazu liegen Käsegebäck und Blätterteigschnecken auf einem Spitzendeckchen. Im Vordergrund sind braune Servietten mit weißer Blumenstickerei und Silberbesteck arrangiert."
 ---
 
 1 Bund oder 1 Tiefkühlpackung Suppengrün, 1 Zwiebel, Salz, 4 Wacholderbeeren, 1 Lorbeerblatt, 6 Pfefferkörner, 1 Fasan, 1–2 Eiweiß, 1 Kalbsbratwurst

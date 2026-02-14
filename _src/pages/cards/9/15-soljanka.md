@@ -1,6 +1,7 @@
 ---
 title: Soljanka
 date: 2025-05-14
+imageAlt: "Eine klare Suppe mit Zitronenscheiben, Selleriestücken, Karotten, Fleisch und schwarzen Oliven wird in einer weißen Suppenterrine mit Schnörkeldekor serviert. Daneben liegen mehrere Löffel und ein mit Sesam bestreutes Brot."
 ---
 
 Diese russische Suppe kann sowohl mit Fisch als auch Fleisch zubereitet werden. Es gibt unzählige Hausrezepte, die voneinander ab-weichen. Es ist eine kräftige, leicht angesäuerte Suppe, in die man verschiedene Zutaten geben kann.

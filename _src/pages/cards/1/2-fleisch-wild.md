@@ -1,6 +1,7 @@
 ---
 title: Fleisch- und Wildeinkauf
 date: 2024-01-18
+imageAlt: "Ein lächelnder Metzger in weißer Schürze präsentiert in einer Fleischerei ein Tablett mit glasierten Bratwürsten, die mit Zwiebelringen garniert sind. In der Auslage davor liegen verschiedene Schinken- und Fleischsorten mit Preisschildern."
 ---
 
 Gut wirtschaften heißt auch richtig einkaufen, gleichgültig, ob für die Familie, für wenige oder viele Gäste.

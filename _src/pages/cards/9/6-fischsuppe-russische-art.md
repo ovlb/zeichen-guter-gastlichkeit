@@ -1,6 +1,7 @@
 ---
 title: Fischsuppe nach russischer Art
 date: 2025-05-01
+imageAlt: "Ein brauner Tonteller mit gekochten Kartoffeln und Fischstücken, garniert mit Zitronenscheiben und frischem Dill in Brühe. Im Hintergrund stehen ein brauner Tontiegel mit Deckel, eine Pfeffermühle aus Holz und ein kariertes Tischtuch in Grün und Beige."
 ---
 
 (Ucha)

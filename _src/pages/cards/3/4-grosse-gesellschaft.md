@@ -1,6 +1,7 @@
 ---
 title: Grosse Gesellschaft
 date: 2024-03-28
+imageAlt: "Ein festlich gedeckter Tisch mit Porzellangeschirr in floralem Blumenmuster, Kristallgläsern auf Stielen und handgeschriebenen Tischkarten mit den Namen „A. Boder” und „Th. Schmidt”. Die Gedeck-Arrangements liegen auf silbernen Platztellern, ergänzt durch Besteck und eine gehäkelte Tischdecke."
 ---
 
 Bei einer größeren Gesellschaft ist eine Tischordnung zu empfehlen. Dabei sind einige Grundregeln zu beachten, gleichgültig, ob an einer langen Tafel oder an mehreren kleinen Tischen gegessen wird:

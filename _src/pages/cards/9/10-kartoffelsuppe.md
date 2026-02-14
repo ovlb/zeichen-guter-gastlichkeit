@@ -1,6 +1,7 @@
 ---
 title: Kartoffelsuppe für Festtage
 date: 2025-05-07
+imageAlt: "Zwei Suppentassen mit cremiger Spinatsuppe, garniert mit Schinkenwürfeln und Sahnetupfern, serviert auf Tellern mit Blumendekor. Daneben eine Schale mit goldbraun gebratenen Weißbrot–Croutons. Im Hintergrund Pfeffermühle und Serviette auf weißer Tischdecke."
 ---
 
 750 g Kartoffeln, 1½ l Fleischbrühe, 2 Zwiebeln, 40 g Butter, ein 300-g-Päckchen Tiefkühlspinat, ⅛ l süße Sahne, Salz, Pfeffer, Majoran, 150 g gekochter Schinken

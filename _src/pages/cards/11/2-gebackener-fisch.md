@@ -1,6 +1,7 @@
 ---
 title: Gebackener Fisch mit Käse
 date: 2025-06-12
+imageAlt: "Fischfilets in einer Auflaufform mit Haselnuss–Käse–Kruste, goldbraun überbacken. Im Hintergrund eine Schüssel mit Erbsen und eine Karaffe mit Tomatenketchup."
 ---
 
 4 Stücke Rotbarsch- oder Seelachsfilet (800 bis 1000 g), 2 Zitronen, Salz, Pfeffer, 50 g Butter, 60 g Haselnüsse, 50 g Parmesan- oder Schweizer Käse, 5 Eßl. Milch, 3 Eßl. trockener Sherry, 1 Prise Muskat

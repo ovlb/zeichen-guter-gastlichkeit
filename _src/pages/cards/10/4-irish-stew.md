@@ -1,6 +1,7 @@
 ---
 title: Irish Stew
 date: 2025-05-30
+imageAlt: "Ein Kartoffel-Hackfleisch-Auflauf in einer durchsichtigen Glasschüssel, daneben ein angerichteter Teller mit einer Portion des Gerichts und Servierbesteck. Im Hintergrund sind geschnittene Zwiebeln und ein gelber Salzstreuer zu sehen."
 ---
 
 750 g schieres Lammfleisch, 750 g Zwiebeln, 1 kg Kartoffeln, Salz, schwarzer Pfeffer, Petersilie, Thymian, ca. 1 l Fleischbrühe

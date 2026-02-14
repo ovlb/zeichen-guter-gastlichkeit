@@ -1,6 +1,7 @@
 ---
 title: Salat Côte d'Azur
 date: 2025-04-10
+imageAlt: "Eine große Glasschüssel mit buntem Salat aus Eisbergsalat, Gurkenscheiben, Tomaten, grünen und roten Paprikastreifen, Zwiebelringen und Thunfischstücken. Im Hintergrund stehen Flaschen mit Öl und Essig sowie Holzlöffel auf einem weißen Holztisch."
 ---
 
 2 hartgekochte Eier, 125 g gekochte grüne Bohnen, ½ Salatgurke, je 1 rote und grüne Paprikaschote, 2 große Salat-Tomaten, 2 violette Zwiebeln oder frische Zwiebeln mit Lauch, 1 Kopfsalat, 1 Dose Thunfisch

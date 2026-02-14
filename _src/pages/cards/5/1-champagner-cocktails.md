@@ -1,6 +1,7 @@
 ---
 title: Champagner-Cocktails
 date: 2025-03-13
+imageAlt: "Drei Cocktails in verschiedenen Gläsern: zwei in breiten Cocktailschalen mit geometrischem Fuß und einer in einem hohen Glas mit Eiswürfeln. Im Hintergrund stehen eine Flasche Jack Daniel’s Whiskey und eine Flasche Taittinger Champagner. Hinten im Bild ein Strauß getrockneter Gänseblümchen."
 ---
 
 Anstelle der üblichen Aperitifs, die aus einer pur gereichten oder aufgespritzten Spirituose bestehen, kann man zur Begrüßung oder vor dem Essen auch einen Cocktail offerieren. Er besteht aus mehreren Zutaten, die so harmonieren, daß kein Geschmack übertönend im Vordergrund steht. Dabei sollte er leicht herb sein, um den Appetit anzuregen. Besonders angenehm sind Cocktails mit einem leichten Schuß trockenem Champagner.

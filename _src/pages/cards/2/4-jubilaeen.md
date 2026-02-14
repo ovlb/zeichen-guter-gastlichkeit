@@ -2,6 +2,7 @@
 title: Jubiläen
 date: 2024-03-21
 seriesId: 2
+imageAlt: "Eine große Servierplatte mit verschiedenen belegten Brotscheiben und Canapés, aufgespießt mit Zahnstochern, garniert mit Käse, Wurst, Tomaten und Petersilie. Im Hintergrund stehen Champagner- und Weinflaschen, geriffelte Kristallgläser, rosa Blumen und antike Bücher in einem Regal."
 ---
 
 Jubiläen sind Erinnerungstage, an denen die Verbindung mit einem bestimmten Personenkreis besonders betont wird. In der Familie ist es zumeist die Silberne oder Goldene Hochzeit, auf beruflicher Ebene die Erreichung einer runden Zahl bei derselben Firma oder im Erwerbsleben.

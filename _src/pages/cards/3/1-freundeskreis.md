@@ -1,6 +1,7 @@
 ---
 title: Freundeskreis
 date: 2024-03-25
+imageAlt: "Ein festlich gedeckter Tisch mit Cocktails in Gläsern mit bunten Trinkhalmen, kleinen Gebäcktörtchen, einer Flasche Asbach-Uralt und einem dekorativen Arrangement mit bunten Spießen im Hintergrund. Im Hintergrund ist ein Fernsehbild mit der Aufschrift „Erste Sitzung des neuen Landtages“ zu sehen."
 ---
 
 Unter alten Freunden gibt es zwar keine besondere Förmlichkeit, doch ist es trotzdem empfehlenswert, sich auf eine bestimmte Tischordnung einzustellen. Dem Gastgeber liegt daran, daß sich jeder wohl-fühlt. Dies wird besonders durch ein geschicktes Platz-Arrangement erreicht, bei dem diejenigen beieinander sitzen, die gut befreundet sind, sich jedoch lange nicht gesehen haben oder aus irgendwelchen Gründen bestimmte Dinge miteinander besprechen müssen.

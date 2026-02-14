@@ -1,6 +1,7 @@
 ---
 title: Hummer, Krebse, Langusten
 date: 2025-04-03
+imageAlt: "Ein ganzer gekochter Hummer auf einem ovalen Teller, garniert mit Zitronenscheiben und Petersilie, steht im Zentrum einer festlich gedeckten Tafel. Das Gedeck umfasst orange Stoffservietten mit Hummermotiv, Weingläser mit geschliffenem Stiel und Porzellangeschirr mit Blumenmuster."
 ---
 
 Sämtliche Krustentiere sind Delikatessen, die nur selten auf den Tisch kommen. Sie werden um so mehr geschätzt, je stilechter und liebevoller sie zurechtgemacht werden.

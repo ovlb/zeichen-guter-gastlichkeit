@@ -1,6 +1,7 @@
 ---
 title: Dubarry-Suppe
 date: 2025-04-28
+imageAlt: "Eine cremige Suppe wird in einem Suppenteller mit passender Untertasse serviert, das Geschirr ist mit blauem Blumenmuster und grün-orangen Blättern verziert. Im Hintergrund steht eine große Suppenterrine mit Deckel im gleichen Dekor, rechts daneben liegt eine Muskatnussreibe."
 ---
 
 1 Kopf Blumenkohl, 30 g Mehl, 40 g Butter, ⅛ 1 Sahne, Salz, Pfeffer, Muskatnuß, 100 g magerer gekochter Schinken, 1 Eigelb

@@ -1,6 +1,7 @@
 ---
 title: Königinpastete
 date: 2025-04-16
+imageAlt: "Blätterteigpasteten gefüllt mit Ragout aus Hähnchen, Kalbfleisch, Champignons und Rinderzunge in heller Sauce, angerichtet auf Tellern mit Zitronenspalten und Petersilie als Garnitur, im Hintergrund Schnittblumen als Tischdekoration"
 ---
 
 300 g Hähnchenbrust, 300 g mageres Kalbfleisch, Suppengrün, Salz, 30 g Butter/Margarine, 30 g Mehl, 125 g frische Champignons, Saft einer halben Zitrone, 50 g gepökelte Rinderzunge, 1 Eßl. Weißwein, 2 Eßl. Sahne, 1 Eigelb, weißer Pfeffer, Zucker, Worcestersauce, 4 große Blätter-teigpasteten, Zitrone, Petersilie

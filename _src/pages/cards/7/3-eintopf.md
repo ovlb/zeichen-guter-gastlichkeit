@@ -1,6 +1,7 @@
 ---
 title: Eintopfessen
 date: 2025-04-02
+imageAlt: "Herzhafter Eintopf mit Fleischstücken, grünen Bohnen, roten Paprikain orangefarbenen Schüsseln serviert. Daneben liegen Scheiben von dunklem Körnerbrot auf einem braun-weiß karierten Tischtuch."
 ---
 
 Zu Eintöpfen paßt ein rustikal gedeckter Tisch. Die Tischdecke sollte farbig auf das Service abgestimmt sein. Lieber Steingutgeschirr als Porzellan. Bestecke mit Holz- oder Keramikgriffen oder auch aus Zinn eignen sich besser als Silber. Rustikale Gläser kommen dabei mehr zur Geltung als Kristall.

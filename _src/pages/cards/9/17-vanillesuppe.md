@@ -1,6 +1,7 @@
 ---
 title: Vanillesuppe mit Schneeklösschen
 date: 2025-05-16
+imageAlt: "Vanillepudding mit Schneeklößchen auf einem Teller und in einer Schüssel, daneben goldbraune Waffelröllchen auf einem Glasteller. Das Geschirr mit blauem Blumenmuster steht auf einer weißen Häkeldecke."
 ---
 
 1 l Milch, 2 Schoten Vanille, 50 g Zucker, 1 Prise Salz, 20 g Speisestärke, 2 Eigelb, 2 Päckchen Vanillezucker, 2 Eiweiß, 1 Eßl. Puderzucker

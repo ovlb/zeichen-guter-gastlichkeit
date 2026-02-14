@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Rum
 date: 2025-03-21
+imageAlt: "Vier Cocktails in verschiedenen Gläsern: ein cremiger Rum–Egg–Nogg in einem Tumbler, ein Mañana in einer Cocktailschale, ein weiterer Cocktail in einer Sektschale und ein Rum–Cocktail in einer flachen Schale. Im Hintergrund ein weißer Kerzenständer und eine Tabakdose aus Porzellan. Die Getränke zeigen unterschiedliche Konsistenzen von milchig bis klar."
 ---
 
 ## Mañana

@@ -1,6 +1,7 @@
 ---
 title: Bierkaltschale
 date: 2025-04-25
+imageAlt: "Eine dunkle Fleischbrühe mit Karotten, Pilzen und einem Klecks Butter in einer gelben Suppenterrine mit Blumenmuster. Im Hintergrund stehen gelbe und weiße Blumen in einer Vase sowie eine passende Tasse auf einem Unterteller."
 ---
 
 65 g Korinthen oder blaue Sultaninen, 2 Eßl. Zwiebackmehl, 3 Eßl. feingeriebenes, trockenes Graubrot, 4 Eßl. Zucker, je 1 Messerspitze Ingwerpulver und gemahlene Nelken, 1 Flasche Altbier, 2 Flaschen Berliner Weiße, 4 Eßl. Portwein, 1 Zitrone, 1 Stange Zimt

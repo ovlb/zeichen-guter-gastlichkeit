@@ -1,6 +1,7 @@
 ---
 title: Krabben-Cocktail
 date: 2025-04-17
+imageAlt: "Zwei Glasschalen gefüllt mit Krabben-Cocktail, bestehend aus Nordseekrabben, Salatblättern, Eierscheiben, Spargelstücken und einer hellen Sauce, garniert mit frischem Dill."
 ---
 
 Nordseekrabben haben einen besonders ausgeprägten und einzigartigen Geschmack. Sind sie ganz frisch aus der Schale gepult, so werden sie mit möglichst wenig Mayonnaise oder Sauce überzogen, um das zarte Aroma nicht zu stark zu überdecken.

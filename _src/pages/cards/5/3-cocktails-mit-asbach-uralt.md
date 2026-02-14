@@ -2,6 +2,7 @@
 title: Cocktails mit Asbach Uralt
 date: 2025-03-14
 part: II
+imageAlt: "Vier verschiedene Cocktails und Aperitifs in eleganten Gläsern auf silbernen Tabletts, darunter eine grüne, eine gelbe und eine rosafarbene Kreation, dekoriert mit einer Cocktailkirsche. Im Hintergrund rosa Rosen als Dekoration und eine Schale mit aufgerollten Gebäckröllchen."
 ---
 
 ## Alexander-Cocktail

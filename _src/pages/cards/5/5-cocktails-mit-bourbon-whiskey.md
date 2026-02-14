@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Bourbon-Whiskey
 date: 2025-03-17
+imageAlt: "Vier verschiedene Cocktails in Coupe- und Tumbler-Gläsern mit bernsteinfarbenen bis dunklen Flüssigkeiten, neben einer Flasche Kentucky Bourbon Whiskey auf einer Spitzendecke. Im Vordergrund liegen Brezeln, rechts ist eine Nelke als Dekoration sichtbar."
 ---
 
 ## Frisco

@@ -1,6 +1,7 @@
 ---
 title: Weinbrand-Longdrinks
 date: 2025-03-27
+imageAlt: "Vier verschiedene Cocktails in Gläsern vor einem verzierten Tisch. Von links: Ein Glas mit spiralförmig geschnittener Zitronenschale, ein Tumbler mit bernsteinfarbenem Drink und Zitronenspirale, ein Sektkelch mit Cocktail und Trinkhalm, und ein Tumbler mit milchigem Drink, Eiswürfeln und Trinkhalm. Im Vordergrund liegt ein Barlöffel."
 ---
 
 ## Brandy Highball

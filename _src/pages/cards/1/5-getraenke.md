@@ -1,6 +1,7 @@
 ---
 title: Getränke-Einkauf
 date: 2024-03-15
+imageAlt: "Ein Verkäufer in blau-weiß gestreifter Arbeitskleidung mit Krawatte präsentiert eine Weinflasche vor einem Regal voller Spirituosen und Weinflaschen."
 ---
 
 ## Alkoholfreie Getränke und Biere

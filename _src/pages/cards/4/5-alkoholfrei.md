@@ -1,6 +1,7 @@
 ---
 title: Alkoholfreie Aperitifs
 date: 2024-04-22
+imageAlt: "Verschiedene Fruchtsäfte in unterschiedlichen Gläsern: Eine Cocktailschale mit orangem Saft im Vordergrund, dahinter ein Sektglas mit klarem Saft, ein Weinglas mit orangem Getränk und weitere Gläser. Im Hintergrund die Blätter einer Pflanze."
 ---
 
 Gästen, die keine alkoholischen Getränke mögen, bietet man reine Fruchtsäfte an. Orangen-, Tomaten- und schwarzer Johannisbeersaft sind am beliebtesten. Es gibt auch eine Reihe von alkoholfreien Fertig-Aperitifs, gewöhnlich auf Tomatenbasis, die dank einer starken Würzung leicht an kräftige Cocktails erinnern.

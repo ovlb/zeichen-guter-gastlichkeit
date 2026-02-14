@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Canadian-Whisky
 date: 2025-03-17
+imageAlt: "Verschiedene Gläser mit bernsteinfarbenen Spirituosen oder Likören stehen auf einem Holztablett neben aufgeschlagenen Büchern und geflochtenen Körben. Im Hintergrund ist rustikale Dekoration mit dem Modeel eines Schiffs aus Holz zu erkennen."
 ---
 
 ## Manhattan

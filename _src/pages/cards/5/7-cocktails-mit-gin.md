@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Gin
 date: 2025-03-18
+imageAlt: "Verschiedene Cocktailgläser mit Getränken stehen auf einem hellen Holztisch, dekoriert mit grünen Zweigen, eines dekoriert herzförmigen blauen Cocktailspieß."
 ---
 
 ## Yellow Daisy

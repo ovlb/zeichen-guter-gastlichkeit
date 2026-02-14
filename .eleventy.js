@@ -6,13 +6,6 @@ import { readdir } from 'fs/promises'
 const IS_PROD = process.env.PAGE_STATE === 'production'
 
 export default async function (eleventyConfig) {
-  const plugins = await import('./_plugins/index.js')
-  const shortcodes = await import('./_shortcodes/index.js')
-  const functions = await import('./_functions/index.js')
-  const libraries = await import('./_libraries/index.js')
-  const transforms = await import('./_transforms/index.js')
-  const templates = await import('./_templates/index.js')
-  const events = await import('./_events/index.js')
   const configPlugins = await Promise.all([
     import('./_plugins/index.js'),
     import('./_shortcodes/index.js'),

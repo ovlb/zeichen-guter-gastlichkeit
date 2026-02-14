@@ -96,6 +96,7 @@
     ]
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.74.0",
     "@netlify/functions": "^0.10.0",
     "feed": "^4.2.2",
     "music-metadata": "^11.0.2",

@@ -1,6 +1,7 @@
 ---
 title: Gemüse-Einkauf
 date: 2024-03-13
+imageAlt: "Eine Frau in gemustertem Pullover und ein Mann mit weißer Schürze betrachten eine Auslage mit frischem Gemüse, darunter Lauch, Salat, Bohnen und Tomaten."
 ---
 
 Gemüse soll möglichst frisch zubereitet werden. Man kauft es deshalb • im letzten Moment, muß sich jedoch vorher vergewissern, daß es auch vorrätig ist.

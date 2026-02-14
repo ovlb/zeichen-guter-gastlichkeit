@@ -1,6 +1,7 @@
 ---
 title: Rüdesheimer Eisfrappé
 date: 2025-03-28
+imageAlt: "Zwei Cognac-Schwenker mit cremigem Eisgetränk, in das mit einem Strohhalm eingeschenkt wird. Im Hintergrund dekorative Blätter und eine Flasche Asbach Uralt. Neben den Gläsern liegt ein Löffel."
 ---
 
 # Rüdesheimer Eisfrappé

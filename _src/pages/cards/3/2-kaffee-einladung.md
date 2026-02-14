@@ -1,6 +1,7 @@
 ---
 title: Kaffee-Einladung
 date: 2024-03-26
+imageAlt: "Eine festliche Kaffeetafel mit Schokoladentorte, die mit Marzipanplättchen dekoriert ist, weißem Porzellan mit rosafarbenem Dekor, einer Flasche Asbach Uralt und einem Strauß Trockenblumen. Im Vordergrund steht ein Teller mit Spargel in heller Sauce."
 ---
 
 Die Kaffeetafel hat den Vorzug, daß sie zeitlich begrenzt ist. Da sie – mit Ausnahme von Sonn- und Feiertagen – während der Geschäftszeit gehalten wird, ist sie weitgehend den Damen vorbehalten. Die Form ist zwanglos, und im Mittelpunkt steht nicht ein Essen, sondern das Gespräch. Bei einer größeren Zahl von Teilnehmern sind daher mehrere Tischgruppen zu empfehlen. Die Herren können den einzelnen Tischen zugeteilt oder gemeinsam an einem Tisch placiert werden.

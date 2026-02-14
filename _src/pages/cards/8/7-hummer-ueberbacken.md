@@ -1,6 +1,7 @@
 ---
 title: Hummer überbacken
 date: 2025-04-15
+imageAlt: "Vier halbierte Hummer auf einer ovalen Servierplatte, gefüllt mit einer Mischung aus Hummerfleisch, Champignons und Möhrenscheiben, überbacken mit einer Curry– oder Safransauce. Die Platte ist dekoriert mit Zitronenscheiben und Petersilie. Im Hintergrund eine Spitzendecke."
 ---
 
 3 Möhren, Salz, 2 lebende Hummer, 150 g Champignons, 1 Eßl. Zitronensaft, 50 g Butter, 1 Teel. Weinessig, 1 Schalotte, 2 weiße Pfefferkörner, Salz, 2 Eigelb, 4 cl Asbach Uralt, 1 Teelöffel Currypulver oder ½ Teel. Safran

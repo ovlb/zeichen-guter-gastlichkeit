@@ -1,6 +1,7 @@
 ---
 title: Gefüllte Avocados
 date: 2025-04-07
+imageAlt: "Zwei Avocadohälften gefüllt mit Nordseekrabben und garniert mit grünem Blattsalat, serviert auf Tellern mit gelbem Dekorrand. Dazu stehen ein geschliffenes Glas mit hellem Getränk und ein Salzstreuer auf dem gedeckten Tisch."
 ---
 
 3 Avocados, 200g Krabbenfleisch, 1 Zitrone, Salz, Pfeffer, 1 Teel. Mayonnaise, 2-4 cl Asbach Uralt, Zitronenmelisse

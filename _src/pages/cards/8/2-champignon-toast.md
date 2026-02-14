@@ -1,6 +1,7 @@
 ---
 title: Champignon-Toast
 date: 2025-04-08
+imageAlt: "Panierte Toastscheiben mit Champignon–Rahm–Sauce, garniert mit Petersilie, auf einem Bett aus Salatblättern mit Tomatenscheiben. Im Hintergrund zwei Gläser Asbach Uralt."
 ---
 
 500 g frische Champignons, 30g Butter, Salz, Pfeffer, 1 Eßl. Mehl, 4 Eßl. süße Sahne, 4 cl Asbach Uralt, 4 Scheiben Toast, Petersilie, Salatblätter, 2 Tomaten

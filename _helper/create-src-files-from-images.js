@@ -5,6 +5,7 @@ import { existsSync, readFileSync } from 'fs'
 import slugify from '@sindresorhus/slugify'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { randomUUID } from 'crypto'
 
 import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
 import { scanCardContent } from './scan-card-content.js'
@@ -13,6 +14,7 @@ import {
   createContentImage,
   createPodcastImage,
 } from './create-image-functions.js'
+import { generateAltText } from './generate-alt-text.js'
 
 import seriesData from '../_src/_data/series.js'
 
@@ -121,15 +123,24 @@ export async function processImages() {
           console.log(`🙅 File ${outputFile} already exists, skipping.`)
         }
       } catch (error) {
-        const [content] = await Promise.all([
-          createMarkdownContent({
-            indexInSeries,
-            name,
-            seriesId,
-          }),
-          createPodcastImage(file),
-          createContentImage(file),
-        ])
+        const podcastImageFileName = file.replace('.tiff', '-podcast.jpg')
+        const podcastImagePath = path.resolve(
+          cwd,
+          '_src/assets/img/podcast',
+          podcastImageFileName,
+        )
+
+        // Create images first (alt text generation needs the JPG to exist)
+        await Promise.all([createPodcastImage(file), createContentImage(file)])
+
+        const content = await createMarkdownContent({
+          indexInSeries,
+          name,
+          seriesId,
+        })
+        const imageAlt = await generateAltText(podcastImagePath, {
+          recipeText: content.text,
+        })
         const date = dateUtils.getNextBusinessDay(lastDate)
 
         // update to use for next card
@@ -144,6 +155,7 @@ export async function processImages() {
           title: content.title,
           date: dateUtils.formatYYYYMMDD(date),
           text: content.text,
+          imageAlt,
         })
       }
     }
@@ -188,10 +200,12 @@ export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
   return textContent
 }
 
-async function writeToFile(filePath, { title, date, text }) {
+async function writeToFile(filePath, { title, date, text, imageAlt }) {
   const mdContent = `---
 title: ${title}
 date: ${date}
+imageAlt: "${imageAlt}"
+id: ${randomUUID()}
 ---
 
 ${text}

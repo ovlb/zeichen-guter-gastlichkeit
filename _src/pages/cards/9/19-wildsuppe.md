@@ -1,6 +1,7 @@
 ---
 title: Wildsuppe „Kuss der Diana“
 date: 2025-05-20
+imageAlt: "Zwei Suppentassen mit cremiger, orangebrauner Suppe, garniert mit Sahnehaube und Paprikapulver, stehen auf Untertassen mit Vogelmotiv. Daneben liegt knuspriges Weißbrot mit Messer auf einem Holzbrett."
 ---
 
 750 g Wildgulasch, 60 g Öl, 1½ I Wasser, 2 Zwiebeln, 1 Tiefkühlpäckchen oder 1 Bund Suppengrün, 3 Wacholderbeeren, 1 Lorbeerblatt, 5 schwarze Pfefferkörner, 1 gehäufter Eßl. Mehl, 8 cl. Asbach Uralt, 2 Eßl. Zitronensaft, Salz, Pfeffer, Edelsüß-Paprika, ¼ l süße Sahne.

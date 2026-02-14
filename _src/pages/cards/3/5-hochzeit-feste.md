@@ -1,6 +1,7 @@
 ---
 title: Hochzeits- und Festessen
 date: 2024-03-29
+imageAlt: "Eine selbstgebastelte Tischordnung aus grauem Karton mit einer ovalen Aussparung in der Mitte, um die herum zehn weiße Namensschilder für die Gäste angeordnet sind. Im Hintergrund sind verschwommen Geschirr und eine goldene Dekofigur zu erkennen."
 ---
 
 Bei zwanglosen Essen im kleinen Freundeskreis gibt es gewöhnlich keine Tischordnung. Gastgeber behalten ihre Plätze und achten darauf, daß ihre Gäste bequem sitzen.

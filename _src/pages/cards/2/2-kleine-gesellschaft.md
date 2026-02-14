@@ -2,6 +2,7 @@
 title: Kleine Gesellschaft
 date: 2024-03-19
 seriesId: 2
+imageAlt: "Eine handgeschriebene Einladungskarte zum Fondue-Essen lehnt vor einem orangefarbenen Fondue-Set mit schwarzem Rechaud. Daneben liegen Fonduegabeln, ein Pfeffer- und ein Salzstreuer."
 ---
 
 In der Mehrzahl aller Fälle schreiben Wohnungs- und Tischgröße bereits die Obergrenze der Besucherzahl vor.

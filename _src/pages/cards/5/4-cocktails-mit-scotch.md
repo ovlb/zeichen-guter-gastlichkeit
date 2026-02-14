@@ -1,6 +1,7 @@
 ---
 title: Cocktails mit Scotch
 date: 2025-03-16
+imageAlt: "Vier verschiedene Whisky-Cocktails in unterschiedlichen Gläsern auf rustikalem Holztisch, im Hintergrund eine Flasche Scotch Whisky und gelbe Frühlingsblumen als Dekoration. Die Drinks reichen farblich von hellem Gold über Bernstein bis zu zartem Rosa."
 ---
 
 ## Blood and Sand
