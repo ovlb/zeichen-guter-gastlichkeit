@@ -35,12 +35,8 @@
   padding: var(--size-2);
   position: relative;
   transform: rotate(var(--card-rotate));
-  transition: box-shadow 0.1s ease-out;
+  transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
   z-index: var(--card-z-index);
-
-  @media (prefers-reduced-motion: no-preference) {
-    transition: box-shadow 0.1s ease-out, transform 0.15s ease-out;
-  }
 
   :is(&:hover, &:focus-within) {
     box-shadow: var(--shadow-3);
