@@ -1,0 +1,73 @@
+.ornamental-frame {
+  --frame-ornament: clamp(2rem, 5vw, 3.5rem);
+  --frame-line-inset: calc(var(--frame-ornament) / 2);
+  --frame-thickness: 2px;
+
+  padding: var(--frame-ornament);
+  position: relative;
+
+  /*
+   * 4 border lines drawn as 1px-thick solid-color gradients.
+   * Each one is positioned and sized to start/end at the ornament boundaries.
+   * The linear-gradient(color, color) trick creates a solid rectangle —
+   * the size/position in the shorthand controls where it appears.
+   *
+   * Shorthand: background: <image> <position> / <size> <repeat>
+   */
+  background:
+    /* Top line */ linear-gradient(var(--text-1), var(--text-1))
+      var(--frame-ornament) var(--frame-line-inset) /
+      calc(100% - 2 * var(--frame-ornament)) var(--frame-thickness) no-repeat,
+    /* Bottom line */ linear-gradient(var(--text-1), var(--text-1))
+      var(--frame-ornament) calc(100% - var(--frame-line-inset)) /
+      calc(100% - 2 * var(--frame-ornament)) var(--frame-thickness) no-repeat,
+    /* Left line */ linear-gradient(var(--text-1), var(--text-1))
+      var(--frame-line-inset) var(--frame-ornament) / var(--frame-thickness)
+      calc(100% - 2 * var(--frame-ornament)) no-repeat,
+    /* Right line */ linear-gradient(var(--text-1), var(--text-1))
+      calc(100% - var(--frame-line-inset)) var(--frame-ornament) /
+      var(--frame-thickness) calc(100% - 2 * var(--frame-ornament)) no-repeat;
+}
+
+/* --- Corner ornaments --- */
+
+/* Shared base for all corners */
+.ornamental-frame::before,
+.ornamental-frame::after,
+.frame-corners::before,
+.frame-corners::after {
+  background: url('/img/corner-ornament.svg') no-repeat center / contain;
+  content: '';
+  display: inline-block;
+  height: var(--frame-ornament);
+  position: absolute;
+  width: var(--frame-ornament);
+}
+
+/* The span must span the full frame so its pseudo-elements position correctly */
+.frame-corners {
+  inset: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Place + flip each corner */
+.ornamental-frame::before {
+  left: 0;
+  top: 0;
+} /* TL: no flip */
+.ornamental-frame::after {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+} /* TR: mirror X */
+.frame-corners::before {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+} /* BL: mirror Y */
+.frame-corners::after {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1);
+} /* BR: mirror both */

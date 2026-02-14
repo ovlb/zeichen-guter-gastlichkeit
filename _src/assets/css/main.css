@@ -6,6 +6,7 @@
 @import './0-base/_img.pcss';
 
 @import './1-atoms/_typography.pcss';
+@import './2-structures/_ornament.pcss';
 
 body {
   display: flex;

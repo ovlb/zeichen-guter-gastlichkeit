@@ -59,11 +59,22 @@
     height: 100%;
     width: 100%;
   }
+
+  @media (--md-n-above) {
+    & + .ornamental-frame {
+      margin-top: calc(-0.5 * var(--frame-ornament));
+    }
+  }
 }
 
 .card-content {
   max-inline-size: var(--size-content-3);
   padding-block: var(--space-s);
+
+  h1 {
+    max-inline-size: unset;
+    text-align: center;
+  }
 
   & > * + * {
     margin-block-start: var(--space-m);
@@ -71,7 +82,7 @@
 }
 
 .card-text {
-  :is(p, ul, ol) + p {
+  :is(p, ul, ol) + :is(p, ul, ol) {
     margin-block-start: var(--space-xs);
   }
 

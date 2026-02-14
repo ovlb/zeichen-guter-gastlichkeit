@@ -24,6 +24,8 @@ class Home {
 
   render({ series, collections }) {
     return `<section class="home-intro">
+    <div class="ornamental-frame">
+      <span class="frame-corners" aria-hidden="true"></span>
       <p class="text-centered">
         Hunderte guter und erprobter Ratschläge – vom Einkaufen bis zur vollendeten
         Speisezubereitung – finden Sie in 256 Karten übersichtlich in 25 Gruppen
@@ -40,6 +42,7 @@ class Home {
           Neue Karten Montag–Freitag.
         </small>
       </p>
+    </div>
     </section>
   `
   }
