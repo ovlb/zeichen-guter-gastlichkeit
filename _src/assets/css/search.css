@@ -1,0 +1,11 @@
+/* Search results page layout */
+.search-page {
+  inline-size: min(90vw, var(--size-content-3));
+  margin-inline: auto;
+  padding-inline: var(--space-s);
+
+  h1 {
+    font-size: var(--u-font-size-3);
+    margin-block-end: var(--space-m);
+  }
+}

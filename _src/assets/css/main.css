@@ -8,6 +8,21 @@
 @import './1-atoms/_typography.pcss';
 @import './2-structures/_ornament.pcss';
 
+.skip-link {
+  inset-inline-start: -9999px;
+  position: absolute;
+  z-index: 999;
+
+  &:focus {
+    background: var(--surface-1);
+    color: var(--text-1);
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    outline: 2px solid var(--link);
+    padding: 1em;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;

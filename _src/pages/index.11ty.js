@@ -22,8 +22,11 @@ class Home {
     </ol>`
   }
 
-  render({ series, collections }) {
+  render({ series, collections, build }) {
     return `<section class="home-intro">
+    <recipe-search app-id="${build.algoliaAppId}" search-key="${
+      build.algoliaSearchKey
+    }"></recipe-search>
     <div class="ornamental-frame">
       <span class="frame-corners" aria-hidden="true"></span>
       <p class="text-centered">
@@ -44,6 +47,7 @@ class Home {
       </p>
     </div>
     </section>
+    <script type="module" src="/js/recipe-search.js"></script>
   `
   }
 }
