@@ -1,6 +1,6 @@
 import path from 'path'
 import { readdir, stat, writeFile } from 'fs/promises'
-import { syncAlgoliaIndex } from '../_helper/sync-algolia-index'
+import { syncAlgoliaIndex } from '../_helper/sync-algolia-index.js'
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist')
 const IMG_DIR = path.resolve(DIST_DIR, 'feed-images')
@@ -29,9 +29,11 @@ export default function (eleventyConfig) {
         headers += `/${relativePath}\n  Last-Modified: ${lastModified}\n`
       }
       await writeFile(path.join(DIST_DIR, '_headers'), headers, 'utf8')
+      console.log('✅ Updated _headers with Last-Modified for feed images')
 
       if (IS_PROD && isCronBuild) {
         await syncAlgoliaIndex()
+        console.log('✅ Algolia index synced successfully')
       }
     }
   })
