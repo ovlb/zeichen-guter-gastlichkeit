@@ -144,7 +144,7 @@ class AtomFeed {
       feed.addItem({
         title: post.data.title,
         url: link,
-        guid: link,
+        guid: post.data.id ?? link,
         itunesDuration: file.duration,
         itunesSeason: post.data.fullSeriesInfo.id,
         itunesEpisode: post.data.cardNumber,
