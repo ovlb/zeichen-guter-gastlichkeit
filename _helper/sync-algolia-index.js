@@ -126,11 +126,16 @@ function buildRecipeRecord({ frontmatter, content, seriesId, fileSlug }) {
   const objectID = frontmatter.id || `${seriesId}-${fileSlug}`
   const ingredients = extractIngredients(content)
 
+  const date = Math.floor(new Date(frontmatter.date).getTime() / 1000)
+
+  // skip cards with a date in the future
+  if (date > Math.floor(Date.now() / 1000)) return null
+
   return {
     objectID,
     title: frontmatter.title,
     ingredients,
-    date: Math.floor(new Date(frontmatter.date).getTime() / 1000),
+    date,
     seriesId,
     seriesName: series.name,
     image: `/img/search/${seriesId}-${fileSlug}-search.avif`,
