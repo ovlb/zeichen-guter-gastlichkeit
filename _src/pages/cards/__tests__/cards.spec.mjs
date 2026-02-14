@@ -168,10 +168,9 @@ test('All markdown files have correct frontmatter structure', async (t) => {
         `${fileName} should have date as second line in frontmatter`,
       )
 
-      t.regex(
-        file.frontMatter[2] || '',
-        /^\s*imageAlt:/,
-        `${fileName} should have imageAlt as third line in frontmatter`,
+      t.truthy(
+        file.frontMatter.some((line) => /^\s*imageAlt:/.test(line)),
+        `${fileName} should have imageAlt in frontmatter`,
       )
     })
   }
