@@ -4,13 +4,27 @@ import { getAllCardImages, srcImagesDir } from './get-all-card-images.js'
 
 const cwd = process.cwd()
 
+export async function createSearchImage(sourceFileName) {
+  const fileName = sourceFileName.replace('.tiff', '-search.avif')
+  const outputPath = path.resolve(cwd, '_src/assets/img/search', fileName)
+
+  await sharp(path.resolve(srcImagesDir, sourceFileName))
+    .avif({
+      quality: 65,
+    })
+    .resize(250, 250)
+    .toFile(outputPath)
+
+  console.log(`🖼️ 🔍 Created search image for ${sourceFileName}`)
+}
+
 export async function createPodcastImage(sourceFileName) {
   const fileName = sourceFileName.replace('.tiff', '-podcast.jpg')
   const outputPath = path.resolve(cwd, '_src/assets/img/podcast', fileName)
 
   await sharp(path.resolve(srcImagesDir, sourceFileName))
     .jpeg({
-      quality: 100,
+      quality: 70,
     })
     .resize(2000, 2000)
     .toFile(outputPath)

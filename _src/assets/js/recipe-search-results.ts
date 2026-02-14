@@ -7,6 +7,7 @@ import {
   DEBOUNCE_MS,
   SEARCH_ICON,
   SR_ONLY_STYLES,
+  publishedFilter,
 } from './lib/constants.js'
 
 const HITS_PER_PAGE = 20
@@ -71,7 +72,7 @@ const styles = /* css */ `
   .facets {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-3xs, 0.25rem);
+    gap: var(--space-2xs, 0.25rem);
     margin-block: var(--space-xs, 0.75rem);
     margin-inline: 0;
     padding: 0;
@@ -86,8 +87,8 @@ const styles = /* css */ `
     font: inherit;
     font-size: var(--u-font-size--2, 0.8125rem);
     min-block-size: 2.75rem;
-    padding-block: var(--space-2xs, 0.5rem);
-    padding-inline: var(--space-xs, 0.75rem);
+    padding-block: var(--space-3xs);
+    padding-inline: var(--space-2xs);
     transition: background-color 0.15s ease, color 0.15s ease;
   }
 
@@ -138,7 +139,7 @@ const styles = /* css */ `
     flex: 1;
   }
 
-  h2.result-title {
+  .result-title {
     font-family: var(--fonts-headline);
     font-size: var(--u-font-size-4);
     font-weight: 700;
@@ -147,16 +148,16 @@ const styles = /* css */ `
     margin-inline: 0;
   }
 
-  h2.result-title a {
+  .result-title a {
     color: var(--link);
     text-decoration: none;
   }
 
-  h2.result-title a:hover {
+  .result-title a:hover {
     text-decoration: underline;
   }
 
-  h2.result-title a:focus-visible {
+  .result-title a:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 2px;
   }
@@ -182,11 +183,6 @@ const styles = /* css */ `
 
   .empty-state,
   .initial-state {
-    padding-block: var(--space-l, 2rem);
-    text-align: center;
-  }
-
-  .loading {
     padding-block: var(--space-l, 2rem);
     text-align: center;
   }
@@ -324,15 +320,13 @@ class RecipeSearchResults extends HTMLElement {
   private async performSearch(query: string): Promise<void> {
     this.currentQuery = query
 
-    this.container.innerHTML = '<p class="loading">Suche ...</p>'
-    this.announce('Suche l\u00e4uft\u2026')
-
     try {
       const client = await getSearchClient(this.appId, this.searchKey)
+      const filters = publishedFilter()
       const { results } = await client.search<SearchHit>({
         requests: [
-          { indexName: RECIPES_INDEX, query, hitsPerPage: HITS_PER_PAGE },
-          { indexName: DRINKS_INDEX, query, hitsPerPage: HITS_PER_PAGE },
+          { indexName: RECIPES_INDEX, query, hitsPerPage: HITS_PER_PAGE, filters },
+          { indexName: DRINKS_INDEX, query, hitsPerPage: HITS_PER_PAGE, filters },
         ],
       })
 

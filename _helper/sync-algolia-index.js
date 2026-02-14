@@ -130,9 +130,10 @@ function buildRecipeRecord({ frontmatter, content, seriesId, fileSlug }) {
     objectID,
     title: frontmatter.title,
     ingredients,
+    date: Math.floor(new Date(frontmatter.date).getTime() / 1000),
     seriesId,
     seriesName: series.name,
-    image: `/img/podcast/${seriesId}-${fileSlug}-podcast.jpg`,
+    image: `/img/search/${seriesId}-${fileSlug}-search.avif`,
     imageAlt: frontmatter.imageAlt || '',
     url: buildUrl(series.name, frontmatter.title),
   }
@@ -148,6 +149,8 @@ function buildDrinkRecords({ frontmatter, content, seriesId, fileSlug }) {
   const drinks = splitDrinks(content)
   const baseID = frontmatter.id || `${seriesId}-${fileSlug}`
 
+  const date = Math.floor(new Date(frontmatter.date).getTime() / 1000)
+
   return drinks.map((drink, index) => ({
     objectID: `${baseID}-${index}-${slugify(
       drink.title.toLocaleLowerCase('de'),
@@ -155,9 +158,10 @@ function buildDrinkRecords({ frontmatter, content, seriesId, fileSlug }) {
     title: drink.title,
     parentTitle: frontmatter.title,
     ingredients: drink.ingredients,
+    date,
     seriesId,
     seriesName: series.name,
-    image: `/img/podcast/${seriesId}-${fileSlug}-podcast.jpg`,
+    image: `/img/search/${seriesId}-${fileSlug}-search.avif`,
     imageAlt: frontmatter.imageAlt || '',
     url: buildUrl(series.name, frontmatter.title),
   }))
@@ -216,11 +220,12 @@ async function configureIndex(client, indexName) {
     indexName,
     indexSettings: {
       searchableAttributes: ['title', 'ingredients'],
-      attributesForFaceting: ['seriesName'],
+      attributesForFaceting: ['filterOnly(date)', 'seriesName'],
       attributesToRetrieve: [
         'title',
         'parentTitle',
         'ingredients',
+        'date',
         'seriesName',
         'image',
         'imageAlt',

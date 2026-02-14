@@ -7,6 +7,7 @@ import {
   DEBOUNCE_MS,
   SEARCH_ICON,
   SR_ONLY_STYLES,
+  publishedFilter,
 } from './lib/constants.js'
 
 const LISTBOX_ID = 'rs-listbox'
@@ -337,10 +338,11 @@ class RecipeSearch extends HTMLElement {
 
     try {
       const client = await getSearchClient(this.appId, this.searchKey)
+      const filters = publishedFilter()
       const { results } = await client.search<SearchHit>({
         requests: [
-          { indexName: RECIPES_INDEX, query, hitsPerPage: MAX_RESULTS },
-          { indexName: DRINKS_INDEX, query, hitsPerPage: MAX_RESULTS },
+          { indexName: RECIPES_INDEX, query, hitsPerPage: MAX_RESULTS, filters },
+          { indexName: DRINKS_INDEX, query, hitsPerPage: MAX_RESULTS, filters },
         ],
       })
 

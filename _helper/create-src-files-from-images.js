@@ -13,6 +13,7 @@ import { dateUtils } from './date-utils.js'
 import {
   createContentImage,
   createPodcastImage,
+  createSearchImage,
 } from './create-image-functions.js'
 import { generateAltText } from './generate-alt-text.js'
 
@@ -131,7 +132,11 @@ export async function processImages() {
         )
 
         // Create images first (alt text generation needs the JPG to exist)
-        await Promise.all([createPodcastImage(file), createContentImage(file)])
+        await Promise.all([
+          createPodcastImage(file),
+          createSearchImage(file),
+          createContentImage(file),
+        ])
 
         const content = await createMarkdownContent({
           indexInSeries,
