@@ -11,7 +11,7 @@
     "clean": "rimraf dist",
     "lint": "concurrently \"npm:lint:*\"",
     "lint:css": "stylelint '**/*.pcss' --fix",
-    "lint:js": "eslint \"**/*.{js,vue,mjs}\" --ignore-pattern 'node_modules/**/*' --fix",
+    "lint:js": "eslint \"**/*.{js,ts,vue,mjs}\" --ignore-pattern 'node_modules/**/*' --fix",
     "serve": "ELEVENTY_ENV=development eleventy --serve --quiet --port 7777",
     "test": "ava",
     "prepare": "node .husky/install.js"
@@ -43,6 +43,8 @@
     "@inframanufaktur/eleventy-plugin-clean-urls": "^1.0.2",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "@rollup/plugin-alias": "^3.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.55.0",
+    "@typescript-eslint/parser": "^8.55.0",
     "autoprefixer": "^10.4.4",
     "ava": "^6.2.0",
     "axios": "^0.24.0",
@@ -88,7 +90,7 @@
     "stylelint-prettier": "^2.0.0"
   },
   "lint-staged": {
-    "**/*.{js,vue,mjs}": [
+    "**/*.{js,ts,vue,mjs}": [
       "eslint --fix"
     ],
     "_src/**/*.(p)?css": [

@@ -325,14 +325,26 @@ class RecipeSearchResults extends HTMLElement {
       const filters = publishedFilter()
       const { results } = await client.search<SearchHit>({
         requests: [
-          { indexName: RECIPES_INDEX, query, hitsPerPage: HITS_PER_PAGE, filters },
-          { indexName: DRINKS_INDEX, query, hitsPerPage: HITS_PER_PAGE, filters },
+          {
+            indexName: RECIPES_INDEX,
+            query,
+            hitsPerPage: HITS_PER_PAGE,
+            filters,
+          },
+          {
+            indexName: DRINKS_INDEX,
+            query,
+            hitsPerPage: HITS_PER_PAGE,
+            filters,
+          },
         ],
       })
 
       if (query !== this.currentQuery) return
 
-      const [recipesResult, drinksResult] = results as Array<{ hits: SearchHit[] }>
+      const [recipesResult, drinksResult] = results as Array<{
+        hits: SearchHit[]
+      }>
       this.allResults = {
         recipes: recipesResult?.hits ?? [],
         drinks: drinksResult?.hits ?? [],
@@ -351,14 +363,17 @@ class RecipeSearchResults extends HTMLElement {
 
   private renderResults(): void {
     if (!this.currentQuery) {
-      this.container.innerHTML = '<p class="initial-state">Suchbegriff eingeben</p>'
+      this.container.innerHTML =
+        '<p class="initial-state">Suchbegriff eingeben</p>'
       return
     }
 
     const allHits = [...this.allResults.recipes, ...this.allResults.drinks]
 
     if (allHits.length === 0) {
-      const msg = `Keine Ergebnisse f\u00fcr \u201e${escapeHtml(this.currentQuery)}\u201c gefunden`
+      const msg = `Keine Ergebnisse f\u00fcr \u201e${escapeHtml(
+        this.currentQuery,
+      )}\u201c gefunden`
       this.container.innerHTML = `<p class="empty-state">${msg}</p>`
       this.announce(msg)
       return
@@ -375,7 +390,16 @@ class RecipeSearchResults extends HTMLElement {
     const facetHtml =
       facets.length > 1
         ? `<div class="facets" role="group" aria-label="Nach Serie filtern">
-            ${facets.map((name) => `<button class="facet-chip" data-series="${escapeAttr(name)}" aria-pressed="${this.activeFacets.has(name)}" type="button">${escapeHtml(name)}</button>`).join('')}
+            ${facets
+              .map(
+                (name) =>
+                  `<button class="facet-chip" data-series="${escapeAttr(
+                    name,
+                  )}" aria-pressed="${this.activeFacets.has(
+                    name,
+                  )}" type="button">${escapeHtml(name)}</button>`,
+              )
+              .join('')}
           </div>`
         : ''
 
@@ -400,9 +424,13 @@ class RecipeSearchResults extends HTMLElement {
 
     return `
       <li class="result-item">
-        <img class="result-thumb" src="${escapeAttr(hit.image)}" alt="${escapeAttr(hit.imageAlt || hit.title)}" loading="lazy" />
+        <img class="result-thumb" src="${escapeAttr(
+          hit.image,
+        )}" alt="${escapeAttr(hit.imageAlt || hit.title)}" loading="lazy" />
         <div class="result-body">
-          <h2 class="result-title"><a href="${escapeAttr(hit.url)}">${title}</a></h2>
+          <h2 class="result-title"><a href="${escapeAttr(
+            hit.url,
+          )}">${title}</a></h2>
           <span class="series-badge">${escapeHtml(hit.seriesName)}</span>
         </div>
       </li>

@@ -291,7 +291,10 @@ class RecipeSearch extends HTMLElement {
           this.openIfHasHits(0)
         } else {
           this.openIfHasHits()
-          if (this.isOpen) this.setActiveIndex(this.activeIndex >= count - 1 ? 0 : this.activeIndex + 1)
+          if (this.isOpen)
+            this.setActiveIndex(
+              this.activeIndex >= count - 1 ? 0 : this.activeIndex + 1,
+            )
         }
         break
 
@@ -301,28 +304,46 @@ class RecipeSearch extends HTMLElement {
           this.close()
         } else {
           this.openIfHasHits()
-          if (this.isOpen) this.setActiveIndex(this.activeIndex <= 0 ? count - 1 : this.activeIndex - 1)
+          if (this.isOpen)
+            this.setActiveIndex(
+              this.activeIndex <= 0 ? count - 1 : this.activeIndex - 1,
+            )
         }
         break
 
       case 'Home':
-        if (this.isOpen && count > 0) { event.preventDefault(); this.setActiveIndex(0) }
+        if (this.isOpen && count > 0) {
+          event.preventDefault()
+          this.setActiveIndex(0)
+        }
         break
 
       case 'End':
-        if (this.isOpen && count > 0) { event.preventDefault(); this.setActiveIndex(count - 1) }
+        if (this.isOpen && count > 0) {
+          event.preventDefault()
+          this.setActiveIndex(count - 1)
+        }
         break
 
       case 'Enter':
         event.preventDefault()
-        if (this.isOpen && this.activeIndex >= 0) this.selectOption(this.activeIndex)
-        else if (this.input.value.trim()) this.navigateToSearch(this.input.value.trim())
+        if (this.isOpen && this.activeIndex >= 0)
+          this.selectOption(this.activeIndex)
+        else if (this.input.value.trim())
+          this.navigateToSearch(this.input.value.trim())
         break
 
       case 'Escape':
-        if (this.isOpen) { event.preventDefault(); this.close(); this.input.value = ''; this.clearResults() }
-        else if (this.input.value) { event.preventDefault(); this.input.value = ''; this.clearResults() }
-        else this.input.blur()
+        if (this.isOpen) {
+          event.preventDefault()
+          this.close()
+          this.input.value = ''
+          this.clearResults()
+        } else if (this.input.value) {
+          event.preventDefault()
+          this.input.value = ''
+          this.clearResults()
+        } else this.input.blur()
         break
 
       case 'Tab':
@@ -341,7 +362,12 @@ class RecipeSearch extends HTMLElement {
       const filters = publishedFilter()
       const { results } = await client.search<SearchHit>({
         requests: [
-          { indexName: RECIPES_INDEX, query, hitsPerPage: MAX_RESULTS, filters },
+          {
+            indexName: RECIPES_INDEX,
+            query,
+            hitsPerPage: MAX_RESULTS,
+            filters,
+          },
           { indexName: DRINKS_INDEX, query, hitsPerPage: MAX_RESULTS, filters },
         ],
       })
@@ -363,7 +389,9 @@ class RecipeSearch extends HTMLElement {
       this.liveRegion.textContent =
         hits.length === 0
           ? 'Keine Ergebnisse gefunden.'
-          : `${hits.length} ${hits.length === 1 ? 'Ergebnis' : 'Ergebnisse'} gefunden.`
+          : `${hits.length} ${
+              hits.length === 1 ? 'Ergebnis' : 'Ergebnisse'
+            } gefunden.`
     } catch (error) {
       console.error('[recipe-search] Search failed:', error)
       this.clearResults()
@@ -384,8 +412,12 @@ class RecipeSearch extends HTMLElement {
       li.dataset.url = hit.url
 
       const title = hit._highlightResult?.title?.value ?? escapeHtml(hit.title)
-      const thumb = `<img class="option-thumb" src="${escapeAttr(hit.image)}" alt="${escapeAttr(hit.imageAlt || hit.title)}" loading="lazy" />`
-      const series = `<span class="option-series">${escapeHtml(hit.seriesName)}</span>`
+      const thumb = `<img class="option-thumb" src="${escapeAttr(
+        hit.image,
+      )}" alt="${escapeAttr(hit.imageAlt || hit.title)}" loading="lazy" />`
+      const series = `<span class="option-series">${escapeHtml(
+        hit.seriesName,
+      )}</span>`
 
       li.innerHTML = `
         ${thumb}
@@ -449,7 +481,8 @@ class RecipeSearch extends HTMLElement {
   }
 
   private setActiveIndex(index: number): void {
-    const options = this.listbox.querySelectorAll<HTMLElement>('[role="option"]')
+    const options =
+      this.listbox.querySelectorAll<HTMLElement>('[role="option"]')
     if (options.length === 0) return
 
     if (this.activeIndex >= 0 && this.activeIndex < options.length) {
@@ -470,9 +503,13 @@ class RecipeSearch extends HTMLElement {
   }
 
   private selectOption(index: number): void {
-    const option = this.listbox.querySelectorAll<HTMLElement>('[role="option"]')[index]
+    const option =
+      this.listbox.querySelectorAll<HTMLElement>('[role="option"]')[index]
     const url = option?.dataset.url
-    if (url) { this.close(); window.location.assign(url) }
+    if (url) {
+      this.close()
+      window.location.assign(url)
+    }
   }
 
   private navigateToSearch(query: string): void {
