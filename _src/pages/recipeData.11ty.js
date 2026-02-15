@@ -3,6 +3,7 @@ class RecipeData {
     return {
       permalink: '/recipe-data.json',
       layout: null,
+      eleventyExcludeFromCollections: true,
     }
   }
 

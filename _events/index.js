@@ -1,6 +1,6 @@
 import path from 'path'
 import { readdir, stat, writeFile } from 'fs/promises'
-import { syncAlgoliaIndex } from '../_helper/sync-algolia-index.js'
+import { pushAlgoliaRecords } from '../_helper/sync-algolia-index.js'
 
 const DIST_DIR = path.resolve(process.cwd(), 'dist')
 const IMG_DIR = path.resolve(DIST_DIR, 'feed-images')
@@ -13,7 +13,7 @@ async function getLastModifiedTime(filePath) {
 }
 
 export default function (eleventyConfig) {
-  eleventyConfig.on('eleventy.after', async ({ runMode }) => {
+  eleventyConfig.on('eleventy.after', async ({ runMode, results }) => {
     if (runMode === 'build') {
       const feedImages = await readdir(IMG_DIR)
 
@@ -32,8 +32,19 @@ export default function (eleventyConfig) {
       console.log('✅ Updated _headers with Last-Modified for feed images')
 
       if (IS_PROD && isCronBuild) {
-        await syncAlgoliaIndex()
-        console.log('✅ Algolia index synced successfully')
+        const recordsBuildResult = results.find((r) =>
+          r.url.endsWith('algolia-records.json'),
+        )
+        if (!recordsBuildResult) {
+          console.error('❌ algolia-records.json not found in Eleventy results')
+          return
+        }
+
+        console.log(recordsBuildResult)
+
+        const records = JSON.parse(recordsBuildResult.content)
+
+        await pushAlgoliaRecords(records)
       }
     }
   })
