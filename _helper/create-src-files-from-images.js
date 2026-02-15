@@ -146,6 +146,7 @@ export async function processImages() {
         const imageAlt = await generateAltText(podcastImagePath, {
           recipeText: content.text,
         })
+        console.log(`🖼️🐕‍🦺 Generated alt text for ${file}`)
         const date = dateUtils.getNextBusinessDay(lastDate)
 
         // update to use for next card
