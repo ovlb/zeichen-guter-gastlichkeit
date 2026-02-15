@@ -78,8 +78,7 @@ class AlgoliaRecords {
   }
 
   render({ collections, series }) {
-    const recipes = []
-    const drinks = []
+    const records = []
 
     for (const card of collections.card) {
       const { seriesId, title, date, imageAlt } = card.data
@@ -99,6 +98,7 @@ class AlgoliaRecords {
       const dateUnix = Math.floor(new Date(date).getTime() / 1000)
 
       const baseRecord = {
+        type: isDrink ? 'drink' : 'recipe',
         date: dateUnix,
         seriesId,
         seriesName: seriesInfo.name,
@@ -113,7 +113,7 @@ class AlgoliaRecords {
 
         for (let i = 0; i < drinkList.length; i++) {
           const drink = drinkList[i]
-          drinks.push({
+          records.push({
             objectID: `${baseID}-${i}-${this.slugify(
               drink.title.toLocaleLowerCase('de'),
             )}`,
@@ -124,7 +124,7 @@ class AlgoliaRecords {
           })
         }
       } else {
-        recipes.push({
+        records.push({
           objectID: `${seriesId}-${fileSlug}`,
           title,
           ingredients: extractIngredients(content),
@@ -133,7 +133,7 @@ class AlgoliaRecords {
       }
     }
 
-    return JSON.stringify({ recipes, drinks })
+    return JSON.stringify(records)
   }
 }
 

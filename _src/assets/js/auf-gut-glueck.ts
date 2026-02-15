@@ -24,7 +24,7 @@ class AufGutGlueck extends HTMLElement {
     const style = document.createElement('style')
     style.textContent = `
       .auf-gut-glueck {
-        color: var(--accent);
+        color: var(--link);
         display: block;
         text-align: center;
       }

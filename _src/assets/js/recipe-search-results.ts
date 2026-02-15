@@ -1,14 +1,7 @@
 import type { SearchHit } from './lib/types.js'
-import { getSearchClient } from './lib/algolia-client.js'
+import { SearchBase } from './lib/search-base.js'
 import { escapeHtml, escapeAttr } from './lib/html.js'
-import {
-  RECIPES_INDEX,
-  DRINKS_INDEX,
-  DEBOUNCE_MS,
-  SEARCH_ICON,
-  SR_ONLY_STYLES,
-  publishedFilter,
-} from './lib/constants.js'
+import { DEBOUNCE_MS, SEARCH_ICON, SR_ONLY_STYLES } from './lib/constants.js'
 
 const HITS_PER_PAGE = 20
 
@@ -211,18 +204,14 @@ const styles = /* css */ `
   }
 `
 
-class RecipeSearchResults extends HTMLElement {
+class RecipeSearchResults extends SearchBase {
   private shadow: ShadowRoot
   private searchInput!: HTMLInputElement
   private liveRegion!: HTMLElement
   private container!: HTMLElement
-  private debounceTimer: ReturnType<typeof setTimeout> | null = null
-  private currentQuery = ''
   private activeFacets = new Set<string>()
-  private allResults: { recipes: SearchHit[]; drinks: SearchHit[] } = {
-    recipes: [],
-    drinks: [],
-  }
+  private activeType: 'recipe' | 'drink' | null = null
+  private allResults: SearchHit[] = []
 
   constructor() {
     super()
@@ -255,8 +244,16 @@ class RecipeSearchResults extends HTMLElement {
     this.liveRegion = this.shadow.querySelector('[aria-live]')!
     this.container = this.shadow.querySelector('.results-container')!
 
-    const q = new URLSearchParams(window.location.search).get('q') ?? ''
+    const params = new URLSearchParams(window.location.search)
+    const q = params.get('q') ?? ''
+    const type = params.get('type')
+    const series = params.get('series')
+
     if (q) this.searchInput.value = q
+    if (type === 'recipe' || type === 'drink') this.activeType = type
+    if (series) {
+      for (const s of series.split(',')) this.activeFacets.add(s)
+    }
 
     this.searchInput.addEventListener('input', this.handleInput)
     this.shadow.addEventListener('click', this.handleFacetClick)
@@ -267,15 +264,7 @@ class RecipeSearchResults extends HTMLElement {
   disconnectedCallback(): void {
     this.searchInput?.removeEventListener('input', this.handleInput)
     this.shadow.removeEventListener('click', this.handleFacetClick)
-    if (this.debounceTimer !== null) clearTimeout(this.debounceTimer)
-  }
-
-  private get appId(): string {
-    return this.getAttribute('app-id') ?? ''
-  }
-
-  private get searchKey(): string {
-    return this.getAttribute('search-key') ?? ''
+    super.disconnectedCallback()
   }
 
   // -- Events ----------------------------------------------------------------
@@ -285,16 +274,18 @@ class RecipeSearchResults extends HTMLElement {
 
     this.debounceTimer = setTimeout(() => {
       const query = this.searchInput.value.trim()
-      this.updateUrl(query)
 
       if (!query) {
         this.currentQuery = ''
-        this.allResults = { recipes: [], drinks: [] }
+        this.allResults = []
+        this.activeType = null
         this.activeFacets.clear()
         this.renderResults()
         return
       }
 
+      this.activeType = null
+      this.activeFacets.clear()
       this.performSearch(query)
     }, DEBOUNCE_MS)
   }
@@ -302,6 +293,14 @@ class RecipeSearchResults extends HTMLElement {
   private handleFacetClick = (event: Event): void => {
     const target = event.target as HTMLElement
     if (!target.classList.contains('facet-chip')) return
+
+    const type = target.dataset.type as 'recipe' | 'drink' | undefined
+    if (type) {
+      this.activeType = this.activeType === type ? null : type
+      this.activeFacets.clear()
+      this.renderResults()
+      return
+    }
 
     const series = target.dataset.series
     if (!series) return
@@ -318,38 +317,11 @@ class RecipeSearchResults extends HTMLElement {
   // -- Search ----------------------------------------------------------------
 
   private async performSearch(query: string): Promise<void> {
-    this.currentQuery = query
-
     try {
-      const client = await getSearchClient(this.appId, this.searchKey)
-      const filters = publishedFilter()
-      const { results } = await client.search<SearchHit>({
-        requests: [
-          {
-            indexName: RECIPES_INDEX,
-            query,
-            hitsPerPage: HITS_PER_PAGE,
-            filters,
-          },
-          {
-            indexName: DRINKS_INDEX,
-            query,
-            hitsPerPage: HITS_PER_PAGE,
-            filters,
-          },
-        ],
-      })
+      const hits = await this.executeSearch(query, HITS_PER_PAGE)
+      if (!hits) return
 
-      if (query !== this.currentQuery) return
-
-      const [recipesResult, drinksResult] = results as Array<{
-        hits: SearchHit[]
-      }>
-      this.allResults = {
-        recipes: recipesResult?.hits ?? [],
-        drinks: drinksResult?.hits ?? [],
-      }
-
+      this.allResults = hits
       this.renderResults()
     } catch (error) {
       console.error('recipe-search-results: Search failed', error)
@@ -365,30 +337,40 @@ class RecipeSearchResults extends HTMLElement {
     if (!this.currentQuery) {
       this.container.innerHTML =
         '<p class="initial-state">Suchbegriff eingeben</p>'
+      this.updateUrl()
       return
     }
 
-    const allHits = [...this.allResults.recipes, ...this.allResults.drinks]
-
-    if (allHits.length === 0) {
+    if (this.allResults.length === 0) {
       const msg = `Keine Ergebnisse f\u00fcr \u201e${escapeHtml(
         this.currentQuery,
       )}\u201c gefunden`
       this.container.innerHTML = `<p class="empty-state">${msg}</p>`
       this.announce(msg)
+      this.updateUrl()
       return
     }
 
-    const facets = this.getAvailableFacets()
     const filtered = this.getFilteredResults()
+    const typeCounts = this.getTypeCounts()
 
-    const countText =
-      this.activeFacets.size > 0
-        ? `${filtered.length} von ${allHits.length} Ergebnissen`
-        : `${allHits.length} Ergebnisse`
+    const isFiltered = this.activeType !== null || this.activeFacets.size > 0
+    const countText = isFiltered
+      ? `${filtered.length} von ${this.allResults.length} Ergebnissen`
+      : `${this.allResults.length} Ergebnisse`
 
+    const typeHtml = `<div class="facets" role="group" aria-label="Nach Typ filtern">
+        <button class="facet-chip" data-type="recipe" aria-pressed="${
+          this.activeType === 'recipe'
+        }" type="button">Rezepte (${typeCounts.get('recipe') ?? 0})</button>
+        <button class="facet-chip" data-type="drink" aria-pressed="${
+          this.activeType === 'drink'
+        }" type="button">Drinks (${typeCounts.get('drink') ?? 0})</button>
+      </div>`
+
+    const facets = this.getAvailableFacets()
     const facetHtml =
-      facets.length > 1
+      facets.length > 0
         ? `<div class="facets" role="group" aria-label="Nach Serie filtern">
             ${facets
               .map(
@@ -412,10 +394,12 @@ class RecipeSearchResults extends HTMLElement {
 
     this.container.innerHTML = `
       <p class="result-meta">${countText}</p>
+      ${typeHtml}
       ${facetHtml}
       ${resultsHtml}
       <p class="algolia-attribution">Suche bereitgestellt von <img src="/img/algolia-logo.svg" alt="Algolia" /></p>
     `
+    this.updateUrl()
     this.announce(countText)
   }
 
@@ -439,23 +423,44 @@ class RecipeSearchResults extends HTMLElement {
 
   // -- Helpers ---------------------------------------------------------------
 
+  private getTypeFiltered(): SearchHit[] {
+    if (this.activeType === null) return this.allResults
+    return this.allResults.filter((hit) => hit.type === this.activeType)
+  }
+
   private getFilteredResults(): SearchHit[] {
-    const combined = [...this.allResults.recipes, ...this.allResults.drinks]
-    if (this.activeFacets.size === 0) return combined
-    return combined.filter((hit) => this.activeFacets.has(hit.seriesName))
+    const byType = this.getTypeFiltered()
+    if (this.activeFacets.size === 0) return byType
+    return byType.filter((hit) => this.activeFacets.has(hit.seriesName))
+  }
+
+  private getTypeCounts(): Map<string, number> {
+    const counts = new Map<string, number>()
+    for (const hit of this.allResults) {
+      counts.set(hit.type, (counts.get(hit.type) ?? 0) + 1)
+    }
+    return counts
   }
 
   private getAvailableFacets(): string[] {
     const names = new Set<string>()
-    for (const hit of this.allResults.recipes) names.add(hit.seriesName)
-    for (const hit of this.allResults.drinks) names.add(hit.seriesName)
+    for (const hit of this.getTypeFiltered()) names.add(hit.seriesName)
     return [...names].sort((a, b) => a.localeCompare(b, 'de'))
   }
 
-  private updateUrl(query: string): void {
+  private updateUrl(): void {
     const url = new URL(window.location.href)
-    if (query) url.searchParams.set('q', query)
+
+    if (this.currentQuery) url.searchParams.set('q', this.currentQuery)
     else url.searchParams.delete('q')
+
+    if (this.activeType) url.searchParams.set('type', this.activeType)
+    else url.searchParams.delete('type')
+
+    const series = [...this.activeFacets]
+    if (series.length > 0) url.searchParams.set('series', series.join(','))
+    else url.searchParams.delete('series')
+
     window.history.replaceState(null, '', url.toString())
   }
 

@@ -1,14 +1,8 @@
 import type { SearchHit } from './lib/types.js'
+import { SearchBase } from './lib/search-base.js'
 import { getSearchClient } from './lib/algolia-client.js'
 import { escapeHtml, escapeAttr } from './lib/html.js'
-import {
-  RECIPES_INDEX,
-  DRINKS_INDEX,
-  DEBOUNCE_MS,
-  SEARCH_ICON,
-  SR_ONLY_STYLES,
-  publishedFilter,
-} from './lib/constants.js'
+import { DEBOUNCE_MS, SEARCH_ICON, SR_ONLY_STYLES } from './lib/constants.js'
 
 const LISTBOX_ID = 'rs-listbox'
 const OPTION_PREFIX = 'rs-option-'
@@ -188,16 +182,14 @@ const styles = /* css */ `
   ${SR_ONLY_STYLES}
 `
 
-class RecipeSearch extends HTMLElement {
+class RecipeSearch extends SearchBase {
   private shadow: ShadowRoot
   private input!: HTMLInputElement
   private listbox!: HTMLUListElement
   private liveRegion!: HTMLDivElement
   private showAllLink!: HTMLAnchorElement
-  private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private activeIndex = -1
   private hits: SearchHit[] = []
-  private currentQuery = ''
   private isOpen = false
 
   private handleDocumentClick = (event: MouseEvent) => {
@@ -250,15 +242,7 @@ class RecipeSearch extends HTMLElement {
 
   disconnectedCallback(): void {
     document.removeEventListener('click', this.handleDocumentClick)
-    if (this.debounceTimer !== null) clearTimeout(this.debounceTimer)
-  }
-
-  private get appId(): string {
-    return this.getAttribute('app-id') ?? ''
-  }
-
-  private get searchKey(): string {
-    return this.getAttribute('search-key') ?? ''
+    super.disconnectedCallback()
   }
 
   // -- Events ----------------------------------------------------------------
@@ -355,47 +339,31 @@ class RecipeSearch extends HTMLElement {
   // -- Search ----------------------------------------------------------------
 
   private async search(query: string): Promise<void> {
-    this.currentQuery = query
-
     try {
-      const client = await getSearchClient(this.appId, this.searchKey)
-      const filters = publishedFilter()
-      const { results } = await client.search<SearchHit>({
-        requests: [
-          {
-            indexName: RECIPES_INDEX,
-            query,
-            hitsPerPage: MAX_RESULTS,
-            filters,
-          },
-          { indexName: DRINKS_INDEX, query, hitsPerPage: MAX_RESULTS, filters },
-        ],
-      })
-
-      if (query !== this.currentQuery) return
-
-      const hits: SearchHit[] = []
-      for (const r of results as Array<{ hits: SearchHit[] }>) {
-        for (const hit of r.hits) {
-          if (hits.length >= MAX_RESULTS) break
-          hits.push(hit)
-        }
-        if (hits.length >= MAX_RESULTS) break
-      }
+      const hits = await this.executeSearch(query, MAX_RESULTS)
+      if (!hits) return
 
       this.hits = hits
       this.renderResults()
       this.open()
-      this.liveRegion.textContent =
+      this.announce(
         hits.length === 0
           ? 'Keine Ergebnisse gefunden.'
           : `${hits.length} ${
               hits.length === 1 ? 'Ergebnis' : 'Ergebnisse'
-            } gefunden.`
+            } gefunden.`,
+      )
     } catch (error) {
       console.error('[recipe-search] Search failed:', error)
       this.clearResults()
     }
+  }
+
+  private announce(message: string): void {
+    this.liveRegion.textContent = ''
+    requestAnimationFrame(() => {
+      this.liveRegion.textContent = message
+    })
   }
 
   // -- Rendering -------------------------------------------------------------

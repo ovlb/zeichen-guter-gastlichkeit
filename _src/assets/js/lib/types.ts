@@ -1,10 +1,10 @@
 /** Matches the Algolia record schema from sync-algolia-index.js */
 export interface SearchRecord {
   objectID: string
+  type: 'recipe' | 'drink'
   title: string
   parentTitle?: string
   ingredients: string
-  seriesId: number
   seriesName: string
   image: string
   imageAlt: string

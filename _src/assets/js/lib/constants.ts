@@ -1,5 +1,4 @@
-export const RECIPES_INDEX = 'recipes'
-export const DRINKS_INDEX = 'drinks'
+export const CARDS_INDEX = 'cards'
 export const DEBOUNCE_MS = 300
 
 /** Numeric filter to exclude future posts from search results */

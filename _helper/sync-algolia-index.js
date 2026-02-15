@@ -4,23 +4,23 @@ import { algoliasearch } from 'algoliasearch'
 const IS_PROD = process.env.PAGE_STATE === 'production'
 const isLiveRun = IS_PROD
 
-const RECIPE_INDEX = 'recipes'
-const DRINKS_INDEX = 'drinks'
+const CARDS_INDEX = 'cards'
 
 /**
  * Configure index settings
  */
-async function configureIndex(client, indexName) {
+async function configureIndex(client) {
   await client.setSettings({
-    indexName,
+    indexName: CARDS_INDEX,
     indexSettings: {
       searchableAttributes: ['title', 'ingredients'],
-      attributesForFaceting: ['filterOnly(date)', 'seriesName'],
+      attributesForFaceting: ['filterOnly(date)', 'seriesName', 'type'],
       attributesToRetrieve: [
         'title',
         'parentTitle',
         'ingredients',
         'date',
+        'type',
         'seriesName',
         'image',
         'imageAlt',
@@ -34,7 +34,7 @@ async function configureIndex(client, indexName) {
 /**
  * Push pre-built records to Algolia indexes
  */
-export async function pushAlgoliaRecords({ recipes, drinks }) {
+export async function pushAlgoliaRecords(records) {
   const appId = process.env.ALGOLIA_APP_ID
   const apiKey = process.env.ALGOLIA_WRITE_API_KEY
 
@@ -47,36 +47,24 @@ export async function pushAlgoliaRecords({ recipes, drinks }) {
 
   const client = algoliasearch(appId, apiKey)
 
-  console.log(
-    `📦 Pushing ${recipes.length} recipe records, ${drinks.length} drink records`,
-  )
+  console.log(`📦 Pushing ${records.length} records to "${CARDS_INDEX}" index`)
 
-  // Configure indexes
-  await Promise.all([
-    configureIndex(client, RECIPE_INDEX),
-    configureIndex(client, DRINKS_INDEX),
-  ])
+  await configureIndex(client)
 
   if (isLiveRun) {
-    // Save records (replaceAllObjects = full replace)
-    const results = await Promise.all([
-      recipes.length
-        ? client.replaceAllObjects({
-            indexName: RECIPE_INDEX,
-            objects: recipes,
-          })
-        : Promise.resolve(),
-      drinks.length
-        ? client.replaceAllObjects({ indexName: DRINKS_INDEX, objects: drinks })
-        : Promise.resolve(),
-    ])
+    const result = records.length
+      ? await client.replaceAllObjects({
+          indexName: CARDS_INDEX,
+          objects: records,
+        })
+      : undefined
 
     console.log(`✅ Algolia sync complete`)
 
-    return results
+    return result
   } else {
     console.log(
-      `⚠️ Dry run: Algolia sync skipped. Records that would have been pushed: ${recipes.length} recipes, ${drinks.length} drinks`,
+      `⚠️ Dry run: Algolia sync skipped. Records that would have been pushed: ${records.length}`,
     )
   }
 }
