@@ -4,7 +4,7 @@ date: 2025-06-02
 imageAlt: "Gefüllte Kohlrouladen mit gebräunten Stellen liegen in einer cremigen, gelblichen Sauce in einem dunklen Topf. Im Hintergrund sind Wirsingkohlblätter und eine Ananas zu sehen."
 ---
 
-1 Weißkohl, 500 g gemischtes Hack, 2 Eier, 2 Eßl. Paniermehl, 2 Zwiebeln, 2 Teel. Senf, Salz, Pfeffer, 200 g geschälte Ananas, 4 Scheiben Gouda (ca. 125 g), 5 Eßl. Öl, 14 1 Ananassaft, 1 1 Madeira, 1 Teel. gekörnte Brühe, 1 Eßl. Speisestärke, 2 Scheiben Ananas
+1 Weißkohl, 500 g gemischtes Hack, 2 Eier, 2 Eßl. Paniermehl, 2 Zwiebeln, 2 Teel. Senf, Salz, Pfeffer, 200 g geschälte Ananas, 4 Scheiben Gouda (ca. 125 g), 5 Eßl. Öl, ¼ l Ananassaft, 1 l Madeira, 1 Teel. gekörnte Brühe, 1 Eßl. Speisestärke, 2 Scheiben Ananas
 
 Den Weißkohl in kochendem Salzwasser 20 Minuten brühen. Abtropfen lassen und vorsichtig auseinanderblättern. Hack mit Eiern, Paniermehl, gehackten Zwiebeln, Senf, Salz, Pfeffer und den fein zerschnittenen Ananasstücken gut verrühren.
 

@@ -6,7 +6,7 @@ id: e23abed9-daba-4c69-89a7-ad874d90454e
 ---
 
 
-1 kg Steinbuttfilets, Saft einer Zitrone, Salz, 6 weiße Pfefferkörner, 1 Zwiebel, ½ l süße Sahne, 1/10 1 Champagner Taittinger
+1 kg Steinbuttfilets, Saft einer Zitrone, Salz, 6 weiße Pfefferkörner, 1 Zwiebel, ½ l süße Sahne, 1/10 l Champagner Taittinger
 
 Die gewaschenen Steinbuttfilets trockentupfen, mit Zitrone einreiben und zehn Minuten ziehen lassen. 1 Teel. Salz, Pfefferkörner und zerschnittene Zwiebeln in einer flachen, großen Kasserolle in 1½ l Wasser kochen. Die Fischstücke salzen, vorsichtig dazugeben und bei schwacher Temperatur 20 Minuten garziehen lassen.
 
