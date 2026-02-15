@@ -1,15 +1,17 @@
 {
-  "include": ["*"],
+  "include": ["_src/assets/js/**/*.ts"],
   "exclude": ["./dist"],
   "compilerOptions": {
     "incremental": true,
-    "target": "ES6",
+    "target": "ESNext",
     "allowJs": true,
     "checkJs": true,
     "noEmit": true,
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "types": ["node", "ava"]
   }
 }
