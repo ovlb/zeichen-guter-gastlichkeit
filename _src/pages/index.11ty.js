@@ -27,6 +27,7 @@ class Home {
     <recipe-search app-id="${build.algoliaAppId}" search-key="${
       build.algoliaSearchKey
     }"></recipe-search>
+    <auf-gut-glueck></auf-gut-glueck>
     <div class="ornamental-frame">
       <span class="frame-corners" aria-hidden="true"></span>
       <p class="text-centered">
@@ -48,6 +49,7 @@ class Home {
     </div>
     </section>
     <script type="module" src="/js/recipe-search.js"></script>
+    <script type="module" src="/js/auf-gut-glueck.js"></script>
   `
   }
 }
