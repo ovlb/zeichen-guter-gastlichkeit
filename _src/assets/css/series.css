@@ -26,6 +26,7 @@
 }
 
 .card-card {
+  align-self: start;
   background-color: var(--surface-1);
   border: 1px solid var(--choco-1);
   border-radius: var(--border-size-1);
