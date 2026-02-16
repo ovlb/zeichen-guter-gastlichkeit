@@ -140,9 +140,5 @@
     display: flex;
     flex-flow: row wrap;
     row-gap: var(--space-2xs);
-
-    li {
-      white-space: nowrap;
-    }
   }
 }
