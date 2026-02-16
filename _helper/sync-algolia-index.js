@@ -8,6 +8,8 @@ const CARDS_INDEX = 'cards'
 
 /**
  * Configure index settings
+ * @param {import('algoliasearch').SearchClient} client - Algolia search client
+ * @returns {Promise<void>}
  */
 async function configureIndex(client) {
   await client.setSettings({
@@ -33,8 +35,14 @@ async function configureIndex(client) {
 
 /**
  * Push pre-built records to Algolia indexes
+ * @param {Array<Object>} records - Array of records to push
+ * @param {Object} options - Optional settings
+ * @param {boolean} options.updateIndexSettings - Whether to update index settings before pushing records
  */
-export async function pushAlgoliaRecords(records) {
+export async function pushAlgoliaRecords(
+  records,
+  { updateIndexSettings = false } = {},
+) {
   const appId = process.env.ALGOLIA_APP_ID
   const apiKey = process.env.ALGOLIA_WRITE_API_KEY
 
@@ -49,7 +57,10 @@ export async function pushAlgoliaRecords(records) {
 
   console.log(`📦 Pushing ${records.length} records to "${CARDS_INDEX}" index`)
 
-  await configureIndex(client)
+  if (updateIndexSettings) {
+    console.log(`⚙️ Updating index settings for "${CARDS_INDEX}"`)
+    await configureIndex(client)
+  }
 
   if (isLiveRun) {
     const result = records.length
