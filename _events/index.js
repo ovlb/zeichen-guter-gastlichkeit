@@ -40,8 +40,6 @@ export default function (eleventyConfig) {
           return
         }
 
-        console.log(recordsBuildResult)
-
         const records = JSON.parse(recordsBuildResult.content)
 
         await pushAlgoliaRecords(records)
