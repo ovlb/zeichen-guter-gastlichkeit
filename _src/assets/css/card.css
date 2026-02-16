@@ -31,7 +31,7 @@
   gap: var(--space-m);
   margin-inline: auto;
   max-inline-size: var(--detail-view-container-inline-size);
-  padding: var(--size-5);
+  padding: min(2vw, var(--size-5));
 
   @media (--md-n-above) {
     & {
