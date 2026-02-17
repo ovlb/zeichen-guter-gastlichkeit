@@ -15,7 +15,7 @@ async function configureIndex(client) {
   await client.setSettings({
     indexName: CARDS_INDEX,
     indexSettings: {
-      searchableAttributes: ['title', 'ingredients'],
+      searchableAttributes: ['title', 'ingredients', 'seriesName'],
       attributesForFaceting: ['filterOnly(date)', 'seriesName', 'type'],
       attributesToRetrieve: [
         'title',
