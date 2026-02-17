@@ -24,12 +24,26 @@ export async function createPodcastImage(sourceFileName) {
 
   await sharp(path.resolve(srcImagesDir, sourceFileName))
     .jpeg({
-      quality: 70,
+      quality: 66,
     })
     .resize(2000, 2000)
     .toFile(outputPath)
 
   console.log(`🖼️ 🎤 Created podcast episode image for ${sourceFileName}`)
+}
+
+export async function createFeedImage(sourceFileName) {
+  const fileName = sourceFileName.replace('.tiff', '-feed.jpg')
+  const outputPath = path.resolve(cwd, '_src/assets/img/feed-images/', fileName)
+
+  await sharp(path.resolve(srcImagesDir, sourceFileName))
+    .jpeg({
+      quality: 66,
+    })
+    .resize(800)
+    .toFile(outputPath)
+
+  console.log(`🖼️ 📰 Created feed image for ${sourceFileName}`)
 }
 
 export async function createContentImage(sourceFileName) {

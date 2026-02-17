@@ -12,6 +12,7 @@ import { scanCardContent } from './scan-card-content.js'
 import { dateUtils } from './date-utils.js'
 import {
   createContentImage,
+  createFeedImage,
   createPodcastImage,
   createSearchImage,
 } from './create-image-functions.js'
@@ -135,6 +136,7 @@ export async function processImages() {
         await Promise.all([
           createPodcastImage(file),
           createSearchImage(file),
+          createFeedImage(file),
           createContentImage(file),
         ])
 

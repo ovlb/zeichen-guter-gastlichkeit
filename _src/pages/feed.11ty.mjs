@@ -4,10 +4,8 @@ import {
   getNewestCollectionItemDate,
 } from '@11ty/eleventy-plugin-rss'
 import { Feed } from 'feed'
-import Image from '@11ty/eleventy-img'
 
 import siteData from '../_data/site.js'
-import fullSource from '../../_helper/get-full-source.js'
 
 class AtomFeed {
   data() {
@@ -29,15 +27,8 @@ class AtomFeed {
     return `${siteData.baseURL}/${this.metadata.feedID}`
   }
 
-  async makeImage(post) {
-    const data = await Image(fullSource(post.data.image), {
-      formats: ['jpg'],
-      widths: [1600],
-      urlPath: '/feed-images/',
-      outputDir: './dist/feed-images/',
-    })
-
-    return new URL(data.jpeg[0].url, siteData.baseURL).toString()
+  makeImageURL(post) {
+    return new URL(post.data.feedImage, siteData.baseURL).toString()
   }
 
   makeFeed(baseData, collection) {
@@ -76,7 +67,7 @@ class AtomFeed {
         title: post.data.title,
         link,
         id: link,
-        image: await this.makeImage(post),
+        image: this.makeImageURL(post),
         date: post.data.date,
         ...(post.templateContent && {
           content: await this.enrichContent(post),

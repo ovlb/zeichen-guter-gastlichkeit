@@ -72,15 +72,8 @@ class AtomFeed {
     return new URL(data.jpeg[0].url, siteData.baseURL).toString()
   }
 
-  async makeImage(post) {
-    const data = await Image(fullSource(post.data.podcastImage), {
-      formats: ['jpg'],
-      widths: [2000],
-      urlPath: '/feed-images/',
-      outputDir: './dist/feed-images/',
-    })
-
-    return new URL(data.jpeg[0].url, siteData.baseURL).toString()
+  makeImage(post) {
+    return new URL(post.data.podcastImage, siteData.baseURL).toString()
   }
 
   async makeFeed() {
@@ -138,7 +131,7 @@ class AtomFeed {
     for (const post of items.toReversed()) {
       let link = absoluteUrl(post.url, siteData.baseURL)
       let file = await this.getFileInfo(post.data.audio)
-      const imageUrl = await this.makeImage(post)
+      const imageUrl = this.makeImage(post)
       const parsedContent = await this.enrichContent(post)
 
       feed.addItem({

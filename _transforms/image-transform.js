@@ -5,9 +5,9 @@ import getFullSource from '../_helper/get-full-source.js'
 const IS_PROD = process.env.ELEVENTY_ENV === 'production'
 
 const defaultOptions = {
-  widths: [320, 680, 1024, 1400, 2000, null],
+  widths: [680, 1024, 1400, 2000, null],
   sizes: process.env.CONTENT_IMAGE_SIZES || '100%',
-  formats: ['avif', 'webp', 'jpeg'],
+  formats: ['avif', 'jpeg'],
   urlPath: '/img/',
   outputDir: './dist/img/',
 }

@@ -26,7 +26,10 @@ export default {
       return `/cards/${seriesId}-${page.fileSlug}.jpg`
     },
     podcastImage: function ({ seriesId, page }) {
-      return `/podcast/${seriesId}-${page.fileSlug}-podcast.jpg`
+      return `/img/podcast/${seriesId}-${page.fileSlug}-podcast.jpg`
+    },
+    feedImage: function ({ seriesId, page }) {
+      return `/img/feed-images/${seriesId}-${page.fileSlug}-feed.jpg`
     },
     audio: function ({ seriesId, page, build }) {
       return `${build.cdnDomain}/audio/${seriesId}-${page.fileSlug}.mp3`
