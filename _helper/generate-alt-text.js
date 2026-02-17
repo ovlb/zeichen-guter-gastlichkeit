@@ -15,8 +15,7 @@ Regeln:
 - Keine Floskeln wie „Das Bild zeigt” — beginne direkt mit dem Inhalt.
 - Verwende ausschließlich typografische Anführungszeichen: „öffnend” und „schließend”. Niemals gerade Anführungszeichen (").
 - Benutze die typografische Variante des Apostrophs (’).
-- Verwende immer die typografische Variante des Bindestrichs (–) für zusammengesetzte Begriffe, z.B. „Kartoffel–Lauch–Gratin”.
-- Vermeide die Nennung von Farben, es sei denn, sie sind für die Beschreibung des Gerichts oder der Zutaten relevant.
+- Verwende immer die typografische Variante des Bindestrichs (-) für zusammengesetzte Begriffe, z.B. „Kartoffel-Lauch-Gratin”.
 - Berücksichtige den Kontext des Rezepts, wenn er für die Beschreibung des Bildes relevant ist.`
 
 /**
