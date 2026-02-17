@@ -38,7 +38,7 @@ class Series {
             alt="${card.data.imageAlt || ''}"
             data-process-image
             data-image-sizes="15rem"
-            data-image-widths="[320, 420, 640, 800]"
+            data-image-widths="[420, 800]"
           />
         </figure>
         <h2 class="main-headline card-card__headline"><a href="${card.url}">${
