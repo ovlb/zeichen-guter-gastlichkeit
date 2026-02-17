@@ -13,7 +13,24 @@ import autoprefixer from 'autoprefixer'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+/** @type {import('postcss').PluginCreator} */
+const stripInlineComments = () => ({
+  postcssPlugin: 'strip-inline-comments',
+  Once(root) {
+    root.walk((node) => {
+      if (node.raws?.before) {
+        node.raws.before = node.raws.before.replace(/\/\/[^\n]*/g, '')
+      }
+      if (node.raws?.after) {
+        node.raws.after = node.raws.after.replace(/\/\/[^\n]*/g, '')
+      }
+    })
+  },
+})
+stripInlineComments.postcss = true
+
 let PLUGINS = [
+  stripInlineComments,
   mixins({
     mixinsDir: join(__dirname, 'mixins/'),
   }),
