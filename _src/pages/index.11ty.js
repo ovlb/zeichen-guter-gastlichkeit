@@ -24,32 +24,34 @@ class Home {
 
   render({ series, collections, build }) {
     return `<section class="home-intro">
-    <recipe-search app-id="${build.algoliaAppId}" search-key="${
+      <recipe-search app-id="${build.algoliaAppId}" search-key="${
       build.algoliaSearchKey
     }"></recipe-search>
-    <auf-gut-glueck></auf-gut-glueck>
-    <div class="ornamental-frame">
-      <span class="frame-corners" aria-hidden="true"></span>
-      <p class="text-centered">
-        Hunderte guter und erprobter Ratschläge – vom Einkaufen bis zur vollendeten
-        Speisezubereitung – finden Sie in 256 Karten übersichtlich in 25 Gruppen
-        gegliedert.
-      </p>
-      ${this.renderGroups(series, collections.seriesWithEntries)}
-      <p class="text-centered">
-        <small>
-          Bitte beachten Sie auch die auf der Rückseite <a href="/hinweise/">gegebenen Hinweise</a>!
-        </small>
-      </p>
-      <p class="text-centered">
-        <small>
-          Neue Karten Montag–Freitag.
-        </small>
-      </p>
-    </div>
+      <auf-gut-glueck></auf-gut-glueck>
     </section>
-    <script type="module" src="/js/recipe-search.js"></script>
-    <script type="module" src="/js/auf-gut-glueck.js"></script>
+    <div class="ornamental-frame home-frame">
+      <span class="frame-corners" aria-hidden="true"></span>
+      <section class="home-intro">
+        <p class="text-centered">
+          Hunderte guter und erprobter Ratschläge – vom Einkaufen bis zur vollendeten
+          Speisezubereitung – finden Sie in 256 Karten übersichtlich in 25 Gruppen
+          gegliedert.
+        </p>
+        ${this.renderGroups(series, collections.seriesWithEntries)}
+        <p class="text-centered">
+          <small>
+            Bitte beachten Sie auch die auf der Rückseite <a href="/hinweise/">gegebenen Hinweise</a>!
+          </small>
+        </p>
+        <p class="text-centered">
+          <small>
+            Neue Karten Montag–Freitag.
+          </small>
+        </p>
+      </section>
+    </div>
+    <script type="module" loading="lazy" src="/js/recipe-search.js"></script>
+    <script type="module" loading="lazy" src="/js/auf-gut-glueck.js"></script>
   `
   }
 }

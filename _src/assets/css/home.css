@@ -7,6 +7,12 @@
   }
 }
 
+.home-frame {
+  margin-inline: auto;
+  max-inline-size: calc(1.5 * var(--size-content-3));
+  padding-inline: max(2w, var(--size-5));
+}
+
 .home-intro {
   display: flex;
   flex-flow: column;
