@@ -1,11 +1,11 @@
-const IS_PROD = process.env.PAGE_STATE === 'production'
+import { IS_PROD } from '../../../_helper/content-scheduling.js'
 
 export default {
   tags: ['card'],
   layout: 'card',
   pageCSS: 'card.css',
   permalink: function ({ series, title, seriesId, part, date }) {
-    if (IS_PROD && date > Date.now()) {
+    if (IS_PROD && !this.isPublished(date)) {
       return false
     }
 
@@ -37,10 +37,8 @@ export default {
     fullSeriesInfo: function ({ series, collections, seriesId }) {
       return {
         ...series.find((ser) => ser.id === seriesId),
-        cards: collections.card
-          .filter(
-            (c) => c.data.seriesId === seriesId && Date.now() >= c.data.date,
-          )
+        cards: collections.publishedCards
+          .filter((c) => c.data.seriesId === seriesId)
           .sort(
             (cardA, cardB) => cardA.data.cardNumber - cardB.data.cardNumber,
           ),

@@ -1,6 +1,5 @@
 import { readFileSync } from 'fs'
-
-const IS_PROD = process.env.PAGE_STATE === 'production'
+import { IS_PROD } from '../../_helper/content-scheduling.js'
 
 // Series 5-6 are drinks (cocktails/longdrinks)
 const DRINK_SERIES = [5, 6]
@@ -80,11 +79,9 @@ class AlgoliaRecords {
   render({ collections, series }) {
     const records = []
 
-    for (const card of collections.card) {
+    for (const card of collections.publishedCards) {
       const { seriesId, title, date, imageAlt } = card.data
       const fileSlug = card.page.fileSlug
-
-      if (date > Date.now()) continue
 
       const isDrink = DRINK_SERIES.includes(seriesId)
       const isRecipe = seriesId >= MIN_RECIPE_SERIES

@@ -2,7 +2,9 @@
 
 ## CSS Pipeline
 
-Uses PostCSS with an ITCSS-inspired layer structure. CSS is processed as a custom Eleventy template format (see `_templates/css.js`).
+Uses PostCSS with an ITCSS-inspired layer structure. CSS is processed as a custom Eleventy template format (see `_templates/css.js`). Design tokens come from [Open Props](https://open-props.style/) — use its custom properties for sizes, colors, typography, easings, etc. instead of hardcoded values.
+
+**CSS-first rule:** Always prefer modern, plain CSS solutions (container queries, custom properties, `:has()`, `@layer`, logical properties, `clamp()`, scroll-driven animations, view transitions, etc.) over JavaScript. Never use JS for layout, styling, or UI behavior that CSS can handle unless explicitly instructed otherwise.
 
 ### Entry Points (`.css` files in root)
 

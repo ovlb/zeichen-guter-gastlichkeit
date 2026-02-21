@@ -56,7 +56,7 @@ class AtomFeed {
   }
 
   async render({ feed: feedData, collections }) {
-    const items = collections.card.filter((c) => Date.now() > c.data.date)
+    const items = collections.publishedCards
 
     const feed = this.makeFeed(feedData, items)
 

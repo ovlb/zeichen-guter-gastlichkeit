@@ -19,6 +19,7 @@ Both `plugin` and `pluginOptions` are passed to `eleventyConfig.addPlugin()`.
 - **`rss.js`** — `@11ty/eleventy-plugin-rss` — RSS feed generation
 - **`sitemap.js`** — `@quasibit/eleventy-plugin-sitemap` — Generates sitemap using `BASE_URL` env var
 - **`syntax-highlight.js`** — `@11ty/eleventy-plugin-syntaxhighlight` — Code syntax highlighting
+- **`content-scheduling.js`** — Registers `isPublished` filter from `_helper/content-scheduling.js`. Makes `this.isPublished(date)` available in all template contexts.
 - **`render.mjs`** — `EleventyRenderPlugin` — Built-in runtime template rendering
 
 ## Adding a Plugin

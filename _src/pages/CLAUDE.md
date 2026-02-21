@@ -34,12 +34,13 @@ Recipe cards organized by series: `cards/{seriesId}/{index}-{name}.md`
 ### Collections
 
 - `card` — All cards (tagged in `cards.11tydata.js`)
+- `publishedCards` — Only cards with `date <= now`, pre-filtered via `isPublished()` (defined in `.eleventy.js`). Used by feeds, search, series pages, recipe data, and `fullSeriesInfo`.
 - `seriesWithEntries` — Set of series IDs that have published cards (defined in `.eleventy.js`)
 - `series:{slug}` — Per-series collections (tagged in per-series data files)
 
 ### Content Scheduling
 
-Cards have auto-generated publish dates on business days (Mon–Fri). In production (`PAGE_STATE=production`), the permalink returns `false` for future-dated cards, effectively hiding them until their publish date.
+Cards have auto-generated publish dates on business days (Mon–Fri). Scheduling logic lives in `_helper/content-scheduling.js` (`isPublished(date)` — returns `Date.now() >= date`). The `publishedCards` collection pre-filters all cards; templates use it instead of filtering manually. The only exception is the card permalink in `cards.11tydata.js`, which uses `IS_PROD && !this.isPublished(date)` to allow previewing future cards in development.
 
 ### Tests
 

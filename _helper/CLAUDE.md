@@ -60,6 +60,15 @@ Uses Claude Sonnet (`claude-sonnet-4-5-20250929`) to generate German alt-text fo
 ### `backfill-alt-text.js`
 Utility to regenerate missing alt-text for existing cards.
 
+## Content Scheduling
+
+### `content-scheduling.js`
+Single source of truth for publish-date logic. Exports:
+- `IS_PROD` — `process.env.PAGE_STATE === 'production'`
+- `isPublished(date)` — pure date check: `Date.now() >= date`. Used by the `publishedCards` collection and the `isPublished` Eleventy filter.
+
+The `publishedCards` custom collection (defined in `.eleventy.js`) pre-filters all cards to only published ones. Templates use `collections.publishedCards` instead of filtering `collections.card` manually. The only exception is the card permalink in `cards.11tydata.js`, which uses `IS_PROD` + `this.isPublished(date)` to allow previewing future cards in development.
+
 ## Date Utilities
 
 ### `date-utils.js`
@@ -96,6 +105,7 @@ Contains PostCSS mixin files (e.g., `dark-mode.css`).
 ## Tests (`__tests__/`)
 
 AVA test files:
+- `content-scheduling.spec.js` — Publish-date filtering, collection patterns, actual card date validation
 - `date-utils.spec.js` — Business day logic, date formatting, weekend detection
 - `upload-to-auphonic.spec.js` — File filtering, File object conversion, error handling (uses temp directories)
 - `findMetaValue.spec.js` — Metadata extraction

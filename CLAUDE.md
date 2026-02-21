@@ -28,6 +28,7 @@ npm test               # AVA tests (_helper/__tests__/*.spec.js)
 - **Prettier**: no semicolons, single quotes, trailing commas, arrow parens always
 - **Stylelint**: properties alphabetical, custom properties before declarations
 - **Environment**: copy `.env.sample` to `.env` for local development
+- **Always lint and format after making changes**: run `npm run lint` after modifying `.js`/`.ts`/`.mjs`/`.pcss` files to auto-fix formatting and style issues
 
 ## Auto-Discovery Architecture
 
@@ -35,7 +36,8 @@ The Eleventy config (`.eleventy.js`) auto-discovers and loads modules from direc
 
 | Directory | Eleventy API | What it registers |
 |-----------|-------------|-------------------|
-| `_plugins/` | `addPlugin()` | RSS, sitemap, clean URLs, syntax highlight, render |
+| `_collections/` | `addCollection()` | `publishedCards`, `seriesWithEntries` |
+| `_plugins/` | `addPlugin()` | RSS, sitemap, clean URLs, syntax highlight, render, content scheduling |
 | `_shortcodes/` | `addShortcode()` | `navLink`, `inlineSvg`, `metaRobots` |
 | `_functions/` | `addJavaScriptFunction()` | `responsiveImage` |
 | `_transforms/` | `addTransform()` | HTML minify (prod), image processing |
@@ -52,7 +54,8 @@ Each subsystem has its own CLAUDE.md:
 - [`_src/pages/CLAUDE.md`](_src/pages/CLAUDE.md) — Page templates, card content, collections, Algolia records
 - [`_src/assets/CLAUDE.md`](_src/assets/CLAUDE.md) — CSS pipeline (PostCSS/ITCSS/Open Props), TypeScript web components, images
 - [`_src/_includes/CLAUDE.md`](_src/_includes/CLAUDE.md) — Layouts and Nunjucks components
-- [`_helper/CLAUDE.md`](_helper/CLAUDE.md) — Build utilities: image pipeline, AI alt-text, date logic, Algolia, PostCSS config, tests
+- [`_collections/CLAUDE.md`](_collections/CLAUDE.md) — Custom Eleventy collections
+- [`_helper/CLAUDE.md`](_helper/CLAUDE.md) — Build utilities: image pipeline, AI alt-text, date logic, content scheduling, Algolia, PostCSS config, tests
 - [`_plugins/CLAUDE.md`](_plugins/CLAUDE.md) — Plugin registration pattern
 - [`_transforms/CLAUDE.md`](_transforms/CLAUDE.md) — HTML transforms with conditional production execution
 - [`_templates/CLAUDE.md`](_templates/CLAUDE.md) — Custom template formats (PostCSS, TypeScript via esbuild)

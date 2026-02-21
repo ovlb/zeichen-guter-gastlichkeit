@@ -3,10 +3,9 @@ import del from 'del'
 import STATIC_FOLDERS from './_helper/paths.js'
 import { readdir } from 'fs/promises'
 
-const IS_PROD = process.env.PAGE_STATE === 'production'
-
 export default async function (eleventyConfig) {
   const configPlugins = await Promise.all([
+    import('./_collections/index.js'),
     import('./_plugins/index.js'),
     import('./_shortcodes/index.js'),
     import('./_functions/index.js'),
@@ -18,20 +17,6 @@ export default async function (eleventyConfig) {
 
   configPlugins.forEach((plugin) => {
     eleventyConfig.addPlugin(plugin.default)
-  })
-
-  eleventyConfig.addCollection('seriesWithEntries', function (collectionAPI) {
-    const cards = collectionAPI.getFilteredByGlob('_src/pages/cards/**/*.md')
-
-    const seriesIDs = new Set()
-
-    cards.forEach((card) => {
-      if (Date.now() >= card.data.date || !IS_PROD) {
-        seriesIDs.add(card.data.seriesId)
-      }
-    })
-
-    return [...seriesIDs]
   })
 
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk')

@@ -8,13 +8,11 @@ class RecipeData {
   }
 
   async render({ collections }) {
-    const cards = collections.card
-      .filter((card) => Date.now() >= card.data.date)
-      .map((card) => ({
-        title: card.data.title,
-        date: card.data.date,
-        permalink: card.url,
-      }))
+    const cards = collections.publishedCards.map((card) => ({
+      title: card.data.title,
+      date: card.data.date,
+      permalink: card.url,
+    }))
 
     return JSON.stringify(cards)
   }
