@@ -55,9 +55,11 @@
           <header>
             <h1 class="main-headline">{{ title }}</h1>
           </header>
-          <section class="card-text">
-            <audio controls preload="metadata" src="{{ audio }}"></audio>
-          </section>
+          <div class="card-text">
+            <recipe-audio src="{{ audio }}">
+              <audio controls preload="metadata" src="{{ audio }}"></audio>
+            </recipe-audio>
+          </div>
           <section class="card-text">
             {{ content | safe }}
           </section>
@@ -101,6 +103,7 @@
       </div>
       {% include "components/core/end-role.njk" %}
     </footer>
+    <script type="module" src="/js/recipe-audio.js"></script>
     {% if prevCard or nextCard %}
     <script type="module" loading="lazy" src="/js/prefetch.js"></script>
     {% endif %}

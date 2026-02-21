@@ -6,6 +6,8 @@ Uses PostCSS with an ITCSS-inspired layer structure. CSS is processed as a custo
 
 **CSS-first rule:** Always prefer modern, plain CSS solutions (container queries, custom properties, `:has()`, `@layer`, logical properties, `clamp()`, scroll-driven animations, view transitions, etc.) over JavaScript. Never use JS for layout, styling, or UI behavior that CSS can handle unless explicitly instructed otherwise.
 
+`@import ''` statements must be at the top of the files or they won’t be processed by PostCSS.
+
 ### Entry Points (`.css` files in root)
 
 Each `.css` file becomes an output at `/css/{filename}`. Pages load them via `pageCSS` frontmatter.
@@ -47,6 +49,7 @@ TypeScript files compiled via esbuild (see `_templates/ts.js`). Output to `/js/{
 - `recipe-search.ts` — `<recipe-search>` custom element, Algolia-powered search
 - `recipe-search-results.ts` — `<recipe-search-results>` custom element for displaying results
 - `auf-gut-glueck.ts` — `<auf-gut-glueck>` custom element ("I'm feeling lucky" random recipe)
+- `recipe-audio.ts` — `<recipe-audio>` custom element, vintage-styled audio player with custom controls
 - `lib/` — Shared utilities
 
 `js.11tydata.js` sets data for JS file processing.

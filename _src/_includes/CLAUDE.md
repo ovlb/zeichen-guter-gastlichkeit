@@ -17,7 +17,7 @@ Recipe card layout. Includes:
 - Series header showing `Serie {id}/{cardNumber}` with link to series page
 - Card image with `data-process-image` attribute (triggers image transform)
 - Ornamental frame wrapper
-- Audio player (`<audio>` element with CDN source)
+- Audio player (`<recipe-audio>` web component with native `<audio>` fallback, CDN source)
 - Music credit section (handles both regular music and lofi generator credits)
 - Prev/next card navigation using shared `.page-nav` classes (from `_page-nav.pcss`) with Eleventy's `getPreviousCollectionItem`/`getNextCollectionItem`/`getCollectionItemIndex` filters on `fullSeriesInfo.cards`
 - `<link rel="prev">`, `<link rel="next">`, and `<link rel="prefetch">` in `<head>` for SEO and instant loading
