@@ -23,9 +23,13 @@ class AufGutGlueck extends HTMLElement {
   appendStyle() {
     const style = document.createElement('style')
     style.textContent = `
+      :host {
+        display: block;
+        font-family: inherit;
+      }
+
       .auf-gut-glueck {
         color: var(--link);
-        display: block;
         text-align: center;
       }
     `

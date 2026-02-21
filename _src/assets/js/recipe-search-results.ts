@@ -7,54 +7,17 @@ const HITS_PER_PAGE = 20
 
 const styles = /* css */ `
   :host {
-    --_icon-size: 1.25rem;
+    --_result-thumb-size: 4rem;
+    --_touch-target: 2.75rem;
 
+    color: var(--text-1);
     container-type: inline-size;
     display: block;
     font-family: inherit;
-    color: var(--text-1);
   }
 
   .search-header {
     margin-block-end: var(--space-m, 1.5rem);
-  }
-
-  .search-input-wrapper {
-    position: relative;
-  }
-
-  .search-input {
-    appearance: none;
-    background: var(--surface-1);
-    border: 2px solid var(--text-1);
-    color: var(--text-1);
-    font: inherit;
-    font-size: var(--u-font-size-0, 1rem);
-    inline-size: 100%;
-    padding-block: var(--space-xs, 0.75rem);
-    padding-inline: var(--space-s, 1rem);
-    padding-inline-start: calc(var(--space-xs, 0.75rem) * 2 + var(--_icon-size));
-    transition: border-color 0.15s ease, outline-color 0.15s ease;
-  }
-
-  .search-input:focus {
-    border-color: var(--link);
-    outline: 2px solid var(--link);
-    outline-offset: 2px;
-  }
-
-  .search-input::placeholder {
-    color: var(--accent);
-  }
-
-  .search-icon {
-    block-size: var(--_icon-size);
-    inline-size: var(--_icon-size);
-    inset-block-start: 50%;
-    inset-inline-start: var(--space-xs, 0.75rem);
-    pointer-events: none;
-    position: absolute;
-    translate: 0 -50%;
   }
 
   .result-meta {
@@ -65,7 +28,7 @@ const styles = /* css */ `
   .facets {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2xs, 0.25rem);
+    gap: var(--space-2xs, 0.5rem);
     margin-block: var(--space-xs, 0.75rem);
     margin-inline: 0;
     padding: 0;
@@ -74,15 +37,15 @@ const styles = /* css */ `
   .facet-chip {
     appearance: none;
     background: transparent;
-    border: 1px solid var(--text-1);
+    border: var(--border-size-1, 1px) solid var(--text-1);
     color: var(--text-1);
     cursor: pointer;
     font: inherit;
     font-size: var(--u-font-size--2, 0.8125rem);
-    min-block-size: 2.75rem;
-    padding-block: var(--space-3xs);
-    padding-inline: var(--space-2xs);
-    transition: background-color 0.15s ease, color 0.15s ease;
+    min-block-size: var(--_touch-target);
+    padding-block: var(--space-3xs, 0.25rem);
+    padding-inline: var(--space-2xs, 0.5rem);
+    transition: background-color 0.15s var(--ease-3, ease), color 0.15s var(--ease-3, ease);
   }
 
   .facet-chip:hover {
@@ -91,8 +54,8 @@ const styles = /* css */ `
   }
 
   .facet-chip:focus-visible {
-    outline: 2px solid var(--link);
-    outline-offset: 2px;
+    outline: var(--border-size-2, 2px) solid var(--link);
+    outline-offset: var(--border-size-2, 2px);
   }
 
   .facet-chip[aria-pressed="true"] {
@@ -112,31 +75,31 @@ const styles = /* css */ `
   }
 
   .result-item {
-    display: flex;
     align-items: start;
+    display: flex;
     gap: var(--space-xs, 0.75rem);
   }
 
   .result-thumb {
-    block-size: 4rem;
+    block-size: var(--_result-thumb-size);
     flex-shrink: 0;
-    inline-size: 4rem;
+    inline-size: var(--_result-thumb-size);
     object-fit: cover;
   }
 
   .result-body {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: var(--space-3xs, 0.25rem);
     min-inline-size: 0;
-    flex: 1;
   }
 
   .result-title {
     font-family: var(--fonts-headline);
     font-size: var(--u-font-size-4);
-    font-weight: 700;
-    line-height: 1.3;
+    font-weight: var(--font-weight-7, 700);
+    line-height: var(--font-lineheight-1, 1.25);
     margin-block: 0;
     margin-inline: 0;
   }
@@ -151,27 +114,27 @@ const styles = /* css */ `
   }
 
   .result-title a:focus-visible {
-    outline: 2px solid var(--link);
-    outline-offset: 2px;
+    outline: var(--border-size-2, 2px) solid var(--link);
+    outline-offset: var(--border-size-2, 2px);
   }
 
   .series-badge {
+    align-self: flex-start;
     background: var(--text-1);
     color: var(--surface-1);
     display: inline-block;
     font-size: var(--u-font-size--2, 0.8125rem);
     line-height: 1;
-    padding-block: 0.25em;
-    padding-inline: 0.6em;
+    padding-block: var(--space-3xs, 0.25rem);
+    padding-inline: var(--space-2xs, 0.5rem);
     white-space: nowrap;
-    align-self: flex-start;
   }
 
   em {
     background: color-mix(in srgb, var(--accent) 25%, transparent);
-    font-style: normal;
-    font-weight: 700;
     color: var(--text-1);
+    font-style: normal;
+    font-weight: var(--font-weight-7, 700);
   }
 
   .empty-state,
@@ -181,13 +144,13 @@ const styles = /* css */ `
   }
 
   .algolia-attribution {
-    display: flex;
     align-items: center;
+    color: var(--accent);
+    display: flex;
+    font-size: var(--u-font-size--2, 0.8125rem);
     gap: var(--space-2xs, 0.5rem);
     justify-content: flex-end;
     margin-block-start: var(--space-m, 1.5rem);
-    font-size: var(--u-font-size--2, 0.8125rem);
-    color: var(--accent);
   }
 
   .algolia-attribution img {
@@ -220,11 +183,12 @@ class RecipeSearchResults extends SearchBase {
 
   connectedCallback(): void {
     this.shadow.innerHTML = `
+      <link rel="stylesheet" href="/css/search-input.css">
       <style>${styles}</style>
       <h1 class="sr-only">Rezeptsuche</h1>
       <div class="search-header">
-        <div class="search-input-wrapper">
-          <span class="search-icon">${SEARCH_ICON}</span>
+        <div class="search-input-group">
+          <span class="search-input-icon">${SEARCH_ICON}</span>
           <label for="search-results-input" class="sr-only">Rezeptsuche</label>
           <input
             id="search-results-input"

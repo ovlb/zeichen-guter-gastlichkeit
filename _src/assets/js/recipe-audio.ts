@@ -8,6 +8,10 @@ const SEEK_PAGE_FACTOR = 0.1
 
 const styles = /* css */ `
   :host {
+    --_btn-size: 2.75rem;
+    --_thumb-size: 0.875rem;
+    --_track-block-size: 0.375rem;
+
     display: block;
     font-family: inherit;
   }
@@ -16,25 +20,25 @@ const styles = /* css */ `
     align-items: center;
     color: var(--text-1);
     display: flex;
-    gap: var(--space-2xs);
+    gap: var(--space-2xs, 0.5rem);
     margin-inline: auto;
     max-inline-size: 24rem;
-    padding: var(--space-3xs) var(--space-xs);
+    padding: var(--space-3xs, 0.25rem) var(--space-xs, 0.75rem);
   }
 
   .play-btn {
     align-items: center;
     background: transparent;
-    block-size: 44px;
+    block-size: var(--_btn-size);
     border: none;
     border-radius: 50%;
     color: inherit;
     cursor: pointer;
     display: flex;
     flex-shrink: 0;
-    inline-size: 44px;
+    inline-size: var(--_btn-size);
     justify-content: center;
-    transition: background-color 0.15s ease;
+    transition: background-color 0.15s var(--ease-3, ease);
   }
 
   .play-btn:hover {
@@ -42,8 +46,8 @@ const styles = /* css */ `
   }
 
   .play-btn:focus-visible {
-    outline: 2px solid var(--text-1);
-    outline-offset: 2px;
+    outline: var(--border-size-2, 2px) solid var(--text-1);
+    outline-offset: var(--border-size-2, 2px);
   }
 
   .time {
@@ -64,7 +68,7 @@ const styles = /* css */ `
   .progress {
     cursor: pointer;
     flex: 1;
-    padding-block: 19px;
+    padding-block: calc((var(--_btn-size) - var(--_track-block-size)) / 2);
     touch-action: none;
   }
 
@@ -73,37 +77,37 @@ const styles = /* css */ `
   }
 
   .progress:focus-visible .progress-track {
-    outline: 2px solid var(--text-1);
-    outline-offset: 4px;
+    outline: var(--border-size-2, 2px) solid var(--text-1);
+    outline-offset: var(--size-1, 0.25rem);
   }
 
   .progress-track {
-    block-size: 6px;
     background: color-mix(in srgb, var(--text-1) 15%, transparent);
-    border-radius: 3px;
+    block-size: var(--_track-block-size);
+    border-radius: calc(var(--_track-block-size) / 2);
     position: relative;
   }
 
   .progress-fill {
     background: var(--link);
     block-size: 100%;
-    border-radius: 3px;
+    border-radius: inherit;
     inline-size: 0%;
     transition: inline-size 0.1s linear;
   }
 
   .progress-thumb {
     background: var(--text-1);
-    block-size: 14px;
-    border: 2px solid var(--accent);
+    block-size: var(--_thumb-size);
+    border: var(--border-size-2, 2px) solid var(--accent);
     border-radius: 50%;
-    inline-size: 14px;
+    inline-size: var(--_thumb-size);
     inset-block-start: 50%;
     inset-inline-start: 0%;
     opacity: 0;
     position: absolute;
     transform: translate(-50%, -50%);
-    transition: opacity 0.15s ease, scale 0.1s ease;
+    transition: opacity 0.15s var(--ease-3, ease), scale 0.1s var(--ease-3, ease);
   }
 
   .progress:hover .progress-thumb,

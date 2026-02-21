@@ -1,9 +1,8 @@
-a {
+a[href] {
   text-decoration: underline;
 
-  &:focus {
-    outline: 2px solid currentColor;
-    outline-offset: var(--size-1);
+  &:focus-visible {
+    text-decoration: none;
   }
 }
 

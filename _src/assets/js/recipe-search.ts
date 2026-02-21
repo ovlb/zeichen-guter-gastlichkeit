@@ -10,84 +10,34 @@ const MAX_RESULTS = 3
 
 const styles = /* css */ `
   :host {
-    --_icon-size: 1.125em;
+    --_listbox-max-block-size: 24rem;
+    --_thumb-size: 2.75rem;
 
     display: block;
-    position: relative;
     font-family: inherit;
+    position: relative;
   }
 
   .combobox-wrapper {
     position: relative;
   }
 
-  .input-wrapper {
-    position: relative;
-  }
-
-  .search-icon {
-    position: absolute;
-    inset-inline-start: var(--space-xs, 0.75rem);
-    inset-block-start: 50%;
-    translate: 0 -50%;
-    pointer-events: none;
-    color: var(--link);
-    inline-size: var(--_icon-size);
-    block-size: var(--_icon-size);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .search-icon svg {
-    inline-size: 100%;
-    block-size: 100%;
-  }
-
-  input[type="search"] {
-    inline-size: 100%;
-    padding-block: var(--space-xs, 0.75rem);
-    padding-inline: var(--space-xs, 0.75rem);
-    padding-inline-start: calc(var(--space-xs, 0.75rem) * 2 + var(--_icon-size));
-    border: 2px solid var(--text-1);
-    background: var(--surface-1);
-    color: var(--text-1);
-    font-size: var(--u-font-size-0, 1rem);
-    font-family: inherit;
-    line-height: 1.5;
-    outline: none;
-    transition: border-color 0.15s ease, outline-color 0.15s ease;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  input[type="search"]:focus {
-    border-color: var(--link);
-    outline: 2px solid var(--link);
-    outline-offset: 2px;
-  }
-
-  input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
   .listbox {
-    position: absolute;
-    inset-inline: 0;
-    inset-block-start: 100%;
-    margin-block-start: var(--space-3xs, 0.25rem);
-    padding: var(--space-3xs, 0.25rem);
-    list-style: none;
     background: var(--surface-1);
-    border: 1px solid var(--text-1);
+    border: var(--border-size-1, 1px) solid var(--text-1);
     box-shadow:
       0 4px 12px color-mix(in srgb, var(--text-1) 8%, transparent),
       0 2px 4px color-mix(in srgb, var(--text-1) 4%, transparent);
-    z-index: 100;
-    max-block-size: 24rem;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    list-style: none;
+    margin-block-start: var(--space-3xs, 0.25rem);
+    max-block-size: var(--_listbox-max-block-size);
     overflow-block: auto;
     overscroll-behavior: contain;
+    padding: var(--space-3xs, 0.25rem);
+    position: absolute;
+    z-index: 100;
   }
 
   .listbox[hidden] {
@@ -95,20 +45,20 @@ const styles = /* css */ `
   }
 
   .option {
-    display: flex;
     align-items: center;
+    color: var(--text-1);
+    cursor: pointer;
+    display: flex;
     gap: var(--space-xs, 0.75rem);
     padding-block: var(--space-2xs, 0.5rem);
     padding-inline: var(--space-xs, 0.75rem);
-    cursor: pointer;
-    color: var(--text-1);
-    transition: background-color 0.15s ease;
+    transition: background-color 0.15s var(--ease-3, ease);
   }
 
   .option[aria-selected="true"] {
     background-color: color-mix(in srgb, var(--accent) 12%, var(--surface-1));
-    outline: 2px solid var(--accent);
-    outline-offset: -2px;
+    outline: var(--border-size-2, 2px) solid var(--accent);
+    outline-offset: calc(-1 * var(--border-size-2, 2px));
   }
 
   .option:hover {
@@ -116,11 +66,11 @@ const styles = /* css */ `
   }
 
   .option-thumb {
-    inline-size: 2.75rem;
-    block-size: 2.75rem;
-    object-fit: cover;
-    flex-shrink: 0;
     background-color: var(--surface-1);
+    block-size: var(--_thumb-size);
+    flex-shrink: 0;
+    inline-size: var(--_thumb-size);
+    object-fit: cover;
   }
 
   .option-text {
@@ -132,7 +82,7 @@ const styles = /* css */ `
 
   .option-title {
     font-size: var(--u-font-size--1, 0.9375rem);
-    line-height: 1.35;
+    line-height: var(--font-lineheight-2, 1.375);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -141,27 +91,27 @@ const styles = /* css */ `
   .option-title mark,
   .option-title em {
     background: color-mix(in srgb, var(--accent) 25%, transparent);
-    font-style: normal;
-    font-weight: 700;
     color: var(--text-1);
+    font-style: normal;
+    font-weight: var(--font-weight-7, 700);
   }
 
   .option-series {
-    font-size: var(--u-font-size--2, 0.75rem);
-    line-height: 1.3;
     color: var(--accent);
+    font-size: var(--u-font-size--2, 0.75rem);
+    line-height: var(--font-lineheight-1, 1.25);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .show-all-link {
-    display: block;
-    padding-block: var(--space-xs, 0.75rem);
-    border-block-start: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
-    font-size: var(--u-font-size--1, 0.875rem);
-    font-weight: 600;
+    border-block-start: var(--border-size-1, 1px) solid color-mix(in srgb, var(--accent) 15%, transparent);
     color: var(--link);
+    display: block;
+    font-size: var(--u-font-size--1, 0.875rem);
+    font-weight: var(--font-weight-6, 600);
+    padding-block: var(--space-xs, 0.75rem);
     text-align: center;
     text-decoration: none;
   }
@@ -171,8 +121,8 @@ const styles = /* css */ `
   }
 
   .show-all-link:focus-visible {
-    outline: 2px solid var(--link);
-    outline-offset: -2px;
+    outline: var(--border-size-2, 2px) solid var(--link);
+    outline-offset: calc(-1 * var(--border-size-2, 2px));
   }
 
   .show-all-link[hidden] {
@@ -205,11 +155,13 @@ class RecipeSearch extends SearchBase {
 
   connectedCallback(): void {
     this.shadow.innerHTML = `
+      <link rel="stylesheet" href="/css/search-input.css">
       <style>${styles}</style>
       <div class="combobox-wrapper">
-        <div class="input-wrapper">
-          <span class="search-icon">${SEARCH_ICON}</span>
+        <div class="search-input-group">
+          <span class="search-input-icon">${SEARCH_ICON}</span>
           <input
+            class="search-input"
             type="search"
             role="combobox"
             aria-expanded="false"

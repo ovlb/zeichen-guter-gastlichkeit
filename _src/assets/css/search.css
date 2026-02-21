@@ -1,6 +1,6 @@
 /* Search results page layout */
 .search-page {
-  inline-size: min(90vw, var(--size-content-3));
+  inline-size: calc(var(--detail-view-container-inline-size) / 2);
   margin-inline: auto;
   padding-inline: var(--space-s);
 

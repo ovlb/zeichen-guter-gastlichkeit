@@ -35,5 +35,8 @@
   --link: var(--choco-9);
   --accent: var(--choco-6);
 
+  --focus-outline: 2px solid currentColor;
+  --focus-outline-offset: var(--size-1);
+
   --detail-view-container-inline-size: 100rem;
 }

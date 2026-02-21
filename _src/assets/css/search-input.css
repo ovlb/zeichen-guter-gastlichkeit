@@ -1,0 +1,44 @@
+/* Shared search input — loaded via <link> in shadow DOM */
+.search-input-group {
+  --_icon-size: 1.25rem;
+
+  position: relative;
+}
+
+.search-input-icon {
+  align-items: center;
+  block-size: var(--_icon-size);
+  color: var(--link);
+  display: flex;
+  inline-size: var(--_icon-size);
+  inset-block-start: 50%;
+  inset-inline-start: var(--space-xs);
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  translate: 0 -50%;
+}
+
+.search-input-icon svg {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.search-input {
+  appearance: none;
+  background: var(--surface-1);
+  border: var(--border-size-2) solid var(--text-1);
+  color: var(--text-1);
+  font: inherit;
+  font-size: var(--u-font-size-0);
+  inline-size: 100%;
+  line-height: var(--font-lineheight-3);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-xs);
+  padding-inline-start: calc(var(--space-xs) * 2 + var(--_icon-size));
+
+  &:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
