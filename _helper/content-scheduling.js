@@ -1,5 +1,7 @@
-export const IS_PROD = process.env.PAGE_STATE === 'production'
+export const IS_DEV = process.env.PAGE_STATE === 'development'
 
 export function isPublished(date) {
-  return Date.now() >= date || !IS_PROD
+  if (IS_DEV) return true
+
+  return Date.now() >= date
 }

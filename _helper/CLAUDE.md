@@ -64,10 +64,10 @@ Utility to regenerate missing alt-text for existing cards.
 
 ### `content-scheduling.js`
 Single source of truth for publish-date logic. Exports:
-- `IS_PROD` — `process.env.PAGE_STATE === 'production'`
-- `isPublished(date)` — pure date check: `Date.now() >= date`. Used by the `publishedCards` collection and the `isPublished` Eleventy filter.
+- `IS_DEV` — `process.env.PAGE_STATE === 'development'`
+- `isPublished(date)` — returns `true` in dev mode (to preview all content), otherwise checks `Date.now() >= date`. Used by the `publishedCards` collection and the `isPublished` Eleventy filter.
 
-The `publishedCards` custom collection (defined in `.eleventy.js`) pre-filters all cards to only published ones. Templates use `collections.publishedCards` instead of filtering `collections.card` manually. The only exception is the card permalink in `cards.11tydata.js`, which uses `IS_PROD` + `this.isPublished(date)` to allow previewing future cards in development.
+The `publishedCards` custom collection (defined in `.eleventy.js`) pre-filters all cards to only published ones. Templates use `collections.publishedCards` instead of filtering `collections.card` manually. The only exception is the card permalink in `cards.11tydata.js`, which uses `!IS_DEV && !this.isPublished(date)` to hide future cards in production.
 
 ## Date Utilities
 

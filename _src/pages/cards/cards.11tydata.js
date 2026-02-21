@@ -1,11 +1,9 @@
-import { IS_PROD } from '../../../_helper/content-scheduling.js'
-
 export default {
   tags: ['card'],
   layout: 'card',
   pageCSS: 'card.css',
   permalink: function ({ series, title, seriesId, part, date }) {
-    if (IS_PROD && !this.isPublished(date)) {
+    if (!this.isPublished(date)) {
       return false
     }
 

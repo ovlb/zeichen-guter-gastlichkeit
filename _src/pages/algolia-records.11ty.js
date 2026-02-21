@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs'
-import { IS_PROD } from '../../_helper/content-scheduling.js'
+import { IS_DEV } from '../../_helper/content-scheduling.js'
 
 // Series 5-6 are drinks (cocktails/longdrinks)
 const DRINK_SERIES = [5, 6]
@@ -70,7 +70,7 @@ function extractBody(raw) {
 class AlgoliaRecords {
   data() {
     return {
-      permalink: IS_PROD ? '/algolia-records.json' : false,
+      permalink: IS_DEV ? false : '/algolia-records.json',
       layout: null,
       eleventyExcludeFromCollections: true,
     }

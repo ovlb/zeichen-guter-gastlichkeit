@@ -40,7 +40,7 @@ Recipe cards organized by series: `cards/{seriesId}/{index}-{name}.md`
 
 ### Content Scheduling
 
-Cards have auto-generated publish dates on business days (Mon–Fri). Scheduling logic lives in `_helper/content-scheduling.js` (`isPublished(date)` — returns `Date.now() >= date`). The `publishedCards` collection pre-filters all cards; templates use it instead of filtering manually. The only exception is the card permalink in `cards.11tydata.js`, which uses `IS_PROD && !this.isPublished(date)` to allow previewing future cards in development.
+Cards have auto-generated publish dates on business days (Mon–Fri). Scheduling logic lives in `_helper/content-scheduling.js` (`isPublished(date)` — returns `true` in dev, otherwise `Date.now() >= date`). The `publishedCards` collection pre-filters all cards; templates use it instead of filtering manually. The only exception is the card permalink in `cards.11tydata.js`, which uses `!IS_DEV && !this.isPublished(date)` to hide future cards in production.
 
 ### Tests
 
