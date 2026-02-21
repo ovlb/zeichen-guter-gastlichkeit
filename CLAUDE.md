@@ -1,0 +1,61 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+**Keep all CLAUDE.md files up to date whenever you change something in the corresponding part of the codebase.**
+
+## Project Overview
+
+**Zeichen guter Gastlichkeit** — a German recipe card website built with Eleventy 3.x. Content originates as TIFF recipe card images (1970s-era) that are OCR'd, processed into markdown, enriched with AI-generated alt-text, and built into a static site deployed on Netlify.
+
+## Commands
+
+```bash
+npm run serve          # Dev server at localhost:7777 with live reload
+npm run build          # Production build (ELEVENTY_ENV=production)
+npm run build:clean    # Clean dist/ then build
+npm run lint           # All linters concurrently (CSS + JS)
+npm run lint:css       # Stylelint for .pcss files (--fix)
+npm run lint:js        # ESLint for .js/.ts/.vue/.mjs (--fix)
+npm test               # AVA tests (_helper/__tests__/*.spec.js)
+```
+
+## Code Conventions
+
+- **ES Modules** (`"type": "module"`) — use `import`/`export` everywhere
+- **Node 22** (`.nvmrc`)
+- **Conventional Commits** enforced via commitlint + husky
+- **Prettier**: no semicolons, single quotes, trailing commas, arrow parens always
+- **Stylelint**: properties alphabetical, custom properties before declarations
+- **Environment**: copy `.env.sample` to `.env` for local development
+
+## Auto-Discovery Architecture
+
+The Eleventy config (`.eleventy.js`) auto-discovers and loads modules from directories using `_helper/get-folder-exports.js`. Each directory has an `index.js` that imports all sibling `.js` files and registers them by camelCased filename. To add a new module, drop a `.js` file in the right directory — no config editing needed.
+
+| Directory | Eleventy API | What it registers |
+|-----------|-------------|-------------------|
+| `_plugins/` | `addPlugin()` | RSS, sitemap, clean URLs, syntax highlight, render |
+| `_shortcodes/` | `addShortcode()` | `navLink`, `inlineSvg`, `metaRobots` |
+| `_functions/` | `addJavaScriptFunction()` | `responsiveImage` |
+| `_transforms/` | `addTransform()` | HTML minify (prod), image processing |
+| `_templates/` | `addTemplateFormats()` | PostCSS (.css) and esbuild (.ts) |
+| `_libraries/` | `setLibrary()` | Configured markdown-it |
+| `_events/` | `on('eleventy.after')` | Algolia sync, Netlify headers |
+
+## Detailed Documentation
+
+Each subsystem has its own CLAUDE.md:
+
+- [`_src/CLAUDE.md`](_src/CLAUDE.md) — Content structure overview, data cascade, layouts
+- [`_src/_data/CLAUDE.md`](_src/_data/CLAUDE.md) — Global data files and environment config
+- [`_src/pages/CLAUDE.md`](_src/pages/CLAUDE.md) — Page templates, card content, collections, Algolia records
+- [`_src/assets/CLAUDE.md`](_src/assets/CLAUDE.md) — CSS pipeline (PostCSS/ITCSS/Open Props), TypeScript web components, images
+- [`_src/_includes/CLAUDE.md`](_src/_includes/CLAUDE.md) — Layouts and Nunjucks components
+- [`_helper/CLAUDE.md`](_helper/CLAUDE.md) — Build utilities: image pipeline, AI alt-text, date logic, Algolia, PostCSS config, tests
+- [`_plugins/CLAUDE.md`](_plugins/CLAUDE.md) — Plugin registration pattern
+- [`_transforms/CLAUDE.md`](_transforms/CLAUDE.md) — HTML transforms with conditional production execution
+- [`_templates/CLAUDE.md`](_templates/CLAUDE.md) — Custom template formats (PostCSS, TypeScript via esbuild)
+- [`_shortcodes/CLAUDE.md`](_shortcodes/CLAUDE.md) — Nunjucks shortcodes
+- [`_libraries/CLAUDE.md`](_libraries/CLAUDE.md) — Markdown-it configuration and plugins
+- [`_events/CLAUDE.md`](_events/CLAUDE.md) — Build event hooks
