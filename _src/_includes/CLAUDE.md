@@ -19,7 +19,9 @@ Recipe card layout. Includes:
 - Ornamental frame wrapper
 - Audio player (`<audio>` element with CDN source)
 - Music credit section (handles both regular music and lofi generator credits)
-- Series navigation footer listing all cards in the series
+- Prev/next card navigation using Eleventy's built-in `getPreviousCollectionItem`/`getNextCollectionItem`/`getCollectionItemIndex` filters on `fullSeriesInfo.cards`
+- `<link rel="prev">`, `<link rel="next">`, and `<link rel="prefetch">` in `<head>` for SEO and instant loading
+- Series link and Start link below the card navigation
 
 ### `home.njk`
 Homepage layout. Includes:

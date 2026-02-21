@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Zeichen guter Gastlichkeit** — a German recipe card website built with Eleventy 3.x. Content originates as TIFF recipe card images (1970s-era) that are OCR'd, processed into markdown, enriched with AI-generated alt-text, and built into a static site deployed on Netlify.
+**Zeichen guter Gastlichkeit** — a German recipe card website built with Eleventy 3.x. The project digitizes 1970s-era physical recipe cards from a ring binder, making them accessible on the web. Content originates as TIFF recipe card images that are OCR'd, processed into markdown, enriched with AI-generated alt-text, and built into a static site deployed on Netlify.
 
 ## Commands
 
@@ -29,6 +29,9 @@ npm test               # AVA tests (_helper/__tests__/*.spec.js)
 - **Stylelint**: properties alphabetical, custom properties before declarations
 - **Environment**: copy `.env.sample` to `.env` for local development
 - **Always lint and format after making changes**: run `npm run lint` after modifying `.js`/`.ts`/`.mjs`/`.pcss` files to auto-fix formatting and style issues
+- **Readable code over terse code**: Prefer clear, well-structured code that reads naturally. Use descriptive names, logical grouping, and whitespace to communicate intent. Never sacrifice readability for brevity.
+- **Web standards over custom solutions**: Use built-in platform APIs, native HTML attributes, and framework-provided features before writing custom logic. Examples: Eleventy's built-in filters over custom computed data, `IntersectionObserver` over scroll listeners, semantic HTML over ARIA workarounds.
+- **Accessibility (WCAG AA)**: All components, templates, and scripts must conform to WCAG Level AA. Ensure sufficient color contrast, full keyboard operability, correct ARIA roles and patterns (e.g. combobox, disclosure), visible focus indicators, and meaningful text alternatives. Use native HTML elements over custom widgets wherever possible.
 
 ## Auto-Discovery Architecture
 
