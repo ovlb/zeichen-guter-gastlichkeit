@@ -5,7 +5,7 @@
 These are class-based templates with `data()` and `render()` methods:
 
 - `index.11ty.js` — Homepage. Renders the series list, links to Algolia-powered `<recipe-search>` and `<auf-gut-glueck>` web components. Uses `home` layout.
-- `series.11ty.js` — Series overview pages. One per series with published cards listed.
+- `series.11ty.js` — Series overview pages. One per series with published cards listed. Includes prev/next series navigation using shared `.page-nav` classes, with prefetch support.
 - `feed.11ty.mjs` — RSS/Atom feed generation using the `feed` package.
 - `podcast.11ty.js` — Podcast RSS feed.
 - `algolia-records.11ty.js` — Generates `algolia-records.json` (production only). Builds search records from card collection. Drinks (series 5–6) are split into individual sub-recipe records via `##` headings. Food recipes (series 8+) get one record each with ingredients extracted from the first paragraph.

@@ -132,48 +132,4 @@
   z-index: 10;
 }
 
-.card-nav {
-  display: grid;
-  gap: var(--space-2xs);
-  grid-template-areas: 'prev' 'position' 'next';
-  justify-items: center;
-  margin-block-end: var(--space-m);
-  padding-block-start: var(--space-m);
-
-  @media (--md-n-above) {
-    & {
-      align-items: baseline;
-      grid-template-areas: 'prev position next';
-      grid-template-columns: 1fr auto 1fr;
-      justify-items: start;
-    }
-  }
-}
-
-.card-nav__prev {
-  grid-area: prev;
-}
-
-.card-nav__position {
-  font-size: var(--u-font-size--1);
-  font-variant-numeric: oldstyle-nums;
-  grid-area: position;
-}
-
-.card-nav__next {
-  grid-area: next;
-
-  @media (--md-n-above) {
-    & {
-      justify-self: end;
-      text-align: end;
-    }
-  }
-}
-
-.card-nav-series {
-  display: flex;
-  font-size: var(--u-font-size--1);
-  gap: var(--space-m);
-  justify-content: center;
-}
+@import './2-structures/_page-nav.pcss';

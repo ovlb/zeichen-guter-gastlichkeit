@@ -21,7 +21,7 @@ Each `.css` file becomes an output at `/css/{filename}`. Pages load them via `pa
 
 - `0-base/` — Resets, universal box-sizing, link styles, image constraints, aspect ratios, list styles
 - `1-atoms/` — Typography (font sizes, line heights using Open Props tokens)
-- `2-structures/` — Card component, ornamental frame decorations
+- `2-structures/` — Card component, ornamental frame decorations, shared page navigation (prev/next + secondary links)
 - `3-pages/` — Page-specific overrides
 
 Partials use `.pcss` extension and are imported via `@import` in entry point `.css` files.

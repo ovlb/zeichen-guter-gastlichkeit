@@ -31,7 +31,7 @@ const styles = /* css */ `
     inset-block-start: 50%;
     translate: 0 -50%;
     pointer-events: none;
-    color: var(--accent);
+    color: var(--link);
     inline-size: var(--_icon-size);
     block-size: var(--_icon-size);
     display: flex;

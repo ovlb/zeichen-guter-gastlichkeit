@@ -85,16 +85,16 @@
     </main>
     <footer class="page-footer card-footer">
       <div class="card-footer__inner">
-        <nav class="card-nav" aria-label="Kartennavigation">
+        <nav class="page-nav" aria-label="Kartennavigation">
           {% if prevCard %}
-          <a href="{{ prevCard.url }}" class="card-nav__prev" rel="prev" data-prefetch>← {{ prevCard.data.title }}</a>
+          <a href="{{ prevCard.url }}" class="page-nav__prev" rel="prev" data-prefetch>← {{ prevCard.data.title }}</a>
           {% endif %}
-          <span class="card-nav__position">{{ cardIndex }}&thinsp;/&thinsp;{{ seriesCardCount }}</span>
+          <span class="page-nav__position">{{ cardIndex }}&thinsp;/&thinsp;{{ seriesCardCount }}</span>
           {% if nextCard %}
-          <a href="{{ nextCard.url }}" class="card-nav__next" rel="next" data-prefetch>{{ nextCard.data.title }} →</a>
+          <a href="{{ nextCard.url }}" class="page-nav__next" rel="next" data-prefetch>{{ nextCard.data.title }} →</a>
           {% endif %}
         </nav>
-        <nav class="card-nav-series" aria-label="Seriennavigation">
+        <nav class="page-nav-secondary" aria-label="Seriennavigation">
           <a href="/{{ fullSeriesInfo.name | slugify }}">Alle Rezepte in {{ fullSeriesInfo.name }}</a>
           <a href="/">Start</a>
         </nav>
