@@ -24,9 +24,11 @@ class Home {
 
   render({ series, collections, build }) {
     return `<section class="home-intro">
-      <recipe-search app-id="${build.algoliaAppId}" search-key="${
-      build.algoliaSearchKey
-    }"></recipe-search>
+      <recipe-search
+        app-id="${build.algoliaAppId}"
+        search-key="${build.algoliaSearchKey}"
+        data-wc-styles="/css/search-input.css"
+      ></recipe-search>
       <p class="text-centered"><auf-gut-glueck></auf-gut-glueck></p>
     </section>
     <div class="ornamental-frame home-frame">

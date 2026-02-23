@@ -11,7 +11,11 @@ class SearchPage {
 
   render({ build }) {
     return `
-      <recipe-search-results app-id="${build.algoliaAppId}" search-key="${build.algoliaSearchKey}"></recipe-search-results>
+      <recipe-search-results
+        app-id="${build.algoliaAppId}"
+        search-key="${build.algoliaSearchKey}"></recipe-search-results
+        data-wc-styles="/css/search-input.css"
+      >
       <script type="module" src="/js/recipe-search-results.js"></script>
     `
   }
