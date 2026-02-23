@@ -27,7 +27,6 @@ class Home {
       <recipe-search
         app-id="${build.algoliaAppId}"
         search-key="${build.algoliaSearchKey}"
-        data-wc-styles="/css/search-input.css"
       ></recipe-search>
       <p class="text-centered"><auf-gut-glueck></auf-gut-glueck></p>
     </section>
@@ -52,8 +51,6 @@ class Home {
         </p>
       </section>
     </div>
-    <script type="module" loading="lazy" src="/js/recipe-search.js"></script>
-    <script type="module" loading="lazy" src="/js/auf-gut-glueck.js"></script>
   `
   }
 }
