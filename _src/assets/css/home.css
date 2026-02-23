@@ -18,6 +18,7 @@
   flex-flow: column;
   margin-inline: auto;
   max-inline-size: var(--size-content-3);
+  padding-inline: var(--size-3);
   row-gap: var(--size-4);
 }
 
