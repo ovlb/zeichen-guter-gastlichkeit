@@ -3,6 +3,7 @@ dist/
 .cache/
 .DS_Store
 .env
+*.tsbuildinfo
 _helper/.tmp-audio/*.flac
 _helper/.tmp-txt/*.txt
 _helper/.tmp-img/*.tiff

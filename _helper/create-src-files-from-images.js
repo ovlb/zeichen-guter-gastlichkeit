@@ -124,7 +124,7 @@ export async function processImages() {
         if (VERBOSE_LOGS) {
           console.log(`🙅 File ${outputFile} already exists, skipping.`)
         }
-      } catch (error) {
+      } catch {
         const podcastImageFileName = file.replace('.tiff', '-podcast.jpg')
         const podcastImagePath = path.resolve(
           cwd,
@@ -199,7 +199,7 @@ export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
     })
 
     console.log(`📝 .txt read completed for ${fileName}`)
-  } catch (error) {
+  } catch {
     console.error(`❌ Error reading .txt ${fileName}. Using fallback content.`)
 
     textContent = { title: name, text: '<!-- .txt no compute -->' }

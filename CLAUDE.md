@@ -16,7 +16,7 @@ npm run build          # Production build (ELEVENTY_ENV=production)
 npm run build:clean    # Clean dist/ then build
 npm run lint           # All linters concurrently (CSS + JS)
 npm run lint:css       # Stylelint for .pcss files (--fix)
-npm run lint:js        # ESLint for .js/.ts/.vue/.mjs (--fix)
+npm run lint:js        # ESLint for .js/.ts/.mjs (--fix)
 npm test               # AVA tests (_helper/__tests__/*.spec.js)
 ```
 
@@ -25,8 +25,11 @@ npm test               # AVA tests (_helper/__tests__/*.spec.js)
 - **ES Modules** (`"type": "module"`) — use `import`/`export` everywhere
 - **Node 22** (`.nvmrc`)
 - **Conventional Commits** enforced via commitlint + husky
-- **Prettier**: no semicolons, single quotes, trailing commas, arrow parens always
-- **Stylelint**: properties alphabetical, custom properties before declarations
+- **Prettier**: no semicolons, single quotes, trailing commas, arrow parens always (runs standalone, not through linters)
+- **ESLint 9** (`eslint.config.js` flat config): import validation via `eslint-plugin-import-x`, Node/browser environment separation — JS files get Node globals only, TS in `_src/assets/js/` gets browser globals + TypeScript rules only
+- **Stylelint** (`stylelint.config.js`): `stylelint-config-standard`, properties alphabetical, custom properties before declarations
+- **TypeScript**: `tsconfig.json` scopes strict type-checking to `_src/assets/js/**/*.ts` (browser code). `jsconfig.json` provides Node.js IntelliSense for all other JS files (`checkJs: true`).
+- **Pre-commit hook**: `tsgo --noEmit` (type-check via `@typescript/native-preview`) then `lint-staged` (ESLint + Stylelint + Prettier)
 - **Environment**: copy `.env.sample` to `.env` for local development
 - **Always lint and format after making changes**: run `npm run lint` after modifying `.js`/`.ts`/`.mjs`/`.pcss` files to auto-fix formatting and style issues
 - **Readable code over terse code**: Prefer clear, well-structured code that reads naturally. Use descriptive names, logical grouping, and whitespace to communicate intent. Never sacrifice readability for brevity.

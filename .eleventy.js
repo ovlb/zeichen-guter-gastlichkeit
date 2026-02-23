@@ -1,7 +1,4 @@
-import path from 'path'
-import del from 'del'
 import STATIC_FOLDERS from './_helper/paths.js'
-import { readdir } from 'fs/promises'
 
 export default async function (eleventyConfig) {
   const configPlugins = await Promise.all([

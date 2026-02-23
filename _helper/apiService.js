@@ -1,8 +1,7 @@
-require('dotenv').config()
+import 'dotenv/config'
+import axios from 'axios'
 
 const { API_HOST, API_KEY, API_STAGE } = process.env
-
-import axios from 'axios'
 
 const apiService = axios.create({
   baseURL: API_HOST,
