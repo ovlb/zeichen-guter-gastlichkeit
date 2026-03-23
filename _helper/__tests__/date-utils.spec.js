@@ -1,19 +1,14 @@
 import test from 'ava'
 import { dateUtils } from '../date-utils.js'
 
-// Helper function for consistent date creation
-const createDate = (dateString) => {
-  const date = new Date(dateString)
-  // Ensure date is interpreted in local timezone consistently
-  date.setHours(0, 0, 0, 0)
-  return date
-}
+// Helper function for consistent UTC date creation (matches how frontmatter dates are parsed)
+const createDate = (dateString) => new Date(dateString)
 
-// Helper for date equality assertion that's more readable than comparing timestamps
+// Helper for date equality assertion using UTC to avoid DST issues
 const areDatesEqual = (date1, date2) =>
-  date1.getFullYear() === date2.getFullYear() &&
-  date1.getMonth() === date2.getMonth() &&
-  date1.getDate() === date2.getDate()
+  date1.getUTCFullYear() === date2.getUTCFullYear() &&
+  date1.getUTCMonth() === date2.getUTCMonth() &&
+  date1.getUTCDate() === date2.getUTCDate()
 
 test('isWeekend identifies weekend days correctly', (t) => {
   const testCases = [
