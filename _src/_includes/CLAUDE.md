@@ -7,7 +7,7 @@ All layouts are Nunjucks templates. They share a common `<head>` via `components
 ### `base.njk`
 Default layout for most pages. Provides:
 - Skip link to `#main`
-- Site header with logo and nav link to home
+- Site header with logo and nav links (Start, Kochbuch)
 - `<main>` with `{{ layoutClass }}` and `{{ content | safe }}`
 - Footer with `end-role.njk`
 
@@ -21,7 +21,8 @@ Recipe card layout. Includes:
 - Music credit section (handles both regular music and lofi generator credits)
 - Prev/next card navigation using shared `.page-nav` classes (from `_page-nav.pcss`) with Eleventy's `getPreviousCollectionItem`/`getNextCollectionItem`/`getCollectionItemIndex` filters on `fullSeriesInfo.cards`
 - `<link rel="prev">`, `<link rel="next">`, and `<link rel="prefetch">` in `<head>` for SEO and instant loading
-- Series link and Start link below the card navigation (`.page-nav-secondary`)
+- `<cookbook-button>` web component for saving recipe to cookbook (localStorage)
+- Series link, Kochbuch link, and Start link below the card navigation (`.page-nav-secondary`)
 
 ### `home.njk`
 Homepage layout. Includes:

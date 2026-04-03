@@ -14,16 +14,18 @@ Each `.css` file becomes an output at `/css/{filename}`. Pages load them via `pa
 
 - `custom-properties.css` — CSS custom properties (Open Props). Must be a separate file for global availability.
 - `main.css` — Base styles, imported by all pages.
-- `card.css` — Card page styles.
+- `card.css` — Card page styles (includes `<cookbook-button>` styles).
 - `home.css` — Homepage styles.
 - `series.css` — Series page styles.
 - `search.css` — Search page styles.
+- `kochbuch.css` — Cookbook page styles (imports shared card grid, facets partials).
+- `facets.css` — Facet chip entry point for Shadow DOM consumers (imports `_facets.pcss`).
 
 ### Layer Structure (partials in subdirectories)
 
 - `0-base/` — Resets, universal box-sizing, link styles, image constraints, aspect ratios, list styles
 - `1-atoms/` — Typography (font sizes, line heights using Open Props tokens)
-- `2-structures/` — Card component, ornamental frame decorations, shared page navigation (prev/next + secondary links)
+- `2-structures/` — Card component (`_card.pcss`), card grid (`_card-grid.pcss`, shared by series + kochbuch), facet chips (`_facets.pcss`, shared by search results + kochbuch), ornamental frame decorations, shared page navigation (prev/next + secondary links)
 - `3-pages/` — Page-specific overrides
 
 Partials use `.pcss` extension and are imported via `@import` in entry point `.css` files.
@@ -50,7 +52,9 @@ TypeScript files compiled via esbuild (see `_templates/ts.js`). Output to `/js/{
 - `recipe-search-results.ts` — `<recipe-search-results>` custom element for displaying results
 - `auf-gut-glueck.ts` — `<auf-gut-glueck>` custom element ("I'm feeling lucky" random recipe)
 - `recipe-audio.ts` — `<recipe-audio>` custom element, vintage-styled audio player with custom controls
-- `lib/` — Shared utilities
+- `cookbook-button.ts` — `<cookbook-button>` custom element (light DOM), save/unsave recipe toggle on card pages
+- `cookbook-page.ts` — `<cookbook-page>` custom element (light DOM), renders saved recipes from localStorage with facet filters on `/kochbuch/` page
+- `lib/` — Shared utilities (includes `cookbook-store.ts` for localStorage CRUD)
 
 `js.11tydata.js` sets data for JS file processing.
 

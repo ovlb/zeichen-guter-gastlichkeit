@@ -8,7 +8,6 @@ const HITS_PER_PAGE = 20
 const styles = /* css */ `
   :host {
     --_result-thumb-size: 4rem;
-    --_touch-target: 2.75rem;
 
     color: var(--text-1);
     container-type: inline-size;
@@ -23,45 +22,6 @@ const styles = /* css */ `
   .result-meta {
     font-size: var(--u-font-size--1, 0.875rem);
     margin-block: var(--space-xs, 0.75rem) 0;
-  }
-
-  .facets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2xs, 0.5rem);
-    margin-block: var(--space-xs, 0.75rem);
-    margin-inline: 0;
-    padding: 0;
-  }
-
-  .facet-chip {
-    appearance: none;
-    background: transparent;
-    border: var(--border-size-1, 1px) solid var(--text-1);
-    color: var(--text-1);
-    cursor: pointer;
-    font: inherit;
-    font-size: var(--u-font-size--2, 0.8125rem);
-    min-block-size: var(--_touch-target);
-    padding-block: var(--space-3xs, 0.25rem);
-    padding-inline: var(--space-2xs, 0.5rem);
-    transition: background-color 0.15s var(--ease-3, ease), color 0.15s var(--ease-3, ease);
-  }
-
-  .facet-chip:hover {
-    background: var(--accent);
-    color: var(--surface-1);
-  }
-
-  .facet-chip:focus-visible {
-    outline: var(--border-size-2, 2px) solid var(--link);
-    outline-offset: var(--border-size-2, 2px);
-  }
-
-  .facet-chip[aria-pressed="true"] {
-    background: var(--text-1);
-    border-color: var(--text-1);
-    color: var(--surface-1);
   }
 
   .results-list {
@@ -184,6 +144,7 @@ class RecipeSearchResults extends SearchBase {
   connectedCallback(): void {
     this.shadow.innerHTML = `
       <link rel="stylesheet" href="/css/search-input.css">
+      <link rel="stylesheet" href="/css/facets.css">
       <style>${styles}</style>
       <h1 class="sr-only">Rezeptsuche</h1>
       <div class="search-header">

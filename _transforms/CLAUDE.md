@@ -29,6 +29,14 @@ For each image:
 - Sets `loading="lazy"`, `decoding="async"`, width/height attributes
 - Respects per-image overrides via data attributes: `data-image-widths`, `data-image-sizes`, `data-image-formats`
 
+### `wc-assets.js` (always runs)
+
+Auto-injects `<script>` and `<link rel="preload">` tags for web components. Maintains a `WC_CONFIG` map of custom element tag names to their JS/CSS assets. When a page's HTML contains a registered custom element, the transform appends the corresponding `<script type="module" loading="lazy">` before `</body>` and optionally a `<link rel="preload">` in `<head>`.
+
+Registered components: `recipe-search`, `recipe-search-results`, `auf-gut-glueck`, `cookbook-button`, `cookbook-page`.
+
+**To add a new web component:** Add an entry to the `WC_CONFIG` map — no template changes needed.
+
 ### `html-minify.js` (production only)
 
 Minifies HTML output using `html-minifier` with short doctype, comment removal, and whitespace collapsing. Only runs when `ELEVENTY_ENV=production` (`when: 'prod'`).

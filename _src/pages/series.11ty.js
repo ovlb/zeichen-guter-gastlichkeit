@@ -30,7 +30,7 @@ class Series {
       <article class="card-card" style="--card-rotate: ${cardRotate}deg; --card-z-index: ${baseZIndex}">
         <p class="card-card__series"><small>Serie ${
           card.data.fullSeriesInfo.id
-        }/${card.data.cardNumber}<small></p>
+        }/${card.data.cardNumber}</small></p>
         <figure class="recipe-card-image">
           <img
             src="${card.data.image}"

@@ -1,5 +1,5 @@
-@import './2-structures/_card.pcss';
-@import './2-structures/_page-nav.pcss';
+@import url('./2-structures/_card.pcss');
+@import url('./2-structures/_page-nav.pcss');
 
 .series {
   background-color: var(--text-1);
@@ -35,12 +35,11 @@
   padding: min(2vw, var(--size-5));
 
   @media (--md-n-above) {
-    & {
-      display: grid;
-      grid-template-columns: 40% 1fr;
-    }
+    display: grid;
+    grid-template-columns: 40% 1fr;
   }
 }
+
 .card-image {
   align-self: start;
   box-shadow: inset var(--text-1) 0 0 0 2px, inset var(--surface-1) 0 0 0 4px,
@@ -50,10 +49,8 @@
   padding: 22px;
 
   @media (--md-n-above) {
-    & {
-      position: sticky;
-      top: var(--size-5);
-    }
+    position: sticky;
+    top: var(--size-5);
   }
 
   img {
@@ -129,6 +126,7 @@
 
 .logo-container {
   display: block;
+
   /* margin-block-start: calc(-1 * var(--size-10)); */
   margin-inline: auto;
   padding: var(--space-m);
@@ -136,4 +134,47 @@
   text-align: center;
   width: min(90vw, 25rem);
   z-index: 10;
+}
+
+.cookbook-button {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: var(--border-size-1) solid var(--text-1);
+  color: var(--text-1);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: var(--u-font-size--1);
+  gap: var(--space-3xs);
+  margin-block-start: var(--space-xs);
+  min-block-size: 2.75rem;
+  padding-block: var(--space-3xs);
+  padding-inline: var(--space-xs);
+  transition: background-color 0.15s var(--ease-3), color 0.15s var(--ease-3);
+
+  &:hover {
+    background: var(--accent);
+    color: var(--surface-1);
+  }
+
+  &:focus-visible {
+    outline: var(--border-size-2) solid var(--link);
+    outline-offset: var(--border-size-2);
+  }
+
+  &[aria-pressed='true'] {
+    background: var(--text-1);
+    color: var(--surface-1);
+  }
+}
+
+.cookbook-button__icon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+cookbook-button {
+  display: block;
+  text-align: center;
 }

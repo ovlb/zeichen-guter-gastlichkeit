@@ -11,6 +11,7 @@ These are class-based templates with `data()` and `render()` methods:
 - `algolia-records.11ty.js` — Generates `algolia-records.json` (production only). Builds search records from card collection. Drinks (series 5–6) are split into individual sub-recipe records via `##` headings. Food recipes (series 8+) get one record each with ingredients extracted from the first paragraph.
 - `recipeData.11ty.js` — Outputs recipe data as JSON.
 - `suche.11ty.js` — Search page.
+- `kochbuch.11ty.js` — Cookbook page. Renders `<cookbook-page>` web component that reads saved recipes from localStorage. Uses `base` layout, loads `kochbuch.css`.
 - `hinweise.md` — Static info page ("Hinweise").
 
 ## Card Content (`cards/`)

@@ -1,0 +1,66 @@
+@import url('./2-structures/_card.pcss');
+@import url('./2-structures/_card-grid.pcss');
+@import url('./2-structures/_facets.pcss');
+
+.kochbuch-page {
+  margin-inline: auto;
+  max-inline-size: var(--detail-view-container-inline-size);
+  padding-block: var(--space-m);
+  padding-inline: var(--space-s);
+}
+
+.cookbook-heading {
+  font-size: var(--u-font-size-2);
+  margin-block-end: var(--space-m);
+  text-align: center;
+}
+
+.cookbook-meta {
+  font-size: var(--u-font-size--1);
+  margin-block: var(--space-xs) 0;
+}
+
+.cookbook-empty {
+  padding-block: var(--space-l);
+  text-align: center;
+}
+
+.cookbook-remove {
+  appearance: none;
+  background: transparent;
+  border: var(--border-size-1) solid var(--text-1);
+  color: var(--text-1);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--u-font-size--2);
+  margin-block-start: var(--space-2xs);
+  padding-block: var(--space-3xs);
+  padding-inline: var(--space-2xs);
+  position: relative;
+  transition: background-color 0.15s var(--ease-3), color 0.15s var(--ease-3);
+
+  /* z-index lifts button above .card-card__headline a::after full-card link overlay */
+  z-index: 1;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--surface-1);
+  }
+
+  &:focus-visible {
+    outline: var(--border-size-2) solid var(--link);
+    outline-offset: var(--border-size-2);
+  }
+}
+
+cookbook-page .sr-only {
+  block-size: 1px;
+  border: 0;
+  clip-path: inset(50%);
+  inline-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+}

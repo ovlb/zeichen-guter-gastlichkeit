@@ -54,6 +54,14 @@
         <section class="card-content">
           <header>
             <h1 class="main-headline">{{ title }}</h1>
+            <cookbook-button
+              card-url="{{ page.url }}"
+              card-title="{{ title }}"
+              image-alt="{{ imageAlt }}"
+              series-name="{{ fullSeriesInfo.name }}"
+              series-id="{{ fullSeriesInfo.id }}"
+              card-number="{{ cardNumber }}"
+            ></cookbook-button>
           </header>
           <div class="card-text">
             <recipe-audio src="{{ audio }}">
@@ -98,6 +106,7 @@
         </nav>
         <nav class="page-nav-secondary" aria-label="Seriennavigation">
           <a href="/{{ fullSeriesInfo.name | slugify }}">Alle Rezepte in {{ fullSeriesInfo.name }}</a>
+          <a href="/kochbuch/">Kochbuch</a>
           <a href="/">Start</a>
         </nav>
       </div>

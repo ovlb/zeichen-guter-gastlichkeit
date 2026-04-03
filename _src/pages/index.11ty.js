@@ -29,6 +29,7 @@ class Home {
         search-key="${build.algoliaSearchKey}"
       ></recipe-search>
       <p class="text-centered"><auf-gut-glueck></auf-gut-glueck></p>
+      <p class="text-centered"><a href="/kochbuch/">Kochbuch</a></p>
     </section>
     <div class="ornamental-frame home-frame">
       <span class="frame-corners" aria-hidden="true"></span>
