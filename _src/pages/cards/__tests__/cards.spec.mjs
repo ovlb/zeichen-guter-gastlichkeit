@@ -22,6 +22,11 @@ const EXCLUDED_FROM_DATE_TEST = [
   '5-karpfen-polnisch.md',
   '7-ragout-fin-vom-fisch.md',
 ]
+const EXCLUDED_FROM_DUPLICATE_DATE_TEST = [
+  '3-cocktails-mit-asbach-uralt.md', // shares 2025-03-14 with 2-cocktails-mit-asbach-uralt.md
+  '6-cocktails-mit-canadian-whisky.md', // shares 2025-03-17 with 5-cocktails-mit-bourbon-whiskey.md
+  '1-fasan.md', // DST artifact: shares 2026-04-03 with 15-wildragout.md
+]
 const EXCLUDED_FROM_WEEKEND_TEST = [
   '3-wein-aperitifs.md',
   '4-cocktails-mit-scotch.md',
@@ -208,6 +213,32 @@ test('Dates are valid and properly ordered', async (t) => {
         t.deepEqual(currentDate, expectedDate, message)
       }
     })
+  }
+})
+
+test('No two cards share the same date', async (t) => {
+  const processedDirs = await collectMarkdownFiles()
+  const allDates = new Map()
+
+  for (const { parsedFiles } of processedDirs) {
+    for (const file of parsedFiles) {
+      const fileName = path.basename(file.path)
+
+      if (EXCLUDED_FROM_DUPLICATE_DATE_TEST.includes(fileName)) continue
+
+      const date = markdown.parseDate(file.frontMatter?.[1])
+
+      t.truthy(date, `${fileName} should have a valid date`)
+
+      const dateString = dateUtils.formatYYYYMMDD(date)
+
+      t.false(
+        allDates.has(dateString),
+        `${fileName} has date ${dateString} which is already used by ${allDates.get(dateString)}`,
+      )
+
+      allDates.set(dateString, fileName)
+    }
   }
 })
 

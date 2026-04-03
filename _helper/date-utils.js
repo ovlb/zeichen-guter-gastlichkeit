@@ -24,7 +24,6 @@ export const dateUtils = {
   },
 
   getNextBusinessDay(date) {
-    const nextDate = new Date(date)
     const day = date.getUTCDay()
 
     const daysToAdd =
@@ -33,8 +32,12 @@ export const dateUtils = {
         [6, 2], // Saturday -> skip to Monday (+2 days)
       ]).get(day) || 1 // Default to 1 day for Sunday and weekdays
 
-    nextDate.setUTCDate(date.getUTCDate() + daysToAdd)
-
-    return nextDate
+    return new Date(
+      Date.UTC(
+        date.getUTCFullYear(),
+        date.getUTCMonth(),
+        date.getUTCDate() + daysToAdd,
+      ),
+    )
   },
 }
