@@ -5,7 +5,7 @@ import { pushAlgoliaRecords } from '../_helper/sync-algolia-index.js'
 const DIST_DIR = path.resolve(process.cwd(), 'dist')
 const IMG_DIR = path.resolve(DIST_DIR, 'img/feed-images')
 const IS_PROD = process.env.PAGE_STATE === 'production'
-const isCronBuild = process.env.INCOMING_HOOK_TITLE === 'Cron'
+const isCronBuild = process.env.SYNC_ALGOLIA === 'true'
 
 async function getLastModifiedTime(filePath) {
   const stats = await stat(filePath)

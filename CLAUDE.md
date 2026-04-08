@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Zeichen guter Gastlichkeit** — a German recipe card website built with Eleventy 3.x. The project digitizes 1970s-era physical recipe cards from a ring binder, making them accessible on the web. Content originates as TIFF recipe card images that are OCR'd, processed into markdown, enriched with AI-generated alt-text, and built into a static site deployed on Netlify.
+**Zeichen guter Gastlichkeit** — a German recipe card website built with Eleventy 3.x. The project digitizes 1970s-era physical recipe cards from a ring binder, making them accessible on the web. Content originates as TIFF recipe card images that are OCR'd, processed into markdown, enriched with AI-generated alt-text, and built into a static site deployed on DigitalOcean App Platform via GitHub Actions CI.
 
 ## Commands
 
@@ -49,7 +49,7 @@ The Eleventy config (`.eleventy.js`) auto-discovers and loads modules from direc
 | `_transforms/` | `addTransform()` | HTML minify (prod), image processing |
 | `_templates/` | `addTemplateFormats()` | PostCSS (.css) and esbuild (.ts) |
 | `_libraries/` | `setLibrary()` | Configured markdown-it |
-| `_events/` | `on('eleventy.after')` | Algolia sync, Netlify headers |
+| `_events/` | `on('eleventy.after')` | Algolia sync, feed image headers |
 
 ## Detailed Documentation
 
