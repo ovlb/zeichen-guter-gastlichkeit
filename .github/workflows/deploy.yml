@@ -12,6 +12,11 @@ on:
         type: boolean
         default: false
 
+env:
+  ELEVENTY_ENV: production
+  PAGE_STATE: production
+  BASE_URL: https://gastlichkeit.ovl.design
+
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
@@ -46,9 +51,6 @@ jobs:
 
       - name: Build
         env:
-          ELEVENTY_ENV: production
-          PAGE_STATE: production
-          BASE_URL: https://gastlichkeit.ovl.design
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
           ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
