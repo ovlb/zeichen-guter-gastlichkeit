@@ -21,9 +21,9 @@ jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -31,20 +31,18 @@ jobs:
       - run: npm ci
 
       - name: Restore eleventy-fetch cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: .cache
           key: eleventy-fetch-${{ hashFiles('_src/pages/cards/**/*.md') }}
           restore-keys: eleventy-fetch-
-          save-always: true
 
       - name: Restore eleventy-img cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: dist/img
           key: eleventy-img-${{ hashFiles('_src/assets/img/**') }}
           restore-keys: eleventy-img-
-          save-always: true
 
       - run: npm run lint
       - run: npm test
@@ -56,6 +54,20 @@ jobs:
           ALGOLIA_WRITE_API_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
           SYNC_ALGOLIA: ${{ github.event_name == 'schedule' || inputs.sync_algolia == true }}
         run: npm run build
+
+      - name: Save eleventy-fetch cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache
+          key: eleventy-fetch-${{ hashFiles('_src/pages/cards/**/*.md') }}
+
+      - name: Save eleventy-img cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: dist/img
+          key: eleventy-img-${{ hashFiles('_src/assets/img/**') }}
 
       - name: Validate feeds
         run: npm run test:feeds
