@@ -31,6 +31,7 @@ jobs:
           path: .cache
           key: eleventy-fetch-${{ hashFiles('_src/pages/cards/**/*.md') }}
           restore-keys: eleventy-fetch-
+          save-always: true
 
       - name: Restore eleventy-img cache
         uses: actions/cache@v4
@@ -38,6 +39,7 @@ jobs:
           path: dist/img
           key: eleventy-img-${{ hashFiles('_src/assets/img/**') }}
           restore-keys: eleventy-img-
+          save-always: true
 
       - run: npm run lint
       - run: npm test
