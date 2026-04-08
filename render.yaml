@@ -1,8 +1,0 @@
-services:
-  - type: web
-    runtime: static
-    name: gastlichkeit
-    repo: https://github.com/ovlb/zeichen-guter-gastlichkeit
-    branch: deploy
-    buildCommand: 'true'
-    staticPublishPath: .

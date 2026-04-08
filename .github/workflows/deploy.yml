@@ -56,14 +56,12 @@ jobs:
       - name: Validate feeds
         run: npm run test:feeds
 
-      - name: Deploy to deploy branch
+      - name: Deploy to Uberspace
+        env:
+          UBERSPACE_SSH_KEY: ${{ secrets.UBERSPACE_SSH_KEY }}
         run: |
-          cd dist
-          touch .nojekyll
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b deploy
-          git add -A
-          git commit -m "Deploy ${GITHUB_SHA::7}"
-          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" deploy:deploy
+          mkdir -p ~/.ssh
+          echo "$UBERSPACE_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H ${{ secrets.UBERSPACE_HOST }} >> ~/.ssh/known_hosts
+          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key" dist/ ${{ secrets.UBERSPACE_SSH_USER }}@${{ secrets.UBERSPACE_HOST }}:/var/www/virtual/${{ secrets.UBERSPACE_SSH_USER }}/html/
