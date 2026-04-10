@@ -37,7 +37,7 @@ eleventyExcludeFromCollections: true
   </FilesMatch>
 
   # Content-Security-Policy
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self' https://static.owlish.dev; media-src 'self' {{ build.cdnDomain }}; connect-src 'self' https://*.algolia.net https://*.algolianet.com; frame-ancestors 'none'"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self' https://static.owlish.dev; media-src 'self' {{ build.cdnDomain }}; connect-src 'self' https://*.algolia.net https://*.algolianet.com; frame-ancestors 'none'"
 
   # Permissions-Policy
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
