@@ -1,7 +1,7 @@
 ---
 title: Zunge in Madeira-Sauce
 date: 2026-05-05
-imageAlt: 'Aufgeschnittene gepökelte Rinderzunge in goldbrauner Madeira-Champignon-Sauce auf einem ovalen Teller mit rot-weißem Dekorrand, garniert mit Petersilie. Im Hintergrund eine Schüssel mit frischem Rosenkohl, eine silberne Saucenkelle und Salz- und Pfefferstreuer auf weißer Tischdecke mit Spitzenmuster.'
+imageAlt: 'Aufgeschnittene gepökelte Rinderzunge in goldbrauner Madeira-Champignon-Sauce auf einem ovalen Teller mit rot-weißem Dekorrand, garniert mit Petersilie. Im Hintergrund eine Schüssel mit Rosenkohl, eine silberne Saucenkelle und Salz- und Pfefferstreuer auf weißer Tischdecke mit Spitzenmuster.'
 id: 14c6ba80-7c9b-4f83-b4a9-40ec92564a3e
 ---
 
