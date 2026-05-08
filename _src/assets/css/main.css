@@ -1,12 +1,11 @@
-@import './0-base/_reset.pcss';
-@import './0-base/_universal.pcss';
-@import './0-base/_aspect-ratio.pcss';
-@import './0-base/_a.pcss';
-@import './0-base/_lists.pcss';
-@import './0-base/_img.pcss';
-
-@import './1-atoms/_typography.pcss';
-@import './2-structures/_ornament.pcss';
+@import url('./0-base/_reset.pcss');
+@import url('./0-base/_universal.pcss');
+@import url('./0-base/_aspect-ratio.pcss');
+@import url('./0-base/_a.pcss');
+@import url('./0-base/_lists.pcss');
+@import url('./0-base/_img.pcss');
+@import url('./1-atoms/_typography.pcss');
+@import url('./2-structures/_ornament.pcss');
 
 .skip-link {
   inset-inline-start: -9999px;
@@ -55,10 +54,9 @@ body {
 }
 
 .end-role {
-  align-content: center;
+  place-content: center center;
   background-color: var(--choco-12);
   display: flex;
-  justify-content: center;
   margin-block-start: var(--size-3);
   padding-block: var(--size-2);
   padding-inline: var(--size-5);
