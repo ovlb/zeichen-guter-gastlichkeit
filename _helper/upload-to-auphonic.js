@@ -1,4 +1,4 @@
-import { readFile, readdir } from 'fs/promises'
+import { readFile, readdir, rm } from 'fs/promises'
 import { basename, dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import dotenv from 'dotenv'
@@ -193,6 +193,9 @@ async function processFile(file) {
       await startAuphonicProduction(productionUuid)
       console.log(`🚀 Started processing: ${productionUuid} for ${fileName}`)
 
+      await rm(file)
+      console.log(`🧼 Removed source file: ${fileName}`)
+
       return { fileName, productionUuid, success: true }
     } catch (error) {
       retries++
@@ -256,14 +259,14 @@ async function uploadAllToAuphonic() {
     // Generate summary statistics
     const successful = results.filter((r) => r.success === true).length
     const skipped = results.filter((r) => r.skipped === true).length
-    const failed = results.filter((r) => r.success === false).length
+    const failed = results.filter((r) => r.success === false)
 
     console.log('\n📊 Summary:')
     console.log(`✅ Successfully processed: ${successful}`)
     console.log(`⏭️ Skipped: ${skipped}`)
-    console.log(`❌ Failed: ${failed}`)
+    console.log(`❌ Failed: ${failed.length}`)
 
-    if (failed > 0) {
+    if (failed.length > 0) {
       console.log('\n❌ Failed files:')
       failed.forEach((f) => console.log(`   - ${f.fileName}: ${f.error}`))
     }

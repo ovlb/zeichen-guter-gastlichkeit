@@ -3,7 +3,7 @@ import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const TEXT_DIR = join(__dirname, './.tmp-txt/')
+export const TEXT_DIR = join(__dirname, './.tmp-txt/')
 
 export async function scanCardContent({ series, episode }) {
   const txtPath = join(TEXT_DIR, `${series}-${episode}.txt`)

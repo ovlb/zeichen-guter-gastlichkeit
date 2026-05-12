@@ -7,8 +7,12 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { randomUUID } from 'crypto'
 
-import { fileNameRegex, getAllCardImages } from './get-all-card-images.js'
-import { scanCardContent } from './scan-card-content.js'
+import {
+  fileNameRegex,
+  getAllCardImages,
+  IMG_DIR,
+} from './get-all-card-images.js'
+import { scanCardContent, TEXT_DIR } from './scan-card-content.js'
 import { dateUtils } from './date-utils.js'
 import {
   createContentImage,
@@ -170,6 +174,8 @@ export async function processImages() {
 
     await updateNextDate(lastDate)
 
+    await cleanFiles()
+
     console.log('🎉 Processing completed.')
   } catch (error) {
     console.error('💥 Error processing images:', error)
@@ -216,7 +222,7 @@ imageAlt: "${imageAlt}"
 id: ${randomUUID()}
 ---
 
-${text}
+${text.trim()}
 `
   try {
     await fs.writeFile(filePath, mdContent)
@@ -251,6 +257,25 @@ async function updateNextDate(date) {
     console.log(`📅 Updated last publish date to ${date.toISOString()}`)
   } catch (error) {
     console.error(`❌ Error updating last publish date:`, error)
+  }
+}
+
+async function cleanFiles() {
+  const img = await fs.readdir(IMG_DIR)
+  const txt = await fs.readdir(TEXT_DIR)
+
+  for (const i of img) {
+    if (i.endsWith('.tiff')) {
+      await fs.rm(path.resolve(IMG_DIR, i))
+      console.log('🧼 rm ', i)
+    }
+  }
+
+  for (const t of txt) {
+    if (t.endsWith('.txt')) {
+      await fs.rm(path.resolve(TEXT_DIR, t))
+      console.log('🧼 rm ', t)
+    }
   }
 }
 

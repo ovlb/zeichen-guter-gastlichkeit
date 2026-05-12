@@ -1,6 +1,6 @@
 import sharp from 'sharp'
 import path from 'path'
-import { getAllCardImages, srcImagesDir } from './get-all-card-images.js'
+import { getAllCardImages, IMG_DIR } from './get-all-card-images.js'
 
 const cwd = process.cwd()
 
@@ -8,7 +8,7 @@ export async function createSearchImage(sourceFileName) {
   const fileName = sourceFileName.replace('.tiff', '-search.avif')
   const outputPath = path.resolve(cwd, '_src/assets/img/search', fileName)
 
-  await sharp(path.resolve(srcImagesDir, sourceFileName))
+  await sharp(path.resolve(IMG_DIR, sourceFileName))
     .avif({
       quality: 65,
     })
@@ -22,7 +22,7 @@ export async function createPodcastImage(sourceFileName) {
   const fileName = sourceFileName.replace('.tiff', '-podcast.jpg')
   const outputPath = path.resolve(cwd, '_src/assets/img/podcast', fileName)
 
-  await sharp(path.resolve(srcImagesDir, sourceFileName))
+  await sharp(path.resolve(IMG_DIR, sourceFileName))
     .jpeg({
       quality: 66,
     })
@@ -36,7 +36,7 @@ export async function createFeedImage(sourceFileName) {
   const fileName = sourceFileName.replace('.tiff', '-feed.jpg')
   const outputPath = path.resolve(cwd, '_src/assets/img/feed-images/', fileName)
 
-  await sharp(path.resolve(srcImagesDir, sourceFileName))
+  await sharp(path.resolve(IMG_DIR, sourceFileName))
     .jpeg({
       quality: 66,
     })
@@ -50,7 +50,7 @@ export async function createContentImage(sourceFileName) {
   const fileName = sourceFileName.replace('.tiff', '.jpg')
   const outputPath = path.resolve(cwd, '_src/assets/img/cards', fileName)
 
-  await sharp(path.resolve(srcImagesDir, sourceFileName))
+  await sharp(path.resolve(IMG_DIR, sourceFileName))
     .jpeg({
       quality: 100,
     })
