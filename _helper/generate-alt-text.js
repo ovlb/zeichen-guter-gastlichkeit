@@ -16,7 +16,7 @@ Regeln:
 - Verwende ausschließlich typografische Anführungszeichen: „öffnend” und „schließend”. Niemals gerade Anführungszeichen (").
 - Benutze die typografische Variante des Apostrophs (’).
 - Verwende immer die typografische Variante des Bindestrichs (-) für zusammengesetzte Begriffe, z.B. „Kartoffel-Lauch-Gratin”.
-- Berücksichtige den Kontext des Rezepts, wenn er für die Beschreibung des Bildes relevant ist.`
+- Berücksichtige den Kontext des Rezepts, wenn er für die Beschreibung des Bildes relevant ist z.B. um nicht eindeutig erkennbare Teile des Bildes zu beschreiben. Vermeide jedoch unnötige Wiederholungen.`
 
 /**
  * Generates a German alt text description for a card image
@@ -35,7 +35,7 @@ export async function generateAltText(imagePath, { recipeText } = {}) {
   }
 
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-5-20250929',
+    model: 'claude-sonnet-4-6',
     max_tokens: 256,
     messages: [
       {
