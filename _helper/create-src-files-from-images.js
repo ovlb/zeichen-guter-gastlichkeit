@@ -23,6 +23,7 @@ import {
 import { generateAltText } from './generate-alt-text.js'
 
 import seriesData from '../_src/_data/series.js'
+import { correctScanErrors } from './text-utils/correct-scan-errors.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const CONFIG_FILE = path.join(__dirname, '.upload-config.json')
@@ -218,11 +219,11 @@ async function writeToFile(filePath, { title, date, text, imageAlt }) {
   const mdContent = `---
 title: ${title}
 date: ${date}
-imageAlt: "${imageAlt}"
+imageAlt: '${imageAlt}'
 id: ${randomUUID()}
 ---
 
-${text.trim()}
+${correctScanErrors(text)}
 `
   try {
     await fs.writeFile(filePath, mdContent)
