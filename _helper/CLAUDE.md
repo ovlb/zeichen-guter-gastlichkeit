@@ -47,6 +47,9 @@ Generates 4 image variants from each source TIFF using Sharp:
 ### `scan-card-content.js`
 Reads OCR-processed `.txt` files from `_helper/.tmp-txt/` and extracts title + text content.
 
+### `recreate-card-images.js`
+Standalone CLI utility to regenerate the 4 image variants (podcast, search, feed, content) from TIFFs in `.tmp-img/` without touching OCR text, alt-text, markdown, or publish dates. Use when source images are re-edited and the existing card content should be preserved. Run with `node _helper/recreate-card-images.js`.
+
 ## AI Integration
 
 ### `generate-alt-text.js`
