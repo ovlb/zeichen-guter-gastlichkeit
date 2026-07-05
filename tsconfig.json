@@ -1,15 +1,11 @@
 {
-  "include": ["_src/assets/js/**/*.ts"],
-  "exclude": ["./dist"],
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
   "compilerOptions": {
-    "incremental": true,
-    "target": "ESNext",
-    "noEmit": true,
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "types": []
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.tsbuildinfo"
   }
 }
+

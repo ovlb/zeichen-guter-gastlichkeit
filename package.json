@@ -15,7 +15,7 @@
     "serve": "ELEVENTY_ENV=development eleventy --serve --port 7777",
     "test": "ava",
     "test:feeds": "ava --config ava.feeds.config.mjs",
-    "ts": "tsc --noEmit",
+    "ts": "tsgo --build",
     "prepare": "node .husky/install.js"
   },
   "engines": {

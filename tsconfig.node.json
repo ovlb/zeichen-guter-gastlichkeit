@@ -1,16 +1,18 @@
 {
+  "include": ["**/*.js", "**/*.mjs"],
+  "exclude": ["_src/assets/js/**", "dist/**", "node_modules/**"],
   "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "noEmit": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node"]
-  },
-  "include": ["**/*.js", "**/*.mjs"],
-  "exclude": ["_src/assets/js/**", "dist/**", "node_modules/**"]
+  }
 }
