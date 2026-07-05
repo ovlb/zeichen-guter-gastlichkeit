@@ -7,3 +7,5 @@ dist/
 _helper/.tmp-audio/*.flac
 _helper/.tmp-txt/*.txt
 _helper/.tmp-img/*.tiff
+_helper/.tmp-scans/*.jpg
+_helper/.tmp-scans/*.jpeg

@@ -12,7 +12,7 @@ import {
   getAllCardImages,
   IMG_DIR,
 } from './get-all-card-images.js'
-import { scanCardContent, TEXT_DIR } from './scan-card-content.js'
+import { parseCardText, TEXT_DIR } from './scan-card-content.js'
 import { dateUtils } from './date-utils.js'
 import {
   createContentImage,
@@ -23,7 +23,8 @@ import {
 import { generateAltText } from './generate-alt-text.js'
 
 import seriesData from '../_src/_data/series.js'
-import { correctScanErrors } from './text-utils/correct-scan-errors.js'
+import { createTxtFromOcr, SCAN_DIR } from './ocr-scans.js'
+import getFilesOfType from './get-files.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const CONFIG_FILE = path.join(__dirname, '.upload-config.json')
@@ -145,6 +146,8 @@ export async function processImages() {
           createContentImage(file),
         ])
 
+        await createTxtFromOcr({ series: seriesId, card: indexInSeries })
+
         const content = await createMarkdownContent({
           indexInSeries,
           name,
@@ -200,7 +203,7 @@ export async function createMarkdownContent({ indexInSeries, name, seriesId }) {
   const fileName = `${seriesId}-${indexInSeries}-${name}.txt`
 
   try {
-    textContent = await scanCardContent({
+    textContent = await parseCardText({
       series: seriesId,
       episode: indexInSeries,
     })
@@ -223,7 +226,7 @@ imageAlt: '${imageAlt}'
 id: ${randomUUID()}
 ---
 
-${correctScanErrors(text)}
+${text}
 `
   try {
     await fs.writeFile(filePath, mdContent)
@@ -262,22 +265,19 @@ async function updateNextDate(date) {
 }
 
 async function cleanFiles() {
-  const img = await fs.readdir(IMG_DIR)
-  const txt = await fs.readdir(TEXT_DIR)
+  const img = getFilesOfType(IMG_DIR, '.tiff')
+  const txt = getFilesOfType(TEXT_DIR, '.txt')
+  const scans = getFilesOfType(SCAN_DIR, '.jpeg')
 
-  for (const i of img) {
-    if (i.endsWith('.tiff')) {
-      await fs.rm(path.resolve(IMG_DIR, i))
-      console.log('🧼 rm ', i)
-    }
-  }
+  const images = img.map((i) => path.resolve(IMG_DIR, i))
+  const txtFiles = txt.map((t) => path.join(TEXT_DIR, t))
+  const scanFiles = scans.map((s) => path.join(SCAN_DIR, s))
 
-  for (const t of txt) {
-    if (t.endsWith('.txt')) {
-      await fs.rm(path.resolve(TEXT_DIR, t))
-      console.log('🧼 rm ', t)
-    }
-  }
+  await Promise.all([...images, txtFiles, scanFiles].map((p) => fs.rm(p)))
+
+  console.log(
+    `🧼 Clean up done. Removed ${images.length} images, ${txtFiles.length} text files, ${scanFiles.length} scans`,
+  )
 }
 
 // Run the main function if this file is executed directly
