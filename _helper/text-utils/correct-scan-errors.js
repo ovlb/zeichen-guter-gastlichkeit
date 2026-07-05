@@ -36,7 +36,7 @@ function fixFractions(str) {
 export function correctScanErrors(raw) {
   let text = raw
 
-  text.replace(COMMON_ERROR_REGEXP, (match) => COMMON_ERRORS[match])
+  text = text.replace(COMMON_ERROR_REGEXP, (match) => COMMON_ERRORS[match])
 
   return fixFractions(text).trim()
 }
