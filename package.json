@@ -19,7 +19,7 @@
     "prepare": "node .husky/install.js"
   },
   "engines": {
-    "node": "22"
+    "node": "26"
   },
   "repository": {
     "type": "git",
@@ -100,11 +100,11 @@
     ]
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.74.0",
-    "algoliasearch": "^5.48.1",
+    "@anthropic-ai/sdk": "^0.106.0",
+    "algoliasearch": "^5.55.1",
     "esbuild": "^0.27.3",
-    "feed": "^4.2.2",
-    "music-metadata": "^11.0.2",
+    "feed": "^5.2.1",
+    "music-metadata": "^11.13.0",
     "podcast": "^2.0.1"
   }
 }
