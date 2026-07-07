@@ -4,6 +4,7 @@ const COMMON_ERRORS = {
   OV: 'Öl',
   'OV/Margarine': 'Öl/Magarine',
   'EBl.': 'Eßl.',
+  'EßI.': 'Eßl.',
   'V½': '½',
   V2: '½',
   '1½': '½',
@@ -14,6 +15,9 @@ const COMMON_ERRORS = {
   '1/¼': '¼',
   '1/8': '⅛',
   '1/⅛': '⅛',
+  '18 1': '⅛ l',
+  '1/&': '⅛',
+  '3/8': '⅜',
 }
 
 const COMMON_ERROR_REGEXP = new RegExp(
