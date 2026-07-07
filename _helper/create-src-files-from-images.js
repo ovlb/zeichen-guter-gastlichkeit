@@ -270,10 +270,10 @@ async function cleanFiles() {
   const scans = getFilesOfType(SCAN_DIR, '.jpeg')
 
   const images = img.map((i) => path.resolve(IMG_DIR, i))
-  const txtFiles = txt.map((t) => path.join(TEXT_DIR, t))
-  const scanFiles = scans.map((s) => path.join(SCAN_DIR, s))
+  const txtFiles = txt.map((t) => path.resolve(TEXT_DIR, t))
+  const scanFiles = scans.map((s) => path.resolve(SCAN_DIR, s))
 
-  await Promise.all([...images, txtFiles, scanFiles].map((p) => fs.rm(p)))
+  await Promise.all([...images, ...txtFiles, ...scanFiles].map((p) => fs.rm(p)))
 
   console.log(
     `🧼 Clean up done. Removed ${images.length} images, ${txtFiles.length} text files, ${scanFiles.length} scans`,
