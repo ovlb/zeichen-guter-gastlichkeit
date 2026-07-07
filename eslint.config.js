@@ -24,8 +24,10 @@ export default [
       sourceType: 'module',
       globals: globals.nodeBuiltin,
     },
-    settings: {
-      'import-x/ignore': ['mac-ocr'],
+    rules: {
+      // mac-ocr is an optionalDependency (darwin-only); on platforms where npm
+      // skipped it, the module isn't on disk and resolution would fail here.
+      'import-x/no-unresolved': ['error', { ignore: ['mac-ocr'] }],
     },
   },
 
