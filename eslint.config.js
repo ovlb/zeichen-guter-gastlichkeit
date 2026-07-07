@@ -24,6 +24,9 @@ export default [
       sourceType: 'module',
       globals: globals.nodeBuiltin,
     },
+    settings: {
+      'import-x/ignore': ['mac-ocr'],
+    },
   },
 
   // TypeScript (browser code in _src/assets/js/)
