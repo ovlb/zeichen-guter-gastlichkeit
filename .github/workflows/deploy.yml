@@ -57,14 +57,12 @@ jobs:
 
       - name: Save eleventy-fetch cache
         uses: actions/cache/save@v6
-        if: always()
         with:
           path: .cache
           key: eleventy-fetch-${{ hashFiles('_src/pages/cards/**/*.md') }}
 
       - name: Save eleventy-img cache
         uses: actions/cache/save@v6
-        if: always()
         with:
           path: dist/img
           key: eleventy-img-${{ hashFiles('_src/assets/img/**') }}
