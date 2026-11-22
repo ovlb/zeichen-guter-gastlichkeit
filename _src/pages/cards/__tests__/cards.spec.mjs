@@ -23,6 +23,7 @@ const EXCLUDED_FROM_DATE_TEST = [
   '7-ragout-fin-vom-fisch.md',
   '1-casa-schmortopf.md',
   '6-schinken-rolle.md',
+  '1-lammcurry.md',
 ]
 const EXCLUDED_FROM_DUPLICATE_DATE_TEST = [
   '3-cocktails-mit-asbach-uralt.md', // shares 2025-03-14 with 2-cocktails-mit-asbach-uralt.md
