@@ -111,6 +111,12 @@ export async function processImages() {
     })
     let lastDate = new Date(LAST_DATE)
 
+    if (!sortedFiles.length) {
+      console.log('🤨 No card images. Stopping.')
+
+      return
+    }
+
     for (const file of sortedFiles) {
       const match = file.match(fileNameRegex)
 
