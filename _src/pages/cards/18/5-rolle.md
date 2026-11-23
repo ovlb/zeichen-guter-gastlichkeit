@@ -1,6 +1,6 @@
 ---
 title: Lammrolle
-date: 2026-11-29
+date: 2026-11-27
 imageAlt: 'Gefüllte Lammrolle, aufgeschnitten und knusprig gebraten, angerichtet auf einer runden Platte mit buntem Gemüse aus grünen und roten Paprikastreifen sowie kleinen Porreestücken. Im Hintergrund stehen gefüllte Weingläser auf einer gelben Tischdecke, dekoriert mit einem Zweig frischem Thymian.'
 id: 9306db82-bb6b-4ab3-b6e6-aaa328933962
 ---
