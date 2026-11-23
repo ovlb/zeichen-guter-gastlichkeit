@@ -1,6 +1,6 @@
 ---
 title: Lammkeule im Römertopf
-date: 2026-07-28
+date: 2027-11-26
 imageAlt: 'Nahaufnahme einer Lammkeule im gelben Römertopf, mit Rosmarinzweigen und halbierten Champignons belegt. Im Hintergrund liegt gegartes Broccoli-Gemüse bereit, das als Beilage serviert wird.'
 id: 03bd0c83-8035-41dd-bbe8-0af00119c6b1
 ---

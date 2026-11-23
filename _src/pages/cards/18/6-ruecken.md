@@ -1,6 +1,6 @@
 ---
 title: Lammrücken mit Gemüse
-date: 2026-07-30
+date: 2027-11-30
 imageAlt: 'Gebratener Lammrücken mit glänzender brauner Kruste, angerichtet auf einer Platte mit Broccoliröschen und kleinen Möhren. Im Hintergrund stehen eine Schale mit Petersilienkartoffeln sowie Salz- und Pfefferstreuer aus Glas auf einem weiß gedeckten Tisch.'
 id: 95d921bc-ab17-4896-a787-1a66d926e760
 ---

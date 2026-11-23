@@ -1,6 +1,6 @@
 ---
 title: Lammkarree überkrustet
-date: 2026-07-27
+date: 2027-11-25
 imageAlt: 'Lammkarree mit knuspriger Kräuter-Senf-Kruste aus Petersilie und Weißbrotbröseln, serviert auf einer ovalen Platte mit blauem Rand. Das Fleisch ist umgeben von geschmorten Tomatenwürfeln und mit frischer Petersilie garniert. Im Hintergrund steht eine Pfeffermühle auf einer gewebten Tischdecke mit blau-gelbem Blumenmuster.'
 id: b8c06182-7d52-43d4-82b7-b4151a26c397
 ---

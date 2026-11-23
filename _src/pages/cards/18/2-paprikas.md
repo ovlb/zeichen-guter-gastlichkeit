@@ -1,6 +1,6 @@
 ---
 title: Lamm-Paprikás
-date: 2026-07-24
+date: 2027-11-24
 imageAlt: 'Gelbe Servierplatte mit Lamm-Paprikás in Paprika-Sauce, garniert mit Streifen grüner Paprikaschoten und Tomatenstücken. Im Hintergrund eine Schale mit breiten Bandnudeln sowie ein Glas Rotwein auf einem Holztisch.'
 id: e2d6b358-73b6-4141-909a-baec9463bc20
 ---
