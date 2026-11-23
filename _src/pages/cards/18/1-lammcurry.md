@@ -1,6 +1,6 @@
 ---
 title: Lammcurry
-date: 2026-11-23
+date: 2027-11-23
 imageAlt: 'Im Vordergrund eine Tonschale mit cremigem Lamm-Curry, garniert mit Bananenscheiben und sichtbaren Fleischwürfeln in gelber Currysauce. Im Hintergrund weitere Tonschalen mit weißem Reis, geriebener Kokosnuss und dunklem Mangochutney, in dem ein Löffel steckt. Die rustikalen Schalen aus braun glasiertem Ton stehen dicht beieinander auf dem Tisch.'
 id: e711eb25-e1fd-4ae9-820a-51907b0c48eb
 ---
